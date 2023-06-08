@@ -1,14 +1,14 @@
 
 <template>
-    <header class="sticky top-0 bg-white flex items-center w-full font-consolas font-light border-b border-gray-3 transition-all" :class="scrolled ? 'scrolled':'initial'">
+    <header class="sticky top-0 bg-white px-10 flex items-center w-full font-consolas font-light border-b border-gray-3 transition-all" :class="scrolled ? 'py-4':'py-5'">
         
         <h3 v-if="scrolled" class="cursor-pointer font-consolas font-bold uppercase text-gray-8 text-3xl transition-all">
             Hemiblade software
         </h3>
-        <img v-else alt="Hemiblade logo" class="cursor-pointer logo transition-all" src="@/assets/nav-logo.png" width="150" height="80" />
+        <img v-else alt="Hemiblade logo" class="cursor-pointer logo my-2 transition-all" src="@/assets/nav-logo.png" width="150" height="80" />
         
     
-        <nav class="ms-auto text-lg transition-all h-full">
+        <nav class="my-1 ms-auto text-lg transition-all h-full">
 
             <template v-for="({ label, address, type }) in links" >
                 <a v-if="type === 'page'" class="relative cursor-pointer hover:font-bold">
@@ -24,7 +24,7 @@
 </template>
 <script setup>
 import { RouterLink } from 'vue-router';
-import { ref, reactive,  onMounted, onBeforeUnmount, nextTick } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 //timeouts
 const timeout = { scroll: 0 }
@@ -34,15 +34,14 @@ const getScrollPercentage = (el) => {
     var p = el.parentNode;
     return (el.scrollTop || p.scrollTop) / (p.scrollHeight - p.clientHeight ) * 100;
 };
-
 let scrolled = ref( getScrollPercentage(document.body) > 0.2);
 
 onMounted(() => {
     document.addEventListener("scroll", () => {
-        clearTimeout(timeout.scroll);
+        clearTimeout(timeout.scroll)
         timeout.scroll = setTimeout(() => {
             scrolled.value = getScrollPercentage(document.body) > 0.2;
-        }, 200)
+        }, 150);
     })
 })
 
