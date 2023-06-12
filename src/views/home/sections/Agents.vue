@@ -18,22 +18,32 @@
         </div>
     </section>
     
-    <section class="bg-blue-2">
-        <h4 class="capitalize font-bold text-xl">
+    <section class="bg-[#EEF8FE] font-consolas px-4 lg:px-12 py-12 border-y border-[#EFEFEF]">
+        <h4 class="uppercase font-bold text-xl">
             Years in the security industry working with products from many vendors taught us a few things.
         </h4>
-        <br /><br />
-        <p>
-        - Not a single manufacturer offers all the best products. <br /><br />
-        - To have the best possible system products must be bought from different	manufacturers but not naturaly integrated.<br /><br />
-        - Useful integration it’s hard to achieve.<br /><br />
-        - Good integration products are expensive to acquire and complex to set up	and maintain.<br /><br />
-        
-        Hemiblade software tools are easy on the budget, a breeze to set up and maintain, and very simple to use.
-        <br /> <br />
-        Too good to be true? Well, ask for a free demo!
+
+        <p class="text-lg">
+            <ul class="mb-6">
+                <li>
+                    - Not a single manufacturer offers all the best products.
+                </li>
+                <li>
+                    - To have the best possible system products must be bought from different	manufacturers but not naturaly integrated.
+                </li>
+                <li>
+                    - Useful integration it’s hard to achieve.
+                </li>
+                <li>
+                    - Good integration products are expensive to acquire and complex to set up	and maintain.
+                </li>
+            </ul>
+            Hemiblade software tools are easy on the budget, a breeze to set up and maintain, and very simple to use.
+            <br />
+            Too good to be true? Well, ask for a free demo!
         </p>
     </section>
+
 </template>
 
 <style scoped>
