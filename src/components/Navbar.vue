@@ -1,7 +1,6 @@
 
 <template>
-    <header class="sticky top-0 bg-white px-10 flex items-center w-full font-consolas font-light border-b border-gray-3 transition-all" :class="scrolled ? 'py-2':'py-4'">
-        
+    <header class="sticky top-0 bg-white px-10 flex items-center w-full font-consolas font-light border-b border-gray-3 z-50 transition-all" :class="scrolled ? 'py-2':'py-4'">
         <h3 v-if="scrolled" class="cursor-pointer my-2 font-consolas font-bold uppercase text-gray-8 text-3xl transition-all">
             Hemiblade software
         </h3>
@@ -40,7 +39,7 @@ onMounted(() => {
     document.addEventListener("scroll", () => {
         clearTimeout(timeout.scroll)
         timeout.scroll = setTimeout(() => {
-            scrolled.value = getScrollPercentage(document.body) > 0.2;
+            scrolled.value = getScrollPercentage(document.body) > 0.15;
         }, 150);
     })
 })

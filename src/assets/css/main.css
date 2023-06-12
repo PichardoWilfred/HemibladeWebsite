@@ -5,5 +5,12 @@
 @layer base {
     html {
         font-family: 'Open Sans', sans-serif;
+        scroll-behavior: smooth;
+    }
+    
+    p.normal-text {
+        @apply font-consolas text-default;
     }
 }
+
+

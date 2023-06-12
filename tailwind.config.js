@@ -31,7 +31,9 @@ module.exports = {
         'blue-1': "#F0F7FF",
         'blue-2': "#C2E6F4",
         'blue-3':"#71A4F7",
-        'blue-4': "#0099DA",
+        'blue-4': "#325A86",
+        // #255283
+        'blue-5': "#0099DA",
 
         'gray-1': "#F3F3F3",
         'gray-2': "#EDEDED",
@@ -45,6 +47,14 @@ module.exports = {
         'gray-10': "#404040",
         'gray-11': "#383838",
     },
+    },
+    corePlugins: {
+        textOpacity: false,
+        backgroundOpacity: false,
+        borderOpacity: false,
+        divideOpacity: false,
+        placeholderOpacity: false,
+        ringOpacity: false,
     },
     plugins: [],
 }
