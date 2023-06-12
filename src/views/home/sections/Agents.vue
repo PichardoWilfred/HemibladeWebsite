@@ -19,7 +19,7 @@
     </section>
     
     <section class="bg-[#EEF8FE] font-consolas px-4 lg:px-12 py-12 border-y border-[#EFEFEF]">
-        <h4 class="uppercase font-bold text-xl">
+        <h4 class="max-lg:mb-4 uppercase font-bold text-xl">
             Years in the security industry working with products from many vendors taught us a few things.
         </h4>
 
