@@ -1,6 +1,6 @@
 <template>
-    <section class="flex justify-around px-10 py-16">
-        <img :src="img" :alt="alt" :class="class_" class="object-contain">
+    <section class="flex flex-wrap justify-around px-8 lg:px-10 py-16">
+        <img :src="img" :alt="alt" :class="class_" class="object-contain max-lg:mb-10">
         <p v-html="text" class="font-consolas font-bold text-lg max-w-[780px]"></p>
     </section>
 </template>
