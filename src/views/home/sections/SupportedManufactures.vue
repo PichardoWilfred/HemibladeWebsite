@@ -15,7 +15,7 @@
             alt: 'DMP'
         },
         {
-            text: 'Network Optix began as an idea born of necessity – there simply had to be a better way to discover, view, and manage IP cameras. <br/ ><br/ > Nx Witness VMS is a lightning fast, easy to use, cross-platform IP video management system (VMS) / video surveillance software designed to discover, view, record, and manage IP video cameras so you can monitor, analyze and react to critical events in real time. <br/ ><br/ > https://www.networkoptix.com/',
+            text: 'Network Optix began as an idea born of necessity – there simply had to be a better way to discover, view, and manage IP cameras. <br/ ><br/ > Nx Witness VMS is a lightning fast, easy to use, cross-platform IP video management system (VMS) / video surveillance software designed to discover, view, record, and manage IP video cameras so you can monitor, analyze and react to critical events in real time. <br/ ><br/ > <a href="https://www.networkoptix.com/" class="underline">https://www.networkoptix.com/</a>',
             img: require('../assets/supported_manufactures/NX.png'),
             class_: 'w-[320px]',
             alt: 'Network Optix'
