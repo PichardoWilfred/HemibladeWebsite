@@ -3,6 +3,7 @@
   import Portrait from "./sections/Portrait.vue";
   import HIP from "./sections/HIP.vue";
   import NewProducts from "./sections/NewProducts.vue"
+  import SupportedManufactures from './sections/SupportedManufactures.vue'
 </script>
 
 <template>
@@ -11,5 +12,6 @@
     <Agents />
     <HIP />
     <NewProducts />
+    <SupportedManufactures />
   </main>
 </template>
