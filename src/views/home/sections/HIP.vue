@@ -1,5 +1,5 @@
 <template>
-    <section class="relative text-black font-consolas px-4 lg:px-12 pt-12">
+    <section class="relative text-black font-consolas px-4 lg:px-12 pt-16">
         <div class="w-full relative z-20 max-w-[1450px]">
             <h3 class="max-lg:mb-4 text-2xl font-bold">HEMIBLADE INTEGRATION PLATFORM (HIP)</h3>
             <p class="mb-4 text-lg">
@@ -11,13 +11,13 @@
                 HIP takes control of login sessions, Network filters, access to databases, user administration, access to devices,
                 listeners, parsers, rules engines, notification rules, engines, dispatchers, API communications with 3rd party products and much more techie stuff.
             </p>
-            <p class="mb-10 text-lg">
+            <p class="text-lg">
                 It took 3+ years of development to get HIP feature set ready to develop IFA. HIP continues to evolve and mature.
                 <br /> The next “Big Thing” will come early 2024. Visit us again soon!
             </p>
-            <div class="flex items-start flex-wrap justify-center">
+            <div class="flex items-start flex-wrap justify-center mt-16">
                 <img v-for="img in images" :src="img.src" :alt="img.alt" :key="i" :class="img.class"
-                class="mx-6 mb-8 lg:mx-8"/>
+                class="mx-6 mb-8 lg:mb-16 lg:mx-8"/>
             </div>
         </div>
     </section>

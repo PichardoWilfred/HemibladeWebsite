@@ -1,7 +1,8 @@
 <template>
-    <section class="px-6 lg:px-12 pt-12">
+    <section class="flex flex-col px-6 lg:px-12 pt-6 pb-24 border-b border-gray-3">
+        <h2 class="font-consolas text-gray-7 text-base mx-auto mb-14">CLIENTS</h2>
         <div class="flex flex-wrap justify-around">
-            <img v-for="{src, class_, alt} in images" :src="src" :class="class_" :alt="alt" class="mb-12 flex-shrink-0 object-contain">
+            <img v-for="{src, class_, alt} in images" :src="src" :class="class_" :alt="alt" class="flex-shrink-0 object-contain">
         </div>
 
     </section>

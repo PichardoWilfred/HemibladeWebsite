@@ -11,9 +11,9 @@
                 <a v-if="type === 'page'" class="relative cursor-pointer hover:font-bold">
                     {{ label }}
                 </a>
-                <RouterLink v-else :to="address" class="relative cursor-pointer hover:font-bold mr-8">
+                <a v-else :href="address" v-smooth-scroll class="relative cursor-pointer hover:font-bold mr-8">
                     {{ label }}
-                </RouterLink>
+                </a>
             </template>
         </nav>
         <!-- mobile menu -->
@@ -26,7 +26,7 @@
         <div class="fixed bg-[#09090954] h-full top-0 left-0 w-full z-40" @click="toggle_mobile_menu()"></div>
         <nav class="fixed h-full bg-white right-0 z-50 flex flex-col font-consolas border-t border-gray-3" :style="{ top: nav_position }">
             <template v-for="({ label, address, type }) in links" >
-                <a v-if="type === 'page'" class="mobile-link relative w-full px-6 py-2 cursor-pointer hover:font-bold">
+                <a v-if="type === 'page'" class="mobile-link relative w-full px-6 py-2 cursor-pointer hover:font-bold" :id="address" v-smooth-scroll>
                     {{ label }}
                 </a>
                 <RouterLink v-else :to="address" class="mobile-link relative w-full px-6 py-2 cursor-pointer hover:font-bold mr-8 border-b border-gray-3">
@@ -75,7 +75,7 @@
 
 <script setup>
 import { RouterLink } from 'vue-router';
-import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue';
+import { inject, ref, onMounted, onBeforeUnmount, nextTick } from 'vue';
 import require from '@/libs/require.js';
 
 
@@ -122,11 +122,11 @@ onMounted(() => {
 
 // navbar links
 const links = ref([
-    { address: '/', label: 'Home' }, 
-    { address: '/', label: 'Products' },
-    { address: '/', label: 'Media' },
-    { address: '/', label: 'About' },
-    { address: '/', label: 'Contact' },
+    { address: '#home', label: 'Home' }, 
+    { address: '#products', label: 'Products' },
+    { address: '#media', label: 'Media' },
+    { address: '#about', label: 'About' },
+    { address: '#contact', label: 'Contact' },
     { address: '/privacy', label: 'Privacy Policy', type: 'page' }
 ]);
 

@@ -10,12 +10,12 @@
 
 <template>
   <main>
-    <Portrait />
+    <Portrait id="home"/>
     <Agents />
-    <HIP />
+    <HIP id="media"/>
     <NewProducts />
     <SupportedManufactures />
     <Clients />
-    <About />
+    <About id="about"/>
   </main>
 </template>

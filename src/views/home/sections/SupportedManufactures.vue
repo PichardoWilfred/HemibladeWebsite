@@ -1,8 +1,11 @@
 <template>
-    <section class="flex flex-wrap justify-around px-8 lg:px-10 py-16">
-        <img :src="img" :alt="alt" :class="class_" class="object-contain max-lg:mb-10">
-        <p v-html="text" class="font-consolas font-bold text-lg max-w-[780px]"></p>
-    </section>
+    <div class="flex flex-col pt-6 pb-16 border-b border-b-gray-3">
+        <h2 class="font-consolas text-gray-7 text-base mx-auto mb-14">SUPPORTED MANUFACTURES</h2>
+        <section class="flex flex-wrap px-8 lg:px-10 ">
+            <img :src="img" :alt="alt" :class="class_" class="object-contain max-lg:mb-10 ml-[8rem] mr-[10rem]">
+            <p v-html="text" class="font-consolas text-lg max-w-[1080px]"></p>
+        </section>
+    </div>
 </template>
 <script setup>
     import require from '@/libs/require.js';
