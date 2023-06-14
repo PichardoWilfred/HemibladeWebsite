@@ -5,7 +5,7 @@
         <h3 v-if="scrolled" class="cursor-pointer my-2 font-consolas font-bold uppercase text-gray-8 text-xl lg:text-3xl transition-all">
             Hemiblade software
         </h3>
-        <img v-else alt="Hemiblade logo" class="cursor-pointer logo transition-all w-[120px] h-[60px]" src="@/assets/nav-logo.png" />
+        <img v-else alt="Hemiblade logo" class="cursor-pointer logo transition-all w-[120px] h-[60px]" src="../assets/nav-logo.png" />
         <nav class="hidden lg:block my-1 ms-auto text-lg transition-all h-full">
             <template v-for="({ label, address, type }) in links" >
                 <a v-if="type === 'page'" class="relative cursor-pointer hover:font-bold">
@@ -76,9 +76,7 @@
 <script setup>
 import { RouterLink } from 'vue-router';
 import { inject, ref, onMounted, onBeforeUnmount, nextTick } from 'vue';
-import require from '@/libs/require.js';
-
-
+import require from "../libs/require"
 // mobile menu
 let show_mobile_menu = ref(false);
 let nav_position = ref('');

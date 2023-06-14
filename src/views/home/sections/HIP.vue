@@ -39,14 +39,14 @@ section::after {
 }
 </style>
 <script setup>
-    import Blazor from "@/assets/hip/Blazor.png";
-    import Bootstrap from "@/assets/hip/Bootstrap.png";
-    import C_ from "@/assets/hip/C_.png";
-    import CSS from "@/assets/hip/CSS.png";
-    import DotNet from "@/assets/hip/DotNetCore.png";
-    import HTML from "@/assets/hip/HTML.png";
-    import JS from "@/assets/hip/JS.jpg";
-    import MSDotnet from "@/assets/hip/MSDotNet.png";
+    import Blazor from "../../../assets/hip/Blazor.png";
+    import Bootstrap from "../../../assets/hip/Bootstrap.png";
+    import C_ from "../../../assets/hip/C_.png";
+    import CSS from "../../../assets/hip/CSS.png";
+    import DotNet from "../../../assets/hip/DotNetCore.png";
+    import HTML from "../../../assets/hip/HTML.png";
+    import JS from "../../../assets/hip/JS.jpg";
+    import MSDotnet from "../../../assets/hip/MSDotNet.png";
 
     const images = [
 

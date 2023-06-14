@@ -8,7 +8,7 @@
     </div>
 </template>
 <script setup>
-    import require from '@/libs/require.js';
+    import require from '../../../libs/require';
 
     const supported_manufactures = [
         {
