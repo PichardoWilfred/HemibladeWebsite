@@ -5,7 +5,7 @@
         <h3 v-if="scrolled" class="cursor-pointer my-2 font-consolas font-bold uppercase text-gray-8 text-xl lg:text-3xl transition-all">
             Hemiblade software
         </h3>
-        <img v-else alt="Hemiblade logo" class="cursor-pointer logo transition-all w-[120px] h-[60px]" src="../assets/nav-logo.png" />
+        <img v-else alt="Hemiblade logo" class="cursor-pointer logo transition-all w-[120px] h-[60px]" src="../../public/img/nav-logo.png" />
         <nav class="hidden lg:block my-1 ms-auto text-lg transition-all h-full">
             <template v-for="({ label, address, type }) in links" >
                 <a v-if="type === 'page'" class="relative cursor-pointer hover:font-bold">
@@ -84,7 +84,7 @@ const toggle_mobile_menu = () => {
     show_mobile_menu.value = !show_mobile_menu.value;
     document.body.style.overflow = show_mobile_menu.value ? 'hidden': 'scroll'; // disable the scrolling of the whole body when the mobolie menu is opened
 }
-const mobile_menu_img = require('../assets/mobile-menu.svg')
+const mobile_menu_img = require('../../public/img/mobile-menu.svg')
 
 //timeouts
 const listener = { scroll: 0 }

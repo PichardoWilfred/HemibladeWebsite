@@ -17,6 +17,6 @@ img {
 }
 </style>
 <script setup>
-import Dahua from "../../../assets/new_products/Dahua.png";
-import Hikvision from "../../../assets/new_products/Hikvision.png";
+import Dahua from "../../../../public/img/new_products/Dahua.png";
+import Hikvision from "../../../../public/img/new_products/Hikvision.png";
 </script>

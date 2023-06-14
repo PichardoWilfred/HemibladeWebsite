@@ -12,17 +12,17 @@
     import { reactive } from 'vue';
     const images = reactive([
         {
-            src: require('../assets/clients/Coopbueno.png'),
+            src: require('../../../../public/img/clients/Coopbueno.png'),
             class_: 'w-[360px]',
             alt: 'Coopbueno'
         },
         {
-            src: require('../assets/clients/Cooperativa San José.png'),
+            src: require('../../../../public/img/clients/CSJ.png'),
             class_: 'w-[200px]',
             alt: 'Cooperativa San José'
         },
         {
-            src: require('../assets/clients/CZFS.png'),
+            src: require('../../../../public/img/clients/CZFS.png'),
             class_: 'w-[310px]',
             alt: 'CZFS'
         }

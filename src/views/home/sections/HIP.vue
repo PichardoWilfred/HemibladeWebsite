@@ -1,5 +1,5 @@
 <template>
-    <section class="relative text-black font-consolas px-4 lg:px-12 pt-16">
+    <section class="relative text-black font-consolas px-4 lg:px-12 pt-16" :style="{backgroundImage: `url(${bg_code})`}">
         <div class="w-full relative z-20 max-w-[1450px]">
             <h3 class="max-lg:mb-4 text-2xl font-bold">HEMIBLADE INTEGRATION PLATFORM (HIP)</h3>
             <p class="mb-4 text-lg">
@@ -25,7 +25,6 @@
 <style scoped>
 section {
     background-size: cover;
-    background-image: url('../../../assets/hip/background_1.jpg');
 }
 section::after {
     content: '';
@@ -39,54 +38,48 @@ section::after {
 }
 </style>
 <script setup>
-    import Blazor from "../../../assets/hip/Blazor.png";
-    import Bootstrap from "../../../assets/hip/Bootstrap.png";
-    import C_ from "../../../assets/hip/C_.png";
-    import CSS from "../../../assets/hip/CSS.png";
-    import DotNet from "../../../assets/hip/DotNetCore.png";
-    import HTML from "../../../assets/hip/HTML.png";
-    import JS from "../../../assets/hip/JS.jpg";
-    import MSDotnet from "../../../assets/hip/MSDotNet.png";
+    import require from "../../../libs/require";
+    import bg_code from '../../../../public/img/hip/background_1.jpg'
 
     const images = [
 
     {
-        src: C_,
+        src: require('../../../../public/img/hip/C_.png'),
         alt: 'C#',
         class: 'w-[120px] lg:w-[80px]',
     },  
     {
-        src: DotNet,
+        src: require('../../../../public/img/hip/DotNetCore.png'),
         alt: 'DotNet',
         class: 'w-[120px] lg:w-[85px]',
     }, 
     {
-        src: MSDotnet,
+        src: require('../../../../public/img/hip/MSDotNet.png'),
         alt: 'MSDotnet',
         class: 'w-[120px] lg:w-[80px]',
     },
     {
-        src: JS,
+        src: require('../../../../public/img/hip/JS.jpg'),
         alt: 'JS',
         class: 'w-[120px] lg:w-[80px]',
     },
     {
-        src: HTML,
+        src: require('../../../../public/img/hip/HTML.png'),
         alt: 'HTML',
         class: 'w-[100px] lg:w-[65px]',
     }, 
     {
-        src: CSS,
+        src: require('../../../../public/img/hip/CSS.png'),
         alt: 'CSS',
         class: 'w-[120px] lg:w-[75px]',
     },
     {
-        src: Bootstrap,
+        src: require('../../../../public/img/hip/Bootstrap.png'),
         alt: 'Bootstrap',
         class: 'w-[120px] lg:w-[85px]',
     },
     {
-        src: Blazor,
+        src: require('../../../../public/img/hip/Blazor.png'),
         alt: 'Blazor',
         class: 'w-[120px] lg:w-[85px]',
     }, 
