@@ -2,7 +2,7 @@
     <div class="flex flex-col pt-6 pb-16 border-b border-b-gray-3">
         <h2 class="font-consolas text-gray-7 text-base mx-auto mb-14">SUPPORTED MANUFACTURES</h2>
         <section class="flex flex-wrap px-8 lg:px-10 ">
-            <img :src="img" :alt="alt" :class="class_" class="object-contain max-lg:mb-10 ml-[8rem] mr-[10rem]">
+            <img :src="img" :alt="alt" :class="class_" class="object-contain max-lg:mb-10 lg:ml-[8rem] lg:mr-[10rem]">
             <p v-html="text" class="font-consolas text-lg max-w-[1080px]"></p>
         </section>
     </div>
@@ -21,7 +21,7 @@
         {
             text: 'Network Optix began as an idea born of necessity – there simply had to be a better way to discover, view, and manage IP cameras. <br/ ><br/ > Nx Witness VMS is a lightning fast, easy to use, cross-platform IP video management system (VMS) / video surveillance software designed to discover, view, record, and manage IP video cameras so you can monitor, analyze and react to critical events in real time. <br/ ><br/ > <a href="https://www.networkoptix.com/" class="underline">https://www.networkoptix.com/</a>',
             img: NX,
-            class_: 'w-[320px]',
+            class_: 'max-w-[320px]',
             alt: 'Network Optix'
         }
     ];
