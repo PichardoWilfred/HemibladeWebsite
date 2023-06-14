@@ -74,9 +74,9 @@
 </style>
 
 <script setup>
+import menu_svg from '../../public/img/mobile-menu.svg';
 import { RouterLink } from 'vue-router';
-import { inject, ref, onMounted, onBeforeUnmount, nextTick } from 'vue';
-import require from "../libs/require"
+import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue';
 // mobile menu
 let show_mobile_menu = ref(false);
 let nav_position = ref('');
@@ -84,7 +84,7 @@ const toggle_mobile_menu = () => {
     show_mobile_menu.value = !show_mobile_menu.value;
     document.body.style.overflow = show_mobile_menu.value ? 'hidden': 'scroll'; // disable the scrolling of the whole body when the mobolie menu is opened
 }
-const mobile_menu_img = require('../../public/img/mobile-menu.svg')
+const mobile_menu_img = menu_svg;
 
 //timeouts
 const listener = { scroll: 0 }

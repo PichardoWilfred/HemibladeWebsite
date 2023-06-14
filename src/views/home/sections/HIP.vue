@@ -40,46 +40,54 @@ section::after {
 <script setup>
     import require from "../../../libs/require";
     import bg_code from '../../../../public/img/hip/background_1.jpg'
+    import Blazor from "../../../../public/img/hip/Blazor.png";
+    import Bootstrap from "../../../../public/img/hip/Bootstrap.png";
+    import C_ from "../../../../public/img/hip/C_.png";
+    import CSS from "../../../../public/img/hip/CSS.png";
+    import DotNet from "../../../../public/img/hip/DotNetCore.png";
+    import HTML from "../../../../public/img/hip/HTML.png";
+    import JS from "../../../../public/img/hip/JS.jpg";
+    import MSDotnet from "../../../../public/img/hip/MSDotNet.png";
 
     const images = [
 
     {
-        src: require('../../../../public/img/hip/C_.png'),
+        src: C_,
         alt: 'C#',
         class: 'w-[120px] lg:w-[80px]',
     },  
     {
-        src: require('../../../../public/img/hip/DotNetCore.png'),
+        src: DotNet,
         alt: 'DotNet',
         class: 'w-[120px] lg:w-[85px]',
     }, 
     {
-        src: require('../../../../public/img/hip/MSDotNet.png'),
+        src: MSDotnet,
         alt: 'MSDotnet',
         class: 'w-[120px] lg:w-[80px]',
     },
     {
-        src: require('../../../../public/img/hip/JS.jpg'),
+        src: JS,
         alt: 'JS',
         class: 'w-[120px] lg:w-[80px]',
     },
     {
-        src: require('../../../../public/img/hip/HTML.png'),
+        src: HTML,
         alt: 'HTML',
         class: 'w-[100px] lg:w-[65px]',
     }, 
     {
-        src: require('../../../../public/img/hip/CSS.png'),
+        src: CSS,
         alt: 'CSS',
         class: 'w-[120px] lg:w-[75px]',
     },
     {
-        src: require('../../../../public/img/hip/Bootstrap.png'),
+        src: Bootstrap,
         alt: 'Bootstrap',
         class: 'w-[120px] lg:w-[85px]',
     },
     {
-        src: require('../../../../public/img/hip/Blazor.png'),
+        src: Blazor,
         alt: 'Blazor',
         class: 'w-[120px] lg:w-[85px]',
     }, 

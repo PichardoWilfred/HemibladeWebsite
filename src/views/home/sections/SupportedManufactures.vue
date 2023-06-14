@@ -8,18 +8,19 @@
     </div>
 </template>
 <script setup>
-    import require from '../../../libs/require';
+    import Hikvision from '../../../../public/img/supported_manufactures/Hikvision.png'
+    import NX from '../../../../public/img/supported_manufactures/NX.png';
 
     const supported_manufactures = [
         {
             text: 'DMP is a family-owned independent manufacturer of intrusion, fire, access control and cellular alarm solutions. <br /><br /> DMP products are designed, engineered and manufactured in America with U.S. <br /> and global components. Our factory, call center, engineering and distribution are all located in Springfield, Missouri, right where the business began more  than 45 years ago.<br /><br /> <a href="https://www.dmp.com/" class="underline">https://www.dmp.com/</a>',
-            img: require('../../../../public/img/supported_manufactures/Hikvision.png'),
+            img: Hikvision,
             class_: 'w-[320px]',
             alt: 'DMP'
         },
         {
             text: 'Network Optix began as an idea born of necessity – there simply had to be a better way to discover, view, and manage IP cameras. <br/ ><br/ > Nx Witness VMS is a lightning fast, easy to use, cross-platform IP video management system (VMS) / video surveillance software designed to discover, view, record, and manage IP video cameras so you can monitor, analyze and react to critical events in real time. <br/ ><br/ > <a href="https://www.networkoptix.com/" class="underline">https://www.networkoptix.com/</a>',
-            img: require('../../../../public/img/supported_manufactures/NX.png'),
+            img: NX,
             class_: 'w-[320px]',
             alt: 'Network Optix'
         }

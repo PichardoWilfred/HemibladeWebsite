@@ -8,21 +8,24 @@
     </section>
 </template>
 <script setup>
-    import require from '../../../libs/require.js';
+    import CB from '../../../../public/img/clients/Coopbueno.png';
+    import CSJ from '../../../../public/img/clients/CSJ.png';
+    import CZFS from '../../../../public/img/clients/CZFS.png';
+
     import { reactive } from 'vue';
     const images = reactive([
         {
-            src: require('../../../../public/img/clients/Coopbueno.png'),
+            src: CB,
             class_: 'w-[360px]',
             alt: 'Coopbueno'
         },
         {
-            src: require('../../../../public/img/clients/CSJ.png'),
+            src: CSJ,
             class_: 'w-[200px]',
             alt: 'Cooperativa San José'
         },
         {
-            src: require('../../../../public/img/clients/CZFS.png'),
+            src: CZFS,
             class_: 'w-[310px]',
             alt: 'CZFS'
         }
