@@ -1,18 +1,29 @@
 <template>
     <section class="flex flex-col px-6 lg:px-12 pt-6 border-b border-gray-3">
         <h2 class="font-consolas text-gray-7 text-base mx-auto mb-14">CLIENTS</h2>
-        <div class="flex flex-wrap justify-around mb-24">
+        <!-- <div class="flex flex-wrap justify-around mb-24">
             <img v-for="{src, class_, alt} in images" :src="src" :class="class_" :alt="alt" class="flex-shrink-0 object-contain">
+        </div> -->
+        <div class="flex mb-24">
+            <swiper-container slides-per-view="3" speed="500" space-between="120" loop="true" autoplay="true" css-mode="true">
+                <swiper-slide v-for="{src, class_, alt} in images">
+                    <img :src="src" :class="class_" :alt="alt" class="flex-shrink-0 object-contain">
+                </swiper-slide>
+            </swiper-container>
         </div>
-
     </section>
 </template>
 <script setup>
+    import { register } from 'swiper/element/bundle';
+    
     import CB from '../../../../public/img/clients/Coopbueno.png';
     import CSJ from '../../../../public/img/clients/CSJ.png';
     import CZFS from '../../../../public/img/clients/CZFS.png';
 
     import { reactive } from 'vue';
+
+    // register swiper
+    register()
     const images = reactive([
         {
             src: CB,

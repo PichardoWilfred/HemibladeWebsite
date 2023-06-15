@@ -1,5 +1,5 @@
 <template>
-    <section class="relative text-black font-consolas px-4 lg:px-12 pt-16" :style="{backgroundImage: `url(${bg_code})`}">
+    <section class="relative text-black font-consolas px-4 lg:px-12 pt-24" :style="{backgroundImage: `url(${bg_code})`}">
         <div class="w-full relative z-20 max-w-[1450px]">
             <h3 class="max-lg:mb-4 text-2xl font-bold">HEMIBLADE INTEGRATION PLATFORM (HIP)</h3>
             <p class="mb-4 text-lg">
@@ -15,10 +15,11 @@
                 It took 3+ years of development to get HIP feature set ready to develop IFA. HIP continues to evolve and mature.
                 <br /> The next “Big Thing” will come early 2024. Visit us again soon!
             </p>
-            <div class="flex items-start flex-wrap justify-center mt-16">
-                <img v-for="img in images" :src="img.src" :alt="img.alt" :key="i" :class="img.class"
-                class="mx-6 mb-8 lg:mb-16 lg:mx-8"/>
-            </div>
+            
+        </div>
+        <div class="flex relative items-start flex-wrap justify-center mt-20 z-20">
+            <img v-for="img in images" :src="img.src" :alt="img.alt" :key="i" :class="img.class"
+            class="mx-6 mb-8 lg:mb-[70px] lg:mx-8"/>
         </div>
     </section>
 </template>
@@ -54,42 +55,42 @@ section::after {
     {
         src: C_,
         alt: 'C#',
-        class: 'w-[120px] lg:w-[80px]',
+        class: 'w-[120px] lg:w-[90px]',
     },  
     {
         src: DotNet,
         alt: 'DotNet',
-        class: 'w-[120px] lg:w-[85px]',
+        class: 'w-[120px] lg:w-[102px]',
     }, 
     {
         src: MSDotnet,
         alt: 'MSDotnet',
-        class: 'w-[120px] lg:w-[80px]',
+        class: 'w-[120px] lg:w-[102px]',
     },
     {
         src: JS,
         alt: 'JS',
-        class: 'w-[120px] lg:w-[80px]',
+        class: 'w-[120px] lg:w-[102px]',
     },
     {
         src: HTML,
         alt: 'HTML',
-        class: 'w-[100px] lg:w-[65px]',
+        class: 'w-[100px] lg:w-[78px]',
     }, 
     {
         src: CSS,
         alt: 'CSS',
-        class: 'w-[120px] lg:w-[75px]',
+        class: 'w-[120px] lg:w-[90px]',
     },
     {
         src: Bootstrap,
         alt: 'Bootstrap',
-        class: 'w-[120px] lg:w-[85px]',
+        class: 'w-[120px] lg:w-[120px]',
     },
     {
         src: Blazor,
         alt: 'Blazor',
-        class: 'w-[120px] lg:w-[85px]',
+        class: 'w-[120px] lg:w-[113px]',
     }, 
     ];
 </script>

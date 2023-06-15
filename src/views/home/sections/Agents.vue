@@ -17,7 +17,7 @@
         </div>
     </section>
     
-    <section class="bg-[#EEF8FE] font-consolas px-4 lg:px-12 py-12 border-y border-[#EFEFEF]">
+    <section class="bg-[#EEF8FE] font-consolas px-4 lg:px-12 py-24 border-y border-[#EFEFEF]">
         <h4 class="max-lg:mb-4 uppercase font-bold text-xl">
             Years in the security industry working with products from many vendors taught us a few things.
         </h4>
@@ -36,7 +36,7 @@
                 <li>
                     - Good integration products are expensive to acquire and complex to set up	and maintain.
                 </li>
-            </ul>
+            </ul><br />
             Hemiblade software tools are easy on the budget, a breeze to set up and maintain, and very simple to use.
             <br />
             Too good to be true? Well, ask for a free demo!
