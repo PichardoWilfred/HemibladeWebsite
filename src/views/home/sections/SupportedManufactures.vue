@@ -4,36 +4,45 @@
         <span class="flex mx-auto">
             {{ index }}
         </span>
-        <section class="flex relative overflow-hidden justify-center max-lg:flex-wrap px-8 lg:px-10 h-[430px] ">
-            <div class="absolute flex w-[300%] h-full transition-all" :style="{...translate}">
+        <section class="flex relative overflow-hidden justify-center max-lg:flex-wrap h-[430px]">
+        
+            <div class="flex relative flex-wrap justify-center bg-white px-8 lg:px-10 h-full w-full" :style="body">
+                <img :src="slide.current.img" :alt="slide.current.alt" 
+                :class="slide.current.class_" 
+                class="object-contain max-lg:mb-10 lg:ml-[6.1vw] lg:mr-[8vw]">
+                <p v-html="slide.current.text" class="flex flex-col justify-center font-consolas text-lg max-w-[1080px]"></p>
+            </div>
+
+            <div class="absolute flex w-[300%] bg-white h-full px-8 lg:px-10 " :style="translate">
                 <!-- prev slide -->
-                <div class="flex justify-center h-full w-full">
+                <div class="flex flex-wrap justify-center h-full w-full">
                     <img :src="slide.last.img" :alt="slide.last.alt" 
                     :class="slide.last.class_" 
                     class="object-contain max-lg:mb-10 lg:ml-[6.1vw] lg:mr-[8vw]">
                     <p v-html="slide.last.text" class="flex flex-col justify-center font-consolas text-lg max-w-[1080px]"></p>
                 </div>
                 <!-- current slide -->
-                <div class="flex justify-center h-full w-full">
+                <div class="flex flex-wrap justify-center h-full w-full">
                     <img :src="slide.current.img" :alt="slide.current.alt" 
                     :class="slide.current.class_" 
                     class="object-contain max-lg:mb-10 lg:ml-[6.1vw] lg:mr-[8vw]">
                     <p v-html="slide.current.text" class="flex flex-col justify-center font-consolas text-lg max-w-[1080px]"></p>
                 </div>
                 <!-- next slide -->
-                <div class="flex justify-center h-full w-full">
+                <div class="flex flex-wrap justify-center h-full w-full">
                     <img :src="slide.next.img" :alt="slide.next.alt" 
                     :class="slide.next.class_" 
                     class="object-contain max-lg:mb-10 lg:ml-[6.1vw] lg:mr-[8vw]">
                     <p v-html="slide.next.text" class="flex flex-col justify-center font-consolas text-lg max-w-[1080px]"></p>
                 </div>
             </div>
+
         </section>
         <div class="flex justify-between">
-            <button @click.prevent="move('backward')" class="rounded bg-yellow-3 w-max px-8 py-2 text-white font-bold">
+            <button @click.prevent.debounce.100="move('backward')" class="rounded bg-yellow-3 w-max px-8 py-2 text-white font-bold">
                 Backward
             </button>
-            <button @click.prevent="move('forward')" class="rounded bg-blue-3 w-max px-8 py-2 text-white font-bold">
+            <button @click.prevent.debounce.100="move('forward')" class="rounded bg-blue-3 w-max px-8 py-2 text-white font-bold">
                 Forward
             </button>
         </div>
@@ -50,18 +59,25 @@
     import Hikvision from '/img/supported_manufactures/Hikvision.png'
     import Suprema from '/img/supported_manufactures/SUPREMA.png'
 
-    import { ref, reactive, computed, watch } from 'vue';
-    
-    // const current = ref(0);
+    import { ref, reactive, computed, watch, onBeforeUnmount } from 'vue';
+    const slide_timeout = 0;
+    const slide_duration = 300;
     const index = reactive({
         last: 2,
         current: 0,
         next: 1
-    }) 
+    })
+    const body = reactive({
+        // opacity: '0.5',
+        'z-index': 2
+    })
     const translate = reactive({
+        // opacity: '0.5',
+        transition: `transform ${slide_duration}ms cubic-bezier(0.075, 0.82, 0.165, 1)`, //cubic-bezier(0.075, 0.82, 0.165, 1)
         transform: '',
+        'z-index': 1
     });
-    
+
     const move = (direction) => {
         
         const total = supported_manufactures.length - 1;
@@ -76,23 +92,32 @@
         // translate.transform = `translateX(${ direction === 'forward' ? '':'-' }34%)`
         const slide_to = {
             forward: () => {
-                translate.transform = 'translateX(-34%)';
+                translate.transform = 'translateX(-32.85%)';
             },
             backward: () => {
-                translate.transform = 'translateX(33%)';
+                translate.transform = 'translateX(32.85%)';
             }
         }
+        body['z-index'] = 1
+        translate['z-index'] = 2;
+
         slide_to[direction]();
-        setTimeout(() => {
+        slide_timeout = setTimeout(() => {
+
+            body['z-index'] = 2;
+            translate['z-index'] = 1;
+
             translate.transform = '';
             set_index[direction]();
             index.next = index.current === total ? 0 : (index.current + 1);
             index.last = index.current === 0 ? total : (index.current - 1);
-        },200)
-        // set_index[direction]();
-        // index.next = index.current === total ? 0 : (index.current + 1);
-        // index.last = index.current === 0 ? total : (index.current - 1);
+        }, slide_duration)
     }
+    
+    onBeforeUnmount(() => {
+        clearTimeout(slide_timeout);
+    })
+
     const supported_manufactures = reactive([
             {
                 text: 'DMP is a family-owned independent manufacturer of intrusion, fire, access control and cellular alarm solutions. <br /><br /> DMP products are designed, engineered and manufactured in America with U.S. <br /> and global components. Our factory, call center, engineering and distribution are all located in Springfield, Missouri, right where the business began more  than 45 years ago.<br /><br /> <a target="_blank" href="https://www.dmp.com/" class="underline">https://www.dmp.com/</a>',
@@ -155,6 +180,5 @@
         current: computed(() => supported_manufactures[index.current]),
         next: computed(() => supported_manufactures[index.next])
     })
-    
 
 </script>
