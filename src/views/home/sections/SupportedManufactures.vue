@@ -1,12 +1,33 @@
 <template>
     <div class="flex flex-col pt-6 pb-16 border-b border-b-gray-3 min-h-[530px]">
         <h2 class="font-consolas text-gray-7 text-base mx-auto mb-14">SUPPORTED MANUFACTURES</h2>
-        {{ index }}
-        <section class="flex justify-center max-lg:flex-wrap px-8 lg:px-10 ">
-            <img :src="manufactures.img" :alt="manufactures.alt" 
-            :class="manufactures.class_" 
-            class="object-contain max-lg:mb-10 lg:ml-[6.1vw] lg:mr-[8vw]">
-            <p v-html="manufactures.text" class="flex flex-col justify-center font-consolas text-lg max-w-[1080px]"></p>
+        <span class="flex mx-auto">
+            {{ index }}
+        </span>
+        <section class="flex relative overflow-hidden justify-center max-lg:flex-wrap px-8 lg:px-10 h-[430px] ">
+            <div class="absolute flex w-[300%] h-full transition-all" :style="{...translate}">
+                <!-- prev slide -->
+                <div class="flex justify-center h-full w-full">
+                    <img :src="slide.last.img" :alt="slide.last.alt" 
+                    :class="slide.last.class_" 
+                    class="object-contain max-lg:mb-10 lg:ml-[6.1vw] lg:mr-[8vw]">
+                    <p v-html="slide.last.text" class="flex flex-col justify-center font-consolas text-lg max-w-[1080px]"></p>
+                </div>
+                <!-- current slide -->
+                <div class="flex justify-center h-full w-full">
+                    <img :src="slide.current.img" :alt="slide.current.alt" 
+                    :class="slide.current.class_" 
+                    class="object-contain max-lg:mb-10 lg:ml-[6.1vw] lg:mr-[8vw]">
+                    <p v-html="slide.current.text" class="flex flex-col justify-center font-consolas text-lg max-w-[1080px]"></p>
+                </div>
+                <!-- next slide -->
+                <div class="flex justify-center h-full w-full">
+                    <img :src="slide.next.img" :alt="slide.next.alt" 
+                    :class="slide.next.class_" 
+                    class="object-contain max-lg:mb-10 lg:ml-[6.1vw] lg:mr-[8vw]">
+                    <p v-html="slide.next.text" class="flex flex-col justify-center font-consolas text-lg max-w-[1080px]"></p>
+                </div>
+            </div>
         </section>
         <div class="flex justify-between">
             <button @click.prevent="move('backward')" class="rounded bg-yellow-3 w-max px-8 py-2 text-white font-bold">
@@ -37,9 +58,14 @@
         current: 0,
         next: 1
     }) 
+    const translate = reactive({
+        transform: '',
+    });
+    
     const move = (direction) => {
+        
         const total = supported_manufactures.length - 1;
-        const directions = {
+        const set_index = {
             forward: () => {
                 index.current = index.current >= total ? 0 : (index.current + 1);
             },
@@ -47,9 +73,25 @@
                 index.current = (index.current - 1) < 0 ? total : (index.current - 1);
             }
         }
-        directions[direction]();
-        index.next = index.current === total ? 0 : (index.current + 1);
-        index.last = index.current === 0 ? total : (index.current - 1);
+        // translate.transform = `translateX(${ direction === 'forward' ? '':'-' }34%)`
+        const slide_to = {
+            forward: () => {
+                translate.transform = 'translateX(-34%)';
+            },
+            backward: () => {
+                translate.transform = 'translateX(33%)';
+            }
+        }
+        slide_to[direction]();
+        setTimeout(() => {
+            translate.transform = '';
+            set_index[direction]();
+            index.next = index.current === total ? 0 : (index.current + 1);
+            index.last = index.current === 0 ? total : (index.current - 1);
+        },200)
+        // set_index[direction]();
+        // index.next = index.current === total ? 0 : (index.current + 1);
+        // index.last = index.current === 0 ? total : (index.current - 1);
     }
     const supported_manufactures = reactive([
             {
@@ -107,9 +149,12 @@
                 alt: 'Suprema'
             },
     ]);
-    const manufactures = computed(() => supported_manufactures[index.current]);
-    
-    
+
+    const slide = reactive({
+        last: computed(() => supported_manufactures[index.last]),
+        current: computed(() => supported_manufactures[index.current]),
+        next: computed(() => supported_manufactures[index.next])
+    })
     
 
 </script>
