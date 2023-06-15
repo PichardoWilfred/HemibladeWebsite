@@ -2,16 +2,15 @@
     <div class="flex flex-col pt-6 pb-16 border-b border-b-gray-3 min-h-[530px]">
         <h2 class="font-consolas text-gray-7 text-base mx-auto mb-14">SUPPORTED MANUFACTURES</h2>
         <section class="flex relative overflow-hidden justify-center max-lg:flex-wrap h-[800px] lg:h-[430px]">
-        
-            <div class="flex relative flex-wrap justify-center bg-white px-8 lg:px-10 h-full w-full" :style="body">
+            
+            <div class="flex relative flex-wrap justify-center bg-white px-8 lg:px-10 h-full w-full" :style="physical_slide">
                 <img :src="slide.current.img" :alt="slide.current.alt" 
                 :class="slide.current.class_" 
                 class="object-contain w-[180px] lg:w-[320px] max-lg:mb-10 lg:ml-[6.1vw] lg:mr-[8vw]">
                 <p v-html="slide.current.text" class="flex flex-col justify-center font-consolas text-lg max-w-[1080px]"></p>
             </div>
 
-            <div class="absolute flex w-[300%] bg-white h-full px-8 lg:px-10 " :style="translate">
-                <!-- all slides -->
+            <div class="absolute flex w-[300%] bg-white h-full px-8 lg:px-10 " :style="visual_slide">
                 <div v-for="{class_, text, alt, img} in slide" class="flex flex-wrap justify-center h-full w-full">
                     <img :src="img" :alt="alt" class="object-contain w-[180px] lg:w-[320px] max-lg:mb-10 lg:ml-[6.1vw] lg:mr-[8vw]">
                     <p v-html="text" class="flex flex-col justify-center font-consolas text-lg max-w-[1080px]"></p>
@@ -19,6 +18,7 @@
             </div>
 
         </section>
+        <!-- debuggin purposes -->
         <div class="flex justify-between">
             <button @click.prevent="move('backward')" class="rounded bg-yellow-3 w-max px-8 py-2 text-white font-bold">
                 Backward
@@ -40,19 +40,21 @@
     import Hikvision from '/img/supported_manufactures/Hikvision.png'
     import Suprema from '/img/supported_manufactures/SUPREMA.png'
 
-    import { ref, reactive, computed, watch, onBeforeUnmount } from 'vue';
+    import { reactive, computed, onBeforeUnmount } from 'vue';
+    // const slide_interval = setInterval(() => {
+    //     move('forward');
+    // }, 30000);
     const slide_timeout = 0;
-    const slide_duration = 300;
+    const slide_duration = 1200;
     const index = reactive({
-        last: 2,
-        current: 0,
-        next: 1
+        last: 0,
+        current: 1,
+        next: 2
     })
-    const body = reactive({
-        // opacity: '0.5',
+    const physical_slide = reactive({
         'z-index': 2
     })
-    const translate = reactive({
+    const visual_slide = reactive({
         // opacity: '0.5',
         transition: `transform ${slide_duration}ms cubic-bezier(0.075, 0.82, 0.165, 1)`, //cubic-bezier(0.075, 0.82, 0.165, 1)
         transform: '',
@@ -69,25 +71,24 @@
                 index.current = (index.current - 1) < 0 ? total : (index.current - 1);
             }
         }
-        // translate.transform = `translateX(${ direction === 'forward' ? '':'-' }34%)`
         const slide_to = {
             forward: () => {
-                translate.transform = 'translateX(-32.85%)';
+                visual_slide.transform = 'translateX(-32.85%)';
             },
             backward: () => {
-                translate.transform = 'translateX(32.85%)';
+                visual_slide.transform = 'translateX(32.85%)';
             }
         }
-        body['z-index'] = 1
-        translate['z-index'] = 2;
+        physical_slide['z-index'] = 1
+        visual_slide['z-index'] = 2;
 
         slide_to[direction]();
         slide_timeout = setTimeout(() => {
 
-            body['z-index'] = 2;
-            translate['z-index'] = 1;
+            physical_slide['z-index'] = 2;
+            visual_slide['z-index'] = 1;
 
-            translate.transform = '';
+            visual_slide.transform = '';
             set_index[direction]();
             index.next = index.current === total ? 0 : (index.current + 1);
             index.last = index.current === 0 ? total : (index.current - 1);
@@ -96,6 +97,7 @@
     
     onBeforeUnmount(() => {
         clearTimeout(slide_timeout);
+        clearInterval(slide_interval)
     })
 
     const supported_manufactures = reactive([

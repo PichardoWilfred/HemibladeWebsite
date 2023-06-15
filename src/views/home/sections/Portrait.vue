@@ -4,7 +4,7 @@ import portrait_img from '../../../../public/img/portrait/portrait_logo.png'
 
 <template>
     <section class="relative">
-        <div fetchpriority="high" class="bg-section h-[60vh] min-[670px]:h-[88vh] bg-blue-1" :style="{backgroundImage: `url(${portrait_img})`}"></div>
+        <div fetchpriority="high" class="bg-section h-[60vh] min-[670px]:h-[94vh] bg-blue-1" :style="{backgroundImage: `url(${portrait_img})`}"></div>
         <div class=" flex h-full w-full absolute top-0 items-center justify-center flex-col z-20 px-3 lg:px-6">
             <h2 class="font-consolas text-default font-bold text-center text-[4vw] min-[720px]:text-2xl min-[670px]:mt-32">
                 NOW IT ALL MAKES PERFECT SENSE®

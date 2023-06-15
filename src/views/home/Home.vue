@@ -6,6 +6,7 @@
   import SupportedManufactures from './sections/SupportedManufactures.vue';
   import Clients from "./sections/Clients.vue";
   import About from "./sections/About.vue";
+  import Remarks from "./sections/Remarks.vue";
 </script>
 
 <template>
@@ -16,6 +17,7 @@
     <NewProducts />
     <SupportedManufactures />
     <Clients />
+    <Remarks />
     <About id="about"/>
   </main>
 </template>
