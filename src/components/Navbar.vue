@@ -8,7 +8,7 @@
             </h3>
         </a>
         <a v-else href="#home" v-smooth-scroll>
-            <img alt="Hemiblade logo" class="cursor-pointer logo transition-all w-[120px] h-[60px]" src="../../public/img/nav-logo.png" />
+            <img alt="Hemiblade logo" class="cursor-pointer logo transition-all w-[120px] h-[60px]" src="/img/nav-logo.png" />
         </a>
         <nav class="hidden lg:block my-1 ms-auto text-lg transition-all h-full">
             <template v-for="({ label, address, type }) in links" >
@@ -83,7 +83,7 @@
 </style>
 
 <script setup>
-import menu_svg from '../../public/img/mobile-menu.svg';
+import menu_svg from '/img/mobile-menu.svg';
 import { RouterLink } from 'vue-router';
 import { ref, inject, onMounted, onBeforeUnmount, nextTick } from 'vue';
 

@@ -1,25 +1,30 @@
 <template>
-    <div class="flex flex-col pt-6 pb-16 border-b border-b-gray-3 min-h-[530px]">
-        <h2 class="font-consolas text-gray-7 text-base mx-auto mb-14">SUPPORTED MANUFACTURES</h2>
-        <section class="flex relative overflow-hidden justify-center max-lg:flex-wrap h-[800px] lg:h-[430px]">
+    <div class="relative flex flex-col pt-6 pb-16 border-b border-b-gray-2 min-h-[280px]">
+        <h2 class="font-consolas text-gray-4 text-base mx-auto">SUPPORTED MANUFACTURES</h2>
+        <section class="flex relative overflow-hidden justify-center max-lg:flex-wrap h-[800px] lg:h-[320px]">
             
             <div class="flex relative flex-wrap justify-center bg-white px-8 lg:px-10 h-full w-full" :style="physical_slide">
                 <img :src="slide.current.img" :alt="slide.current.alt" 
                 :class="slide.current.class_" 
-                class="object-contain w-[180px] lg:w-[320px] max-lg:mb-10 lg:ml-[6.1vw] lg:mr-[8vw]">
-                <p v-html="slide.current.text" class="flex flex-col justify-center font-consolas text-lg max-w-[1080px]"></p>
+                class="manufactures">
+                <p v-html="slide.current.text" class="description-text"></p>
             </div>
 
             <div class="absolute flex w-[300%] bg-white h-full px-8 lg:px-10 " :style="visual_slide">
                 <div v-for="{class_, text, alt, img} in slide" class="flex flex-wrap justify-center h-full w-full">
-                    <img :src="img" :alt="alt" class="object-contain w-[180px] lg:w-[320px] max-lg:mb-10 lg:ml-[6.1vw] lg:mr-[8vw]">
-                    <p v-html="text" class="flex flex-col justify-center font-consolas text-lg max-w-[1080px]"></p>
+                    <img :src="img" :alt="alt" class="manufactures">
+                    <p v-html="text" class="description-text"></p>
                 </div>
             </div>
-
+    <!-- BAD SMALL-->
+        <!-- milestone -->
+        <!-- HIKVISION -->
+    <!-- BAD BIG  -->
+        <!-- DMP -->
+        <!-- DSC -->
         </section>
         <!-- debuggin purposes -->
-        <div class="flex justify-between">
+        <div class="flex justify-between" v-show="showTest">
             <button @click.prevent="move('backward')" class="rounded bg-yellow-3 w-max px-8 py-2 text-white font-bold">
                 Backward
             </button>
@@ -27,7 +32,11 @@
                 Forward
             </button>
         </div>
+        <button @click="() => {showTest = !showTest}"
+        class="absolute flex items-center justify-center top-0 left-0 w-[40px] h-[40px] rounded-full text-white bg-yellow-3 p-4">O</button>
+
     </div>
+
 </template>
 <script setup>
     import DMP from '/img/supported_manufactures/DMP.png'
@@ -40,7 +49,8 @@
     import Hikvision from '/img/supported_manufactures/Hikvision.png'
     import Suprema from '/img/supported_manufactures/SUPREMA.png'
 
-    import { reactive, computed, onBeforeUnmount } from 'vue';
+    import { reactive, computed, onBeforeUnmount, ref } from 'vue';
+    const showTest = ref(false)
     // const slide_interval = setInterval(() => {
     //     move('forward');
     // }, 30000);
@@ -116,7 +126,7 @@
             {
                 text: 'Milestone Systems is a leading provider of open-platform video management software. <br/ ><br /> Based on an open platform, our video management software enables integration with the industry’s widest choice of cameras and best-in-class business solutions. <br/ ><br/ > <a target="_blank" href="https://www.milestonesys.com/" class="underline">https://www.milestonesys.com/</a>',
                 img: Milestone,
-                class_: '',
+                class_: 'w-[100px]',
                 alt: 'Milestone'
             },
             {
@@ -164,3 +174,12 @@
     })
 
 </script>
+
+<style scoped>
+img.manufactures {
+    @apply object-contain w-[180px] lg:w-[380px] max-lg:mb-10 lg:ml-[6.1vw] lg:mr-[8vw];
+}
+p.description-text {
+    @apply flex flex-col justify-center font-consolas text-lg max-w-[880px];
+}
+</style>

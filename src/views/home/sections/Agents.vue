@@ -1,6 +1,6 @@
 <script setup>
-    import ifa from "../../../../public/img/portrait/IFA.jpg";
-    import aka from "../../../../public/img/portrait/AKA.jpg";
+    import ifa from "/img/portrait/IFA.jpg";
+    import aka from "/img/portrait/AKA.jpg";
 1</script>
 
 <template>

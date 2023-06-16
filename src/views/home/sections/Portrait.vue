@@ -1,5 +1,5 @@
 <script setup>
-import portrait_img from '../../../../public/img/portrait/portrait_logo.png'
+import portrait_img from '/img/portrait/portrait_logo.png'
 </script>
 
 <template>

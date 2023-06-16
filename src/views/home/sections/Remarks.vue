@@ -1,16 +1,22 @@
 <template>
-    <section class="flex flex-col pt-6 h-[480px] border-b border-gray-3">
-        <h2 class="font-consolas text-gray-7 text-base mx-auto mb-14">HEMIBLADE REMARKS</h2>
+    <section class="flex flex-col items-center pt-6 h-[440px] border-b border-gray-2">
+        <h2 class="font-consolas text-gray-4 text-base mx-auto mb-14">HEMIBLADE REMARKS</h2>
         <transition name="fade" mode="out-in">
-            <div class="flex justify-center items-center font-consolas" :key="index">
-                <div class="flex flex-col content-center items-center text-center ">
+            <div class="flex flex-col content-start justify-center items-start font-consolas" :key="index">
+                <div class="flex items-center">
                     <img :src="testimonial.img" :alt="testimonial.alt" class="rounded-full w-[200px] h-[200px] mb-4">
-                    <h1 class="font-bold text-xl">{{ testimonial.name }}</h1>
-                    <h2 class="">{{ testimonial.role }}</h2>
+                    <p class="font-courier leading-[1.5] text-[22px] ml-[5rem] max-w-[800px] font-italic">
+                        "{{ testimonial.remark }}"
+                    </p>
                 </div>
-                <p class="ml-[5rem] max-w-[800px] font-italic">
-                    {{ testimonial.remark }}
-                </p>
+                <div class="flex flex-col items-center text-center">
+                    <h1 class="font-bold text-xl text-center">
+                        {{ testimonial.name }}
+                    </h1>
+                    <h2 class="text-center">
+                        {{ testimonial.role }}
+                    </h2>
+                </div>
             </div>
         </transition>
         <!-- <button class="bg-blue px-4 py-2 bg-yellow-3 text-white w-max mx-auto rounded" @click="index++">Next</button> -->
