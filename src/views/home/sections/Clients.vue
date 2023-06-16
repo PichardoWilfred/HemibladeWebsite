@@ -4,17 +4,25 @@
         <!-- <div class="flex flex-wrap justify-around mb-24">
             <img v-for="{src, class_, alt} in images" :src="src" :class="class_" :alt="alt" class="flex-shrink-0 object-contain">
         </div> -->
-        <div class="flex mb-24">
-            <swiper-container slides-per-view="3" speed="500" space-between="120" loop="true" autoplay="true" css-mode="true">
-                <swiper-slide v-for="{src, class_, alt} in images">
-                    <img :src="src" :class="class_" :alt="alt" class="flex-shrink-0 object-contain">
+        <div class=" mb-24">
+            <swiper
+            :module="modules"
+            
+            :slides-per-view="3" :autoplay="{ delay: 0 }">
+                <swiper-slide v-for="{src, class_, alt} in images" :key="alt" :style="slide_styles">
+                    <img :src="src" :class="class_" :alt="alt" class="flex-shrink-0 object-contain" />
                 </swiper-slide>
-            </swiper-container>
+            </swiper>
         </div>
     </section>
 </template>
 <script setup>
-    import { register } from 'swiper/element/bundle';
+    import { Swiper, SwiperSlide } from "swiper/vue";
+    import { Autoplay } from 'swiper';
+    import 'swiper/css';
+    import 'swiper/css/pagination';
+
+    // import { register } from 'swiper/element/bundle';
     
     import CB from '/img/clients/Coopbueno.png';
     import CSJ from '/img/clients/CSJ.png';
@@ -23,7 +31,14 @@
     import { reactive } from 'vue';
 
     // register swiper
-    register()
+    // register();
+    const slide_styles = {
+        display: 'flex',
+        justifyContent: 'center',
+        height: '200px',
+        alignItems: 'center'
+    }
+    const modules = [Autoplay]
     const images = reactive([
         {
             src: CB,
