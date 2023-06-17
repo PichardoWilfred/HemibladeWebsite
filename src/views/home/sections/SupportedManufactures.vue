@@ -1,27 +1,21 @@
 <template>
     <div class="relative flex flex-col pt-6 pb-16 border-b border-b-gray-2 min-h-[280px]">
         <h2 class="font-consolas text-gray-4 text-base mx-auto">SUPPORTED MANUFACTURES</h2>
-        <section class="flex relative overflow-hidden justify-center max-lg:flex-wrap h-[800px] lg:h-[320px]">
-            
-            <div class="flex relative flex-wrap justify-center bg-white px-8 lg:px-10 h-full w-full" :style="physical_slide">
+        <section class="bg-white flex relative overflow-hidden justify-center max-lg:flex-wrap h-[800px] lg:h-[380px] xl:h-[320px]">
+
+            <div class="flex relative flex-wrap justify-center bg-white px-8 lg:px-10" :style="physical_slide">
                 <img :src="slide.current.img" :alt="slide.current.alt" 
                 :class="slide.current.class_" 
                 class="manufactures">
                 <p v-html="slide.current.text" class="description-text"></p>
             </div>
 
-            <div class="absolute flex w-[300%] bg-white h-full px-8 lg:px-10 " :style="visual_slide">
+            <div class="absolute flex bg-white w-[300%] h-full px-8 lg:px-10 " :style="visual_slide">
                 <div v-for="{class_, text, alt, img} in slide" class="flex flex-wrap justify-center h-full w-full">
                     <img :src="img" :alt="alt" class="manufactures">
                     <p v-html="text" class="description-text"></p>
                 </div>
             </div>
-    <!-- BAD SMALL-->
-        <!-- milestone -->
-        <!-- HIKVISION -->
-    <!-- BAD BIG  -->
-        <!-- DMP -->
-        <!-- DSC -->
         </section>
         <!-- debuggin purposes -->
         <div class="flex justify-between" v-show="showTest">
@@ -50,10 +44,8 @@
     import Suprema from '/img/supported_manufactures/SUPREMA.png'
 
     import { reactive, computed, onBeforeUnmount, ref } from 'vue';
-    const showTest = ref(false)
-    // const slide_interval = setInterval(() => {
-    //     move('forward');
-    // }, 30000);
+    const showTest = ref(false);
+    
     const slide_timeout = 0;
     const slide_duration = 1200;
     const index = reactive({
@@ -177,7 +169,7 @@
 
 <style scoped>
 img.manufactures {
-    @apply object-contain w-[180px] lg:w-[380px] max-lg:mb-10 lg:ml-[6.1vw] lg:mr-[8vw];
+    @apply object-contain w-[300px] lg:w-[380px] max-lg:mb-10 lg:ml-[6.1vw] lg:mr-[8vw];
 }
 p.description-text {
     @apply flex flex-col justify-center font-consolas text-lg max-w-[880px];
