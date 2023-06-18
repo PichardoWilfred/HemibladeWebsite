@@ -49,7 +49,7 @@
     import { reactive, computed, onBeforeUnmount, ref } from 'vue';
     const showTest = ref(false);
     
-    const slide_timeout = 0;
+    let slide_timeout = 0;
     const slide_duration = 1200;
 
     const index = reactive({

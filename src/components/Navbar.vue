@@ -11,18 +11,18 @@
             <img alt="Hemiblade logo" class="cursor-pointer logo transition-all w-[120px] h-[60px]" src="/img/nav-logo.png" />
         </a>
         <nav class="hidden lg:block my-1 ms-auto text-lg transition-all h-full">
-            <template v-for="({ label, address, type }) in links" >
+            <template v-for="({ label, address, type }) in links">
                 <a v-if="type === 'page'" class="link relative cursor-pointer hover:font-bold">
                     {{ label }}
                 </a>
-                <a v-else :href="address" v-smooth-scroll class="link relative cursor-pointer hover:font-bold mr-8">
-                    {{ label }}
+                <a v-else :href="address" v-smooth-scroll="{ offset: () => navbar_height}" class="link relative cursor-pointer hover:font-bold mr-8">
+                    {{ label }} 
                 </a>
             </template>
         </nav>
         <!-- mobile menu -->
         <button class="mobile-menu lg:hidden relative ms-auto" @click="toggle_mobile_menu()">
-            <img :src="mobile_menu_img" alt="menu" class="w-[32px]"/>
+            <img :src="menu_svg" alt="menu" class="w-[32px]"/>
         </button>
     </header>
     <!-- mobile -->
@@ -30,7 +30,7 @@
     <transition name="fade" mode="out-in">
         <div v-if="show_mobile_menu" class="absolute h-screen w-screen top-0 left-0">
             <div class="fixed bg-[#09090954] h-full top-0 left-0 w-full z-40" @click="toggle_mobile_menu()"></div>
-            <nav class="fixed h-full bg-white right-0 z-50 flex flex-col font-consolas border-t border-gray-3" :style="{ top: nav_position }">
+            <nav class="mobile fixed h-full bg-white right-0 z-50 flex flex-col font-consolas border-t border-gray-3">
                 <template v-for="({ label, address, type }) in links" >
                     <a v-if="type === 'page'" class="mobile-link link relative w-full px-6 py-2 cursor-pointer hover:font-bold">
                         {{ label }}
@@ -85,27 +85,34 @@
 <script setup>
 import menu_svg from '/img/mobile-menu.svg';
 import { RouterLink } from 'vue-router';
-import { ref, inject, onMounted, onBeforeUnmount, nextTick } from 'vue';
+import { ref, inject, onMounted, onBeforeUnmount, computed, nextTick } from 'vue';
 
 // mobile menu
-let show_mobile_menu = ref(false);
+const show_mobile_menu = ref(false);
+const navbar = ref(null);
+let navbar_height = ref(null);
+let desktop_offset = computed(() => navbar_height.value);
+
 const smoothScroll = inject('smoothScroll');
+// to set the distance between the p[ortrait and the top of the page
+const emit = defineEmits(['setHeight']);
 
-let nav_position = ref('');
-
-const toggle_mobile_menu = () => { 
+const toggle_mobile_menu = async () => {
     show_mobile_menu.value = !show_mobile_menu.value;
-    document.body.style.overflow = show_mobile_menu.value ? 'hidden': 'scroll'; // disable the scrolling of the whole body when the mobolie menu is opened
+    document.body.style.overflow = show_mobile_menu.value ? 'hidden': 'scroll'; // disable the scrolling of the whole body when the mobile menu is opened
+    await nextTick(() => {
+        const nav = document.querySelector('nav.mobile');
+        navbar_height.value = navbar.value.clientHeight;
+        nav.style.top = navbar_height.value+'px';
+    })
 }
 const debounceToggle = (address) => {
     listener.nav = setTimeout(() => {
-        const section = document.querySelector(address);
-        smoothScroll({ scrollTo: section });
+        const scrollTo = document.querySelector(address);
+        smoothScroll({ scrollTo, offset: (navbar_height.value) * -1 });
         toggle_mobile_menu();
     }, 400) 
 }
-
-const mobile_menu_img = menu_svg;
 
 //timeouts
 const listener = { scroll: 0, nav: 0 }
@@ -120,26 +127,15 @@ let scrolled = ref( getScrollPercentage(document.body) > 3.5);
 onMounted(() => {
     listener.scroll = document.addEventListener("scroll", async () => {
         scrolled.value = getScrollPercentage(document.body) > 3.5;
-        nav_position.value = navbar.value.clientHeight + 'px';
-        await nextTick(() => {
-            nav_position.value = navbar.value.clientHeight + 'px';
-        })
     });
+    emit('setHeight', (navbar.value.clientHeight - 30) + 'px');
 })
 
 onBeforeUnmount(() => {
     removeEventListener(listener.scroll);
-    clearTimeout(listener.nav)
+    clearTimeout(listener.nav);
 });
 
-const emit = defineEmits(['setHeight'])
-const navbar = ref(null);
-const marginTop = ref('');
-onMounted(() => {
-    marginTop.value = (navbar.value.clientHeight - 30)+'px';
-    nav_position.value = navbar.value.clientHeight + 'px';
-    emit('setHeight', marginTop.value);
-})
 
 // navbar links
 const links = ref([
