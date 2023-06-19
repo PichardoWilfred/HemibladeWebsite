@@ -181,7 +181,7 @@ img.manufactures {
     @apply object-contain;
 }
 p.description-text {
-    @apply flex flex-col justify-center font-consolas text-lg pl-[2vw] lg:pl-0 pr-[2vw] max-w-[1080px];
+    @apply flex flex-col justify-center font-consolas text-lg pl-[20px] lg:pl-0 pr-[20px] max-w-[1080px];
 }
 
 .visual-slide {

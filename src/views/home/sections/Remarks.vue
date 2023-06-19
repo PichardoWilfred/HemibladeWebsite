@@ -1,19 +1,17 @@
 <template>
     <section class="flex flex-col items-center pt-6 h-[440px] border-b border-gray-2">
-        <h2 class="font-consolas text-gray-4 text-base mx-auto mb-14">HEMIBLADE REMARKS</h2>
+        <h2 class="font-consolas text-gray-4 text-base mx-auto mb-8 lg:mb-14">HEMIBLADE REMARKS</h2>
         <transition name="fade" mode="out-in">
-            <div class="flex flex-col content-start justify-center items-start font-consolas" :key="index">
-                <div class="flex items-center">
-                    <img :src="testimonial.img" :alt="testimonial.alt" class="rounded-full w-[200px] h-[200px] mb-4">
-                    <p class="font-courier leading-[1.5] text-[22px] ml-[5rem] max-w-[800px] font-italic">
-                        "{{ testimonial.remark }}"
-                    </p>
-                </div>
-                <div class="flex flex-col items-center text-center">
-                    <h1 class="font-bold text-xl text-center">
+            <div class="remark font-consolas px-6 lg:px-10" :key="index">
+                <img :src="testimonial.img" :alt="testimonial.alt" class="client-avatar rounded-full w-[75px] h-[75px] lg:w-[200px] lg:h-[200px] lg:mb-4">
+                <p class="client-remark font-courier leading-[1.5] text-[16px] lg:text-[22px] lg:ml-[5rem] max-w-[800px]">
+                    "{{ testimonial.remark }}"
+                </p>
+                <div class="client-info">
+                    <h1 class="font-bold text-xl lg:text-center">
                         {{ testimonial.name }}
                     </h1>
-                    <h2 class="text-center">
+                    <h2 class="lg:text-center">
                         {{ testimonial.role }}
                     </h2>
                 </div>
@@ -22,7 +20,42 @@
         <!-- <button class="bg-blue px-4 py-2 bg-yellow-3 text-white w-max mx-auto rounded" @click="index++">Next</button> -->
     </section>
 </template>
-
+<style scoped>
+.remark {
+    display: grid; 
+    grid-template-columns: 210px auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "avatar remark"
+        "info ."
+}
+.client-avatar {
+    justify-self: center;
+    grid-area: avatar;
+}
+.client-remark {
+    grid-area: remark;
+    align-self: center;
+}
+.client-info {
+    justify-self: center;
+    grid-area: info;
+}
+@media (max-width: 1025px) {
+    .remark {
+        grid-template-columns: 75px auto;
+        column-gap: 4.5vw;
+        row-gap: 4.5vw;
+        grid-template-areas:
+            "avatar info"
+            "remark remark"
+    }
+    .client-info {
+        align-self: center;
+        justify-self: start;
+    }
+}
+</style>
 <script setup>
 import carlos_mendoza from '/img/remarks/carlos_mendoza.jpg';
 import ana_morales from '/img/remarks/ana_morales.jpg';
