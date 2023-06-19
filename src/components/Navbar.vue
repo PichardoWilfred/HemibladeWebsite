@@ -15,7 +15,7 @@
                 <a v-if="type === 'page'" class="link relative cursor-pointer hover:font-bold">
                     {{ label }}
                 </a>
-                <a v-else :href="address" v-smooth-scroll="{ offset: () => navbar_height}" class="link relative cursor-pointer hover:font-bold mr-8">
+                <a v-else :href="address" @click.prevent="scroll(address)" class="link relative cursor-pointer hover:font-bold mr-8">
                     {{ label }} 
                 </a>
             </template>
@@ -35,7 +35,7 @@
                     <a v-if="type === 'page'" class="mobile-link link relative w-full px-6 py-2 cursor-pointer hover:font-bold">
                         {{ label }}
                     </a>
-                    <a v-else @click="debounceToggle(address)" class="mobile-link link relative w-full px-6 py-2 cursor-pointer hover:font-bold mr-8 border-b border-gray-3">
+                    <a v-else @click.prevent="debounceToggle(address)" class="mobile-link link relative w-full px-6 py-2 cursor-pointer hover:font-bold mr-8 border-b border-gray-3">
                         {{ label }}
                     </a>
                 </template>
@@ -91,7 +91,6 @@ import { ref, inject, onMounted, onBeforeUnmount, computed, nextTick } from 'vue
 const show_mobile_menu = ref(false);
 const navbar = ref(null);
 let navbar_height = ref(null);
-let desktop_offset = computed(() => navbar_height.value);
 
 const smoothScroll = inject('smoothScroll');
 // to set the distance between the p[ortrait and the top of the page
@@ -106,11 +105,19 @@ const toggle_mobile_menu = async () => {
         nav.style.top = navbar_height.value+'px';
     })
 }
+
+const scroll = (address, offset = navbar_height.value) => {
+    const scrollTo = document.querySelector(address);
+    console.log(navbar_height.value);
+    smoothScroll({ scrollTo, offset: offset * -1 });
+}
+
+
 const debounceToggle = (address) => {
     listener.nav = setTimeout(() => {
-        const scrollTo = document.querySelector(address);
-        smoothScroll({ scrollTo, offset: (navbar_height.value) * -1 });
+        scroll(address);
         toggle_mobile_menu();
+
     }, 400) 
 }
 
@@ -125,7 +132,9 @@ const getScrollPercentage = (el) => {
 let scrolled = ref( getScrollPercentage(document.body) > 3.5);
 
 onMounted(() => {
+    navbar_height.value = navbar.value.clientHeight;
     listener.scroll = document.addEventListener("scroll", async () => {
+        navbar_height.value = navbar.value.clientHeight;
         scrolled.value = getScrollPercentage(document.body) > 3.5;
     });
     emit('setHeight', (navbar.value.clientHeight - 30) + 'px');
