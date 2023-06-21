@@ -12,8 +12,12 @@
             Click on an Agent’s logo to learn how Hemiblade Software can enhance your security system.
         </p>
         <div class="flex justify-around flex-wrap">
-            <img :src="ifa" class="application" alt="" srcset="">
-            <img :src="aka" class="application aka">
+            <a class="flex application" href="https://elaborate-donut-4c6c64.netlify.app/">
+                <img :src="ifa" class="" alt="" srcset="">
+            </a>
+            <a class="flex application" href="">
+                <img :src="aka" class=" aka">
+            </a>
         </div>
     </section>
     
