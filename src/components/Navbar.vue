@@ -12,9 +12,9 @@
         </a>
         <nav class="hidden lg:block my-1 ms-auto text-lg transition-all h-full">
             <template v-for="({ label, address, type }) in links">
-                <a v-if="type === 'page'" class="link relative cursor-pointer hover:font-bold">
+                <router-link v-if="type === 'page'" :to="address" class="link relative cursor-pointer hover:font-bold">
                     {{ label }}
-                </a>
+                </router-link>
                 <a v-else :href="address" @click.prevent="scroll(address)" class="link relative cursor-pointer hover:font-bold mr-8">
                     {{ label }} 
                 </a>
@@ -26,15 +26,14 @@
         </button>
     </header>
     <!-- mobile -->
-    
     <transition name="fade" mode="out-in">
         <div v-if="show_mobile_menu" class="absolute h-screen w-screen top-0 left-0">
             <div class="fixed bg-[#09090954] h-full top-0 left-0 w-full z-40" @click="toggle_mobile_menu()"></div>
             <nav class="mobile fixed h-full bg-white right-0 z-50 flex flex-col font-consolas border-t border-gray-3">
                 <template v-for="({ label, address, type }) in links" >
-                    <a v-if="type === 'page'" class="mobile-link link relative w-full px-6 py-2 cursor-pointer hover:font-bold">
+                    <router-link v-if="type === 'page'" :to="address" @click.prevent="toggle_mobile_menu()" class="mobile-link link relative w-full px-6 py-2 cursor-pointer hover:font-bold">
                         {{ label }}
-                    </a>
+                    </router-link>
                     <a v-else @click.prevent="debounceToggle(address)" class="mobile-link link relative w-full px-6 py-2 cursor-pointer hover:font-bold mr-8 border-b border-gray-3">
                         {{ label }}
                     </a>
@@ -84,13 +83,16 @@
 
 <script setup>
 import menu_svg from '/img/mobile-menu.svg';
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRouter, useRoute } from 'vue-router';
 import { ref, inject, onMounted, onBeforeUnmount, computed, nextTick } from 'vue';
 
 // mobile menu
 const show_mobile_menu = ref(false);
 const navbar = ref(null);
 let navbar_height = ref(null);
+
+const router = useRouter();
+const route = useRoute();
 
 const smoothScroll = inject('smoothScroll');
 // to set the distance between the p[ortrait and the top of the page
@@ -106,17 +108,24 @@ const toggle_mobile_menu = async () => {
     })
 }
 
-const scroll = (address, offset = navbar_height.value) => {
-    const scrollTo = document.querySelector(address);
-    console.log(navbar_height.value);
-    smoothScroll({ scrollTo, offset: offset * -1 });
+const scroll = async (address, offset = navbar_height.value) => {
+    if (route.path === '/privacy-policy') {
+        await router.push('/');
+        const scrollTo = document.querySelector(address);
+        smoothScroll({ scrollTo, offset: offset * -1 });
+        return;
+    }else {
+        const scrollTo = document.querySelector(address);
+        smoothScroll({ scrollTo, offset: offset * -1 });
+    }
+
+    
 }
 
 const debounceToggle = (address) => {
     listener.nav = setTimeout(() => {
         scroll(address);
         toggle_mobile_menu();
-
     }, 400) 
 }
 
@@ -152,7 +161,8 @@ const links = ref([
     { address: '#media', label: 'Media' },
     { address: '#about', label: 'About' },
     { address: '#contact', label: 'Contact' },
-    { address: '/privacy', label: 'Privacy Policy', type: 'page' }
+    { address: '#buy', label: 'Buy' },
+    { address: '/privacy-policy', label: 'Privacy Policy', type: 'page' }
 ]);
 
 </script>

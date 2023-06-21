@@ -2,11 +2,11 @@
   import Agents from "./sections/Agents.vue";
   import Portrait from "./sections/Portrait.vue";
   import HIP from "./sections/HIP.vue";
-  import NewProducts from "./sections/NewProducts.vue";
+  // import NewProducts from "./sections/NewProducts.vue";
   import SupportedManufactures from './sections/SupportedManufactures.vue';
   import Clients from "./sections/Clients.vue";
   import About from "./sections/About.vue";
-  import Remarks from "./sections/Remarks.vue";
+  // import Remarks from "./sections/Remarks.vue";
   import Footer_ from "./sections/footer/Footer_.vue";
 </script>
 
