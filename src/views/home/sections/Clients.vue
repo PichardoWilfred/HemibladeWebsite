@@ -1,13 +1,16 @@
 <template>
-    <section class="flex flex-col px-6 lg:px-12 pt-6 border-b border-gray-2">
+    <section class="flex flex-col px-7 lg:px-12 pt-6 border-b border-gray-2">
         <h2 class="font-consolas text-gray-4 text-base mx-auto mb-5">CLIENTS</h2>
-        <div class="swiper-container overflow-hidden">
+        <div class="flex max-lg:flex-col max-lg:items-center flex-wrap justify-around pt-10 mb-10">
+            <img v-for="{src, class_, alt} in images" :src="src" :class="class_" :alt="alt" class=" object-contain mb-20 lg:mb-10">
+        </div>
+    <!--<div class="swiper-container overflow-hidden">
             <div class="swiper-wrapper mb-10">
                 <div v-for="(img, index) in images" :key="index" class="swiper-slide flex" :style="slide_styles">
                     <img :src="img.src" alt="" :class="img.class_" class="object-contain">
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 </template>
 <script setup>
@@ -25,7 +28,7 @@
         },
         {
             src: CSJ,
-            class_: 'w-[200px]',
+            class_: 'w-[200px] mx-16',
             alt: 'Cooperativa San José'
         },
         {
@@ -40,12 +43,12 @@
     };
     onMounted(() => {
         new Swiper('.swiper-container', {
-            autoplay: {
-                delay: 0,
-                disableOnInteraction: true // Specify the autoplay delay in milliseconds
-            },
-            infinite: true,
-            loop: true,
+            // autoplay: {
+            //     delay: 0,
+            //     disableOnInteraction: true // Specify the autoplay delay in milliseconds
+            // },
+            // infinite: true,
+            // loop: true,
             slidesPerView: 3,
             speed: 12500,
             breakpoints: {

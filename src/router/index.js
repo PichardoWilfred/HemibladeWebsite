@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/home/Home.vue';
 import Privacy from '../views/privacy/Privacy.vue';
-
+import Ifa from '../views/ifa/Ifa.vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -14,7 +14,12 @@ const router = createRouter({
       path: '/privacy-policy',
       name: 'privacy-policy',
       component: Privacy
-    }
+    },
+    {
+      path: '/ifa',
+      name: 'ifa',
+      component: Ifa
+    },
     // {
     //   path: '/about',
     //   name: 'about',

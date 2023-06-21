@@ -2,25 +2,26 @@
 <template>
     <!-- desktop -->
     <header ref="navbar" class="fixed top-0 bg-white px-4 lg:px-10 flex items-center w-full font-consolas font-light border-b border-gray-3 z-50 transition-all" :class="scrolled ? 'py-2':'py-4'">
-        <a v-if="scrolled" href="#home" v-smooth-scroll>
-            <h3 class="cursor-pointer my-2 font-consolas font-bold uppercase text-gray-8 text-xl lg:text-3xl transition-all">
+        <a @click="scroll('#home')">
+            <h3 v-if="scrolled" class="cursor-pointer lg:my-2 font-consolas font-bold uppercase text-gray-8 text-xl lg:text-3xl transition-all">
                 Hemiblade software
             </h3>
-        </a>
-        <a v-else href="#home" v-smooth-scroll>
-            <img alt="Hemiblade logo" class="cursor-pointer logo transition-all w-[120px] h-[60px]" src="/img/nav-logo.png" />
+            <img v-else alt="Hemiblade logo" class="cursor-pointer logo transition-all w-[100px] lg:w-[150px]" src="/img/nav-logo.png" />
         </a>
         <nav class="hidden lg:block my-1 ms-auto text-lg transition-all h-full">
-            <template v-for="({ label, address, type }) in links">
-                <router-link v-if="type === 'page'" :to="address" class="link relative cursor-pointer hover:font-bold">
-                    {{ label }}
-                </router-link>
-                <a v-else :href="address" @click.prevent="scroll(address)" class="link relative cursor-pointer hover:font-bold mr-8">
+            <template v-for="({ label, address, type }) in links" :key="address">
+                <a @click.prevent="scroll(address, type)" class="link relative cursor-pointer hover:font-bold mr-8 last:mr-0">
                     {{ label }} 
                 </a>
             </template>
+            <router-link class="inline-flex" to="/ifa">
+                IFA
+            </router-link>
+            <div class="hidden overflow-hidden w-[200px] h-[42px]">
+                {{ links }}
+            </div>
         </nav>
-        <!-- mobile menu -->
+        <!-- mobile menu button-->
         <button class="mobile-menu lg:hidden relative ms-auto" @click="toggle_mobile_menu()">
             <img :src="menu_svg" alt="menu" class="w-[32px]"/>
         </button>
@@ -30,7 +31,7 @@
         <div v-if="show_mobile_menu" class="absolute h-screen w-screen top-0 left-0">
             <div class="fixed bg-[#09090954] h-full top-0 left-0 w-full z-40" @click="toggle_mobile_menu()"></div>
             <nav class="mobile fixed h-full bg-white right-0 z-50 flex flex-col font-consolas border-t border-gray-3">
-                <template v-for="({ label, address, type }) in links" >
+                <template v-for="({ label, address, type }) in links" :key="address">
                     <router-link v-if="type === 'page'" :to="address" @click.prevent="toggle_mobile_menu()" class="mobile-link link relative w-full px-6 py-2 cursor-pointer hover:font-bold">
                         {{ label }}
                     </router-link>
@@ -84,7 +85,7 @@
 <script setup>
 import menu_svg from '/img/mobile-menu.svg';
 import { RouterLink, useRouter, useRoute } from 'vue-router';
-import { ref, inject, onMounted, onBeforeUnmount, computed, nextTick } from 'vue';
+import { ref, inject, onMounted, onBeforeUnmount, reactive, nextTick, watch } from 'vue';
 
 // mobile menu
 const show_mobile_menu = ref(false);
@@ -98,6 +99,23 @@ const smoothScroll = inject('smoothScroll');
 // to set the distance between the p[ortrait and the top of the page
 const emit = defineEmits(['setHeight']);
 
+const product_links = {
+    '/': [
+        { address: '#home', label: 'Home' }, 
+        { address: '#products', label: 'Products' },
+        { address: '#media', label: 'Media' },
+        { address: '#about', label: 'About' },
+        { address: '#contact', label: 'Contact' },
+        { address: '#buy', label: 'Buy' },
+        { address: '/privacy-policy', label: 'Privacy Policy', type: 'page' },
+    ],
+    '/ifa': [
+        { address: '#home', label: 'YOUREifa' }
+    ]
+}
+
+let links = reactive(product_links[route.path]);
+
 const toggle_mobile_menu = async () => {
     show_mobile_menu.value = !show_mobile_menu.value;
     document.body.style.overflow = show_mobile_menu.value ? 'hidden': 'scroll'; // disable the scrolling of the whole body when the mobile menu is opened
@@ -108,18 +126,22 @@ const toggle_mobile_menu = async () => {
     })
 }
 
-const scroll = async (address, offset = navbar_height.value) => {
-    if (route.path === '/privacy-policy') {
+const scroll = async (address, type = 'scroll') => {
+    
+    links = product_links[route.path];
+    if (type === 'page') {
+        await router.push(address);
+        return;
+    }
+    if (route.path !== '/') {
         await router.push('/');
         const scrollTo = document.querySelector(address);
-        smoothScroll({ scrollTo, offset: offset * -1 });
+        smoothScroll({ scrollTo, offset: navbar_height.value * -1 });
         return;
     }else {
         const scrollTo = document.querySelector(address);
-        smoothScroll({ scrollTo, offset: offset * -1 });
+        smoothScroll({ scrollTo, offset: navbar_height.value * -1 });
     }
-
-    
 }
 
 const debounceToggle = (address) => {
@@ -140,8 +162,8 @@ const getScrollPercentage = (el) => {
 let scrolled = ref( getScrollPercentage(document.body) > 3.5);
 
 onMounted(() => {
-    navbar_height.value = navbar.value.clientHeight;
-    listener.scroll = document.addEventListener("scroll", async () => {
+    navbar_height.value = navbar.value.clientHeight; //for getting the accurate offset of the scroll
+    listener.scroll = document.addEventListener("scroll", () => {
         navbar_height.value = navbar.value.clientHeight;
         scrolled.value = getScrollPercentage(document.body) > 3.5;
     });
@@ -152,18 +174,6 @@ onBeforeUnmount(() => {
     removeEventListener(listener.scroll);
     clearTimeout(listener.nav);
 });
-
-
-// navbar links
-const links = ref([
-    { address: '#home', label: 'Home' }, 
-    { address: '#products', label: 'Products' },
-    { address: '#media', label: 'Media' },
-    { address: '#about', label: 'About' },
-    { address: '#contact', label: 'Contact' },
-    { address: '#buy', label: 'Buy' },
-    { address: '/privacy-policy', label: 'Privacy Policy', type: 'page' }
-]);
 
 </script>
 

@@ -1,23 +1,23 @@
 <template>
-    <section class="relative text-black font-consolas px-4 lg:px-12 pt-24" :style="{backgroundImage: `url(${bg_code})`}">
+    <section class="relative text-black font-consolas px-7 lg:px-12 pt-24" :style="{backgroundImage: `url(${bg_code})`}">
         <div class="w-full relative z-20 max-w-[1450px]">
-            <h3 class="max-lg:mb-4 text-2xl font-bold">HEMIBLADE INTEGRATION PLATFORM (HIP)</h3>
-            <p class="mb-4 text-lg">
+            <h3 class="max-lg:mb-4 text-[16px] lg:text-2xl font-bold">HEMIBLADE INTEGRATION PLATFORM (HIP)</h3>
+            <p class="mb-4 text-[15px] lg:text-lg">
                 The HEMIBLADE Integration Platform, HIP for short, is our proprietary
                 framework that provides the functionality and control needed to
                 develop our software tools.
             </p>
-            <p class="mb-4 text-lg">
+            <p class="mb-4 text-[15px] lg:text-lg">
                 HIP takes control of login sessions, Network filters, access to databases, user administration, access to devices,
                 listeners, parsers, rules engines, notification rules, engines, dispatchers, API communications with 3rd party products and much more techie stuff.
             </p>
-            <p class="text-lg">
+            <p class="text-[15px] lg:text-lg">
                 It took 3+ years of development to get HIP feature set ready to develop IFA. HIP continues to evolve and mature.
                 <br /> The next “Big Thing” will come early 2024. Visit us again soon!
             </p>
             
         </div>
-        <div class="flex relative items-start flex-wrap justify-center mt-20 z-20">
+        <div class="flex max-lg:flex-col max-lg:items-center relative items-start flex-wrap justify-center mt-20 z-20">
             <img v-for="img in images" :src="img.src" :alt="img.alt" :key="i" :class="img.class"
             class="mx-6 mb-8 lg:mb-[70px] lg:mx-8"/>
         </div>
@@ -50,7 +50,6 @@ section::after {
     import MSDotnet from "/img/hip/MSDotNet.png";
 
     const images = [
-
     {
         src: C_,
         alt: 'C#',

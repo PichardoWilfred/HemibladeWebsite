@@ -51,7 +51,7 @@
     const showTest = ref(false);
     
     let slide_timeout = 0;
-    const slide_duration = 1200;
+    const slide_duration = window.matchMedia('(max-width: 1025px)').matches ? 500 : 1200;
     let slide_interval = 0;
     const index = reactive({
         last: 0,
@@ -184,7 +184,7 @@ img.manufactures {
     @apply object-contain w-[320px] h-fit my-6;
 }
 p.description-text {
-    @apply flex flex-col max-lg:justify-start justify-center font-consolas text-lg px-4 lg:px-10 max-w-[1080px] max-lg:h-[500px];
+    @apply flex flex-col max-lg:justify-start justify-center font-consolas text-lg px-7 lg:px-12 max-w-[1080px] max-lg:h-[500px];
 }
 .visual-slide {
     @apply absolute flex w-[300%] h-full;
