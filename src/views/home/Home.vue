@@ -15,11 +15,11 @@
     <Portrait id="home"/>
     <Agents />
     <HIP id="media"/>
-    <NewProducts />
+    <!-- <NewProducts /> -->
     <SupportedManufactures />
     <Clients />
-    <Remarks />
+    <!-- <Remarks /> -->
     <About id="about"/>
-    <Footer_ />
+    <Footer_ id="contact"/>
   </main>
 </template>

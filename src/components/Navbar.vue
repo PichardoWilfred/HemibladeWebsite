@@ -112,7 +112,6 @@ const scroll = (address, offset = navbar_height.value) => {
     smoothScroll({ scrollTo, offset: offset * -1 });
 }
 
-
 const debounceToggle = (address) => {
     listener.nav = setTimeout(() => {
         scroll(address);
