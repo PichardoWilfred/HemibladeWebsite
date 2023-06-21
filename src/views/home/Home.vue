@@ -7,6 +7,7 @@
   import Clients from "./sections/Clients.vue";
   import About from "./sections/About.vue";
   import Remarks from "./sections/Remarks.vue";
+  import Footer_ from "./sections/footer/Footer_.vue";
 </script>
 
 <template>
@@ -19,5 +20,6 @@
     <Clients />
     <Remarks />
     <About id="about"/>
+    <Footer_ />
   </main>
 </template>

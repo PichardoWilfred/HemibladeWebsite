@@ -66,7 +66,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        background-color: #F3BE19;
+        background-color: #71A4F7;
         width: 0%;
         height: 2px;
         transition: all 0.15s ease-in-out;
