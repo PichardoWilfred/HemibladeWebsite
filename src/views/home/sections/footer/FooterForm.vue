@@ -1,5 +1,5 @@
 <template>
-    <form class="flex flex-col w-[32rem] mb-6">
+    <form class="flex flex-col w-[36rem] mb-6">
         <h1 class="font-barlow-w font-semibold text-white text-2xl mb-6">CONNECT WITH US</h1>
         <div class="form-control flex flex-col mb-5">
             <input v-model="form.email.value" 
@@ -9,9 +9,9 @@
                 Por favor, ingrese un correo válido.
             </small>
         </div>
-        <div class="form-control flex flex-col mb-5">
+        <div class="form-control flex flex-col mb-2">
             <textarea v-model="form.message.value" placeholder="Message"
-            class="h-40 p-2 mb-1 font-open-sans resize-none bg-[transparent] placeholder-gray-6 placeholder:font-bold placeholder:text-[14px] border border-gray-7 focus-within:outline-none focus-within:border-yellow hover:border-yellow active:border-yellow">
+            class="h-[220px] p-2 mb-1 font-open-sans resize-none bg-[transparent] placeholder-gray-6 placeholder:font-bold placeholder:text-[14px] border border-gray-7 focus-within:outline-none focus-within:border-yellow hover:border-yellow active:border-yellow">
             </textarea>
             <small class="text-gray-5 transition-all" :class="[form.message.error ? 'visible':'invisible']">
                 Por favor, describa como podemos ayudarlo.

@@ -14,9 +14,9 @@
                     {{ label }} 
                 </a>
             </template>
-            <router-link class="inline-flex" to="/ifa">
+            <!-- <router-link class="inline-flex" to="/ifa">
                 IFA
-            </router-link>
+            </router-link> -->
             <div class="hidden overflow-hidden w-[200px] h-[42px]">
                 {{ links }}
             </div>
@@ -99,22 +99,30 @@ const smoothScroll = inject('smoothScroll');
 // to set the distance between the p[ortrait and the top of the page
 const emit = defineEmits(['setHeight']);
 
-const product_links = {
-    '/': [
+// const product_links = {
+//     '/': [
+//         { address: '#home', label: 'Home' }, 
+//         { address: '#products', label: 'Products' },
+//         { address: '#media', label: 'Media' },
+//         { address: '#about', label: 'About' },
+//         { address: '#contact', label: 'Contact' },
+//         { address: '#buy', label: 'Buy' },
+//         { address: '/privacy-policy', label: 'Privacy Policy', type: 'page' },
+//     ],
+//     '/ifa': [
+//         { address: '#home', label: 'YOUREifa' }
+//     ]
+// }
+
+let links = reactive([
         { address: '#home', label: 'Home' }, 
         { address: '#products', label: 'Products' },
         { address: '#media', label: 'Media' },
         { address: '#about', label: 'About' },
         { address: '#contact', label: 'Contact' },
-        { address: '#buy', label: 'Buy' },
+        // { address: '#buy', label: 'Buy' },
         { address: '/privacy-policy', label: 'Privacy Policy', type: 'page' },
-    ],
-    '/ifa': [
-        { address: '#home', label: 'YOUREifa' }
-    ]
-}
-
-let links = reactive(product_links[route.path]);
+    ],);
 
 const toggle_mobile_menu = async () => {
     show_mobile_menu.value = !show_mobile_menu.value;
@@ -128,7 +136,7 @@ const toggle_mobile_menu = async () => {
 
 const scroll = async (address, type = 'scroll') => {
     
-    links = product_links[route.path];
+    // links = product_links[route.path];
     if (type === 'page') {
         await router.push(address);
         return;

@@ -4,7 +4,7 @@
     import { reactive } from "vue";
     const list = reactive([
         'Not a single manufacturer offers all the best products.',
-        'To have the best possible system products must be bought from different	manufacturers but not naturaly integrated.',
+        'To have the best possible system products must be bought from different manufacturers but not naturaly integrated.',
         'Useful integration it’s hard to achieve.',
         'Good integration products are expensive to acquire and complex to set up	and maintain.',
     ])
@@ -34,7 +34,7 @@
         </h4>
         <p class="text-[15px] lg:text-lg">
             <ul class="mb-6">
-                <li v-for="(item, index) of list" :key="index" class="before:mr-2 before:content-['-'] flex flex-shrink-0 text-[15px] lg:text-lg mb-3">
+                <li v-for="(item, index) of list" :key="index" class="before:mr-2 before:content-['-'] flex flex-shrink-0 text-[15px] lg:text-lg mb-3 lg:mb-1">
                     {{ item }}
                 </li>
             </ul>
