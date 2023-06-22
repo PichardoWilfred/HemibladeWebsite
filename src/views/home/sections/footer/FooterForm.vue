@@ -9,7 +9,7 @@
                 Por favor, ingrese un correo válido.
             </small>
         </div>
-        <div class="form-control flex flex-col mb-2">
+        <div class="form-control flex flex-col mb-5 lg:mb-2">
             <textarea v-model="form.message.value" placeholder="Message"
             class="h-[220px] p-2 mb-1 font-open-sans resize-none bg-[transparent] placeholder-gray-6 placeholder:font-bold placeholder:text-[14px] border border-gray-7 focus-within:outline-none focus-within:border-yellow hover:border-yellow active:border-yellow">
             </textarea>

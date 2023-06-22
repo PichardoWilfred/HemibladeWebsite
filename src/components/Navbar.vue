@@ -135,8 +135,6 @@ const toggle_mobile_menu = async () => {
 }
 
 const scroll = async (address, type = 'scroll') => {
-    
-    // links = product_links[route.path];
     if (type === 'page') {
         await router.push(address);
         return;

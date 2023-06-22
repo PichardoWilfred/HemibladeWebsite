@@ -60,7 +60,7 @@
     })
     slide_interval = setInterval(() => {
         move('forward');
-    },25000)
+    }, 10000)
     const physical_slide = reactive({
         'z-index': 2
     })
