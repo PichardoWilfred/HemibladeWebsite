@@ -13,7 +13,7 @@
             </p>
             <p class="text-[15px] lg:text-lg">
                 It took 3+ years of development to get HIP feature set ready to develop IFA. HIP continues to evolve and mature. <br /><br />
-                <br />
+                
                 Stay tuned. A BIG evolution arrives in 2024 and it will be free for all active users.
             </p>
             
