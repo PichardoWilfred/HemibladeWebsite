@@ -13,7 +13,7 @@
 <template>
     <section class="px-7 lg:px-12 pt-10" id="products">
         <p class="normal-text text-[15px] lg:text-xl pb-12 lg:pb-[60px] max-w-[1700px]">
-            HEMIBLADE software tools are called Agents. These pieces of software are specialized in handling data types from specific groups of devices. <br />
+            HEMIBLADE software tools are called Agents. These pieces of software are specialized in handling data types from specific groups of devices. <br /><br />
             IFA stands for “Intrusion Fire Agent” and is dedicated to interact with intrusion and fire panels. In the same way, AKA means Access Control Agent and is tasked to interact with access control systems.
             <br /> <br />
             Click on an Agent’s logo to learn how Hemiblade Software can enhance your security system.
@@ -22,7 +22,7 @@
             <a class="flex application" href="https://elaborate-donut-4c6c64.netlify.app/">
                 <img :src="ifa" class="" alt="" srcset="">
             </a>
-            <a class="flex application" href="">
+            <a class="flex application" href="#">
                 <img :src="aka" class=" aka">
             </a>
         </div>
@@ -41,9 +41,9 @@
             <br />
             <p class="text-[15px] lg:text-lg">
                 Hemiblade software tools are easy on the budget, a breeze to set up and maintain, and very simple to use.
-                <br />
+                <br /><br />
                 We stand 100% behind our products. Ask for a free demo. We will guide you thru to have the best experience.
-                <br />Request your guided demo at: <a class="underline" href="info@hemiblade.com">info@hemiblade.com</a>
+                <br /><br />Request your guided demo at: <a class="underline" href="info@hemiblade.com">info@hemiblade.com</a>
             </p>
         </p>
     </section>

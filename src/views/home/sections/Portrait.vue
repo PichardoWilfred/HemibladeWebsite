@@ -3,24 +3,22 @@ import portrait_img from '/img/portrait/portrait_logo.png'
 </script>
 
 <template>
-    <section class="relative h-[60vh] min-[670px]:h-[70vh]">
-        <div class="bg-section bg-blue-1 h-full" :style="{backgroundImage: `url(${portrait_img})`}"></div>
-        <!-- [58.98%] -->
-        <div class="gradient-to-white absolute w-full h-full z-20 bottom-0 left-0" />
-        <!-- <div class="absolute bg-gradient-to-b from-white to-[#FFFFFF99] w-full h-full z-20 top-0 left-0" /> -->
-        <div class=" flex h-full w-full absolute top-0 items-center flex-col z-30 px-3 lg:px-6">
-            <h2 class="font-consolas px-6 py-2 rounded-lg text-default font-bold text-center 
-            text-[4vw] min-[720px]:text-2xl min-[720px]:mt-[10rem] min-[720px]:mb-[3.5rem]">
+    <section class="relative lg:h-[840px]">
+        <div class="bg-section bg-blue-1 h-full" 
+        :style="{backgroundImage: `url(${portrait_img})`}"></div>
+        <div class="flex h-full w-full absolute top-0 items-center justify-center flex-col z-30 lg:px-6">
+            <h2 class="font-consolas max-sm:mx-3 px-6 py-2 border border-gray-4 rounded-lg text-default font-bold text-center 
+            text-2xl mt-[6rem] lg:mt-[4rem]">
                 NOW IT ALL MAKES PERFECT SENSE®
             </h2>
-            <h1 class="font-barlow px-4 py-2 rounded-lg bg-[#325A86AD] border
-            border-gray-4 font-semibold min-[720px]:max-w-[830px] text-[5.3vw] 
-            min-[865px]:text-[48px] min-[720px]:leading-[60px] text-center text-white my-[4vw] min-[720px]:mb-[6.5rem] min-[720px]:mt-0">
+            <h1 class="font-barlow max-lg:px-3 lg:px-4 lg:py-2 rounded-lg font-semibold max-w-[900px] text-[30px] 
+            lg:text-[48px] lg:leading-[60px] text-center text-blue-4
+            mt-[2rem] lg:mt-[20rem]">
                 CONNECT THE DOTS BETWEEN SECURITY SYSTEMS
                 THAT WERE UNRELATED… UNTIL NOW.
             </h1>
-            <!-- py-2 px-4 bg-[#FFFFFFD9]  -->
-            <p class="font-consolas text-center text-bold text-white text-sm min-[720px]:text-xl max-w-[800px]">
+            <p class="font-consolas max-lg:p-4 text-center text-bold text-default 
+                text-base lg:text-xl max-w-[800px] mt-[1.5rem] max-sm:bg-[#FFFFFFA1]">
                 We develop event-driven integration software tools that add the
                 intelligence and communication needed to coordinate independent 
                 systems to operate as a team to enrich your situational awareness.
@@ -32,11 +30,26 @@ import portrait_img from '/img/portrait/portrait_logo.png'
 <style scoped>
 .bg-section {
     z-index: 2;
-    background-position: center 5%;
-    background-size: 100%;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
-.gradient-to-white {
-    background-color: #325A8660;
-    /* background: linear-gradient(0deg, #FFFFFF 11.29%, #FFFFFF00 100.98%); */
+@media (max-width: 1025px) {
+    section {
+        height: 700px;
+    }
+    .bg-section {
+        background-position: center 50px;
+        background-size: 1900px;
+    }
+}
+@media (max-width: 1025px) and (orientation: landscape){
+    section {
+        height: 800px;
+    }
+    .bg-section {
+        background-position: center 50px;
+        background-size: 1900px;
+    }
 }
 </style>
