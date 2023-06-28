@@ -2,6 +2,7 @@
 import { ref } from "vue"
 import { RouterView } from 'vue-router';
 import Navbar from "./components/Navbar.vue";
+import Footer_ from "./views/home/sections/footer/Footer_.vue";
 let marginTop = ref('');
 </script>
 
