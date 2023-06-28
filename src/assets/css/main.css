@@ -42,7 +42,7 @@
     }
 }
 a.learn-more-btn svg :is(rect, path) {
-    fill: var(--gray-3);
+    fill: var(--gray-8);
 }
 a.learn-more-btn:hover svg :is(rect, path) {
     fill: var(--default);
