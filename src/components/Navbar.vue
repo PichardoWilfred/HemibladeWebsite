@@ -23,7 +23,7 @@
                 </div>
             </nav>
             <!-- mobile menu button-->
-            <button class="mobile-menu lg:hidden relative ms-auto" @click="toggle_mobile_menu()">
+            <button v-if="website.section !== 'none'" class="mobile-menu lg:hidden relative ms-auto" @click="toggle_mobile_menu()">
                 <img :src="menu_svg" alt="menu" class="w-[32px]"/>
             </button>
         </div>
@@ -33,11 +33,15 @@
         <div v-if="show_mobile_menu" class="absolute h-screen w-screen top-0 left-0">
             <div class="fixed bg-[#09090954] h-full top-0 left-0 w-full z-40" @click="toggle_mobile_menu()"></div>
             <nav class="mobile fixed h-full bg-white right-0 z-50 flex flex-col font-consolas border-t border-gray-3">
-                <template v-for="({ label, address, type }) in links.routes" :key="route.path">
-                    <router-link v-if="type === 'page'" :to="address" @click.prevent="toggle_mobile_menu()" class="mobile-link link relative w-full px-6 py-2 cursor-pointer hover:font-bold">
+                <template v-for="({ label, address, type }) in website.routes" :key="address">
+                    <router-link v-if="type === 'page'" :to="address" @click.prevent="toggle_mobile_menu()" 
+                    :class="website.section === 'ifa' ? 'yellow':'blue'"
+                    class="mobile-link link relative w-full px-6 py-2 cursor-pointer hover:font-bold">
                         {{ label }}
                     </router-link>
-                    <a v-else @click.prevent="debounceToggle(address)" class="mobile-link link relative w-full px-6 py-2 cursor-pointer hover:font-bold mr-8 border-b border-gray-3">
+                    <a v-else @click.prevent="debounceToggle(address)" 
+                    :class="website.section === 'ifa' ? 'yellow':'blue'"
+                    class="mobile-link link relative w-full px-6 py-2 cursor-pointer hover:font-bold mr-8 border-b border-gray-3">
                         {{ label }}
                     </a>
                 </template>
@@ -82,7 +86,7 @@
         width: 100%;
     }
     a.mobile-link:last-child:hover::after {
-        width: 0%;
+        /* width: 0%; */
     }
 </style>
 
@@ -111,7 +115,6 @@ const section_adresses = {
         { address: '#about', label: 'About' },
         { address: '#contact', label: 'Contact' },
         { address: '#buy', label: 'Buy' },
-        // { address: '/ifa', label: 'IFA', type: 'page' },
         { address: '/privacy-policy', label: 'Privacy Policy', type: 'page' },
     ],
     ifa: [
@@ -121,6 +124,9 @@ const section_adresses = {
         { address:'#comparison', label: 'Integrations' },
         { address:'#downloads', label: 'Download' },
         { address:'#contact', label: 'Contact' },
+    ],
+    none: [
+        { address: '', label: '' }
     ]
 }
 
@@ -131,7 +137,20 @@ let website = reactive({
 watch(
     () => route.path,
     async () => {
-        const website_section = route.path === '/' ? 'home' : route.path.substring(1); // only apply to mother router, not child.
+        let website_section;
+        const path = route.path;
+
+        const in_home = ['/'].includes(path);
+        const in_ifa = ['/highlights','/ifa'].includes(path);
+        if (in_home) {
+            website_section = 'home';
+        }else if (in_ifa) {
+            website_section = 'ifa';
+        }else {
+            website_section = 'none';
+        }
+
+        // const website_section = path !== '/' ? 'home' : route.path.substring(1);
         website.routes = section_adresses[website_section];
         website.section = website_section;
     },
@@ -152,6 +171,11 @@ const scroll = async (address, type = 'scroll') => {
         await router.push(address);
         return;
     }
+    if (route.path === '/highlights') {
+        await router.push('/ifa')
+    }
+    console.log(website.section);
+    // else if ( window.matchMedia('(max-width: 1025px)').matches ){ }
     const scrollTo = document.querySelector(address);
     smoothScroll({ scrollTo, offset: navbar_height.value * -1 });
 }
