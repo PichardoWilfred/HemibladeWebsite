@@ -5,8 +5,8 @@
         <Highlights id="highlight" />
         <Perks />
         <Compatibility />
-        <Comparison />
-        <Downloads />
+        <Comparison id="comparison"/>
+        <Downloads id="downloads"/>
     </main>
 </template>
 <script setup>

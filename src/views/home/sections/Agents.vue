@@ -1,5 +1,6 @@
 <script setup>
 import { reactive } from "vue";
+import { RouterLink } from 'vue-router';
 import ifa from "/img/portrait/IFA.png";
 import aka from "/img/portrait/AKA.png";
 const list = reactive([
@@ -19,9 +20,9 @@ const list = reactive([
             Click on an Agent’s logo to learn how Hemiblade Software can enhance your security system.
         </p>
         <div class="flex justify-around flex-wrap">
-            <a class="flex application" href="https://elaborate-donut-4c6c64.netlify.app/">
+            <RouterLink class="flex application" to="/ifa">
                 <img :src="ifa" class="" alt="" srcset="">
-            </a>
+            </RouterLink>
             <a class="flex application" href="#" @click.prevent="() => {}">
                 <img :src="aka" class=" aka">
             </a>

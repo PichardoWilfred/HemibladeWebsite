@@ -111,7 +111,7 @@ const section_adresses = {
         { address: '#about', label: 'About' },
         { address: '#contact', label: 'Contact' },
         { address: '#buy', label: 'Buy' },
-        { address: '/ifa', label: 'IFA', type: 'page' },
+        // { address: '/ifa', label: 'IFA', type: 'page' },
         { address: '/privacy-policy', label: 'Privacy Policy', type: 'page' },
     ],
     ifa: [
@@ -120,7 +120,7 @@ const section_adresses = {
         { address:'#highlight', label: 'Highlights' },
         { address:'#comparison', label: 'Integrations' },
         { address:'#downloads', label: 'Download' },
-        { address:'#footer', label: 'Contact' },
+        { address:'#contact', label: 'Contact' },
     ]
 }
 
@@ -152,9 +152,7 @@ const scroll = async (address, type = 'scroll') => {
         await router.push(address);
         return;
     }
-    console.log(address);
     const scrollTo = document.querySelector(address);
-    console.log(document.querySelector(address));
     smoothScroll({ scrollTo, offset: navbar_height.value * -1 });
 }
 const goHome = async () => {
