@@ -1,7 +1,7 @@
 <template>
     <main class="pt-20">
-        <Portrait />
-        <Gallery />
+        <Portrait id="home"/>
+        <Gallery  id="gallery"/>
     </main>
 </template>
 <script setup>

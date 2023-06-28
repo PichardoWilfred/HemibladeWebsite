@@ -4,7 +4,7 @@
     <header ref="navbar" class="fixed top-0 bg-white w-full font-consolas font-light border-b border-gray-3 z-50">
         <div v-if="!scrolled && website.section === 'ifa'" class="overflow-hidden relative block bg-yellow-3 h-6 w-full border-b border-gray-5 z-[60]" />
         <div class="flex items-center w-full px-4 lg:px-10  transition-all" :class="scrolled ? 'py-2':'py-4'">
-            <a @click="scroll('#home')">
+            <a @click="goHome">
                 <h3 v-if="scrolled" class="cursor-pointer lg:my-2 font-consolas font-bold uppercase text-gray-8 text-xl lg:text-3xl transition-all">
                     Hemiblade software
                 </h3>
@@ -116,7 +116,7 @@ const section_adresses = {
     ],
     ifa: [
         { address:'#home', label: 'Home' },
-        { address:'#showcase', label: 'Gallery' },
+        { address:'#gallery', label: 'Gallery' },
         { address:'#highlight', label: 'Highlights' },
         { address:'#comparison', label: 'Integrations' },
         { address:'#downloads', label: 'Download' },
@@ -152,15 +152,15 @@ const scroll = async (address, type = 'scroll') => {
         await router.push(address);
         return;
     }
-    if (route.path !== '/') { // (bug) doesn't cover the we are in the IFA website section
-        await router.push('/');
-        const scrollTo = document.querySelector(address);
-        smoothScroll({ scrollTo, offset: navbar_height.value * -1 });
-        return;
-    }else {
-        const scrollTo = document.querySelector(address);
-        smoothScroll({ scrollTo, offset: navbar_height.value * -1 });
-    }
+    console.log(address);
+    const scrollTo = document.querySelector(address);
+    console.log(document.querySelector(address));
+    smoothScroll({ scrollTo, offset: navbar_height.value * -1 });
+}
+const goHome = async () => {
+    if (website.section !== 'home') await router.push('/');
+    const scrollTo = document.querySelector('#home');
+    smoothScroll({ scrollTo, offset: navbar_height.value * -1 });
 }
 
 const debounceToggle = (address) => {
