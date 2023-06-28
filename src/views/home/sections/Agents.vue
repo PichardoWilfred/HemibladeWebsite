@@ -1,14 +1,14 @@
 <script setup>
-    import ifa from "/img/portrait/IFA.png";
-    import aka from "/img/portrait/AKA.png";
-    import { reactive } from "vue";
-    const list = reactive([
-        'Not a single manufacturer offers all the best products.',
-        'To have the best possible system products must be bought from different manufacturers but not naturaly integrated.',
-        'Useful integration it’s hard to achieve.',
-        'Good integration products are expensive to acquire and complex to set up	and maintain.',
-    ])
-1</script>
+import { reactive } from "vue";
+import ifa from "/img/portrait/IFA.png";
+import aka from "/img/portrait/AKA.png";
+const list = reactive([
+    'Not a single manufacturer offers all the best products.',
+    'To have the best possible system products must be bought from different manufacturers but not naturaly integrated.',
+    'Useful integration it’s hard to achieve.',
+    'Good integration products are expensive to acquire and complex to set up	and maintain.',
+])
+</script>
 
 <template>
     <section class="px-7 lg:px-12 pt-10" id="products">
@@ -22,7 +22,7 @@
             <a class="flex application" href="https://elaborate-donut-4c6c64.netlify.app/">
                 <img :src="ifa" class="" alt="" srcset="">
             </a>
-            <a class="flex application" href="#">
+            <a class="flex application" href="#" @click.prevent="() => {}">
                 <img :src="aka" class=" aka">
             </a>
         </div>
@@ -51,14 +51,10 @@
 </template>
 
 <style scoped>
-
 .application {
     @apply w-full sm:max-w-[460px] lg:min-w-[490px] lg:w-[40%] max-w-[750px] flex-shrink-0 mx-5 mb-10 lg:mb-24;
 }
 img.application.aka {
     transform: scale(1.04) translateY(-10px);
-}
-ul li::before {
-    /* margin-right: 10px; */
 }
 </style>

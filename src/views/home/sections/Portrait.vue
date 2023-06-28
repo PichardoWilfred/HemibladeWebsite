@@ -5,7 +5,7 @@ import portrait_img from '/img/portrait/portrait_logo.png'
 <template>
     <section class="relative lg:h-[840px]">
         <div class="bg-section bg-blue-1 h-full" 
-        :style="{backgroundImage: `url(${portrait_img})`}"></div>
+        :style="{ backgroundImage: `url(${portrait_img})` }"></div>
         <div class="flex h-full w-full absolute top-0 items-center justify-center flex-col z-30 lg:px-6">
             <h2 class="font-consolas max-sm:mx-3 px-6 py-2 rounded-lg text-default font-bold text-center 
             text-2xl mt-[6rem] lg:mt-[4rem]">

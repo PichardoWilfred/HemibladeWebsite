@@ -20,6 +20,5 @@
     <Clients />
     <!-- <Remarks /> -->
     <About id="about"/>
-    <Footer_ id="contact"/>
   </main>
 </template>

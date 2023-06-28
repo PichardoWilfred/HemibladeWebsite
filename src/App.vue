@@ -8,6 +8,7 @@ let marginTop = ref('');
 <template>
   <Navbar @set-height="(payload) => { marginTop = payload }" />
   <RouterView :style="{ marginTop }"/>
+  <Footer_ id="contact"/>
 </template>
 
 <style scoped>
