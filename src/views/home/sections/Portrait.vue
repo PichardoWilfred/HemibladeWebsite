@@ -4,25 +4,27 @@ import portrait_img from '/img/portrait/portrait_logo.png'
 
 <template>
     <section class="relative lg:h-[840px]">
-        <div class="bg-section bg-blue-1 h-full" 
-        :style="{ backgroundImage: `url(${portrait_img})` }"></div>
-        <div class="flex h-full w-full absolute top-0 items-center sm:justify-center flex-col z-30 lg:px-6">
+        <div class="bg-section bg-white h-full" :style="{ backgroundImage: `url(${portrait_img})` }" />
+        <div class="flex flex-col h-full w-full absolute top-0 items-center z-30 lg:px-6">
             <h2 class="font-consolas max-sm:mx-3 px-6 py-2 rounded-lg text-default font-bold text-center 
-            text-2xl mt-[9rem] sm:mt-[6rem] lg:mt-[4rem]">
+            text-2xl mt-[9rem] lg:mt-[9rem]">
                 NOW IT ALL MAKES PERFECT SENSE®
             </h2>
-            <h1 class="font-barlow max-lg:px-3 lg:px-4 lg:py-2 rounded-lg font-semibold max-w-[900px] text-[30px] 
-            lg:text-[48px] lg:leading-[60px] text-center text-blue-4
-            mt-[2rem] lg:mt-[20rem]">
+            <h1 class="font-barlow max-lg:px-3 lg:px-4 lg:py-2 rounded-lg font-semibold max-w-[572px] lg:max-w-[900px] 
+            text-[5.3vw] sm:text-[30px] lg:text-[48px] 
+            lg:leading-[60px] text-center text-blue-4
+            mt-[7.5rem] lg:mt-[20rem]">
                 CONNECT THE DOTS BETWEEN SECURITY SYSTEMS
                 THAT WERE UNRELATED… UNTIL NOW.
             </h1>
-            <p class="font-consolas max-lg:p-4 text-center text-default 
-                text-base lg:text-xl max-w-[800px] mt-[4rem] sm:mt-[1.5rem] max-lg:bg-[#FFFFFFA1]">
-                We develop event-driven integration software tools that add the
-                intelligence and communication needed to coordinate independent 
-                systems to operate as a team to enrich your situational awareness.
-            </p>
+            <div class="max-lg:bg-[#FFFFFF] max-lg:p-4 pt-0 mt-[1.5rem] w-full flex justify-center">
+                <p class="font-consolas text-default text-center 
+                    text-base lg:text-xl max-w-[663px] lg:max-w-[800px]">
+                    We develop event-driven integration software tools that add the
+                    intelligence and communication needed to coordinate independent 
+                    systems to operate as a team to enrich your situational awareness.
+                </p>
+            </div>
         </div>
     </section>
 </template>
@@ -34,22 +36,22 @@ import portrait_img from '/img/portrait/portrait_logo.png'
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
-@media (max-width: 1025px) {
+@media (max-width: 1025px) and (orientation: landscape), (max-width: 1025px){
     section {
-        height: 700px;
+        height: 530px;
     }
     .bg-section {
         background-position: center 50px;
-        background-size: 1900px;
+        background-size: 1000px;
     }
 }
-@media (max-width: 1025px) and (orientation: landscape){
+@media (max-width: 550px) {
     section {
-        height: 800px;
+        min-height: 600px;
     }
     .bg-section {
-        background-position: center 50px;
-        background-size: 1900px;
+        background-size: 1100px;
     }
 }
+
 </style>

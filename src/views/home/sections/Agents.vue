@@ -20,10 +20,10 @@ const list = reactive([
             Click on an Agent’s logo to learn how Hemiblade Software can enhance your security system.
         </p>
         <div class="flex justify-around flex-wrap">
-            <RouterLink class="flex application" to="/ifa">
+            <RouterLink class="application" to="/ifa">
                 <img :src="ifa" >
             </RouterLink>
-            <a class="flex application" href="#" @click.prevent="() => {}">
+            <a class="application" href="#" @click.prevent="() => {}">
                 <img :src="aka" class="aka">
             </a>
         </div>
@@ -53,7 +53,7 @@ const list = reactive([
 
 <style scoped>
 .application {
-    @apply w-full sm:max-w-[460px] lg:min-w-[490px] lg:w-[40%] max-w-[750px] flex-shrink-0 mx-5 mb-10 lg:mb-24;
+    @apply flex w-full sm:max-w-[460px] lg:min-w-[490px] lg:w-[40%] max-w-[750px] flex-shrink-0 mx-5 mb-10 lg:mb-24;
 }
 img.application.aka {
     transform: scale(1.04) translateY(-10px);

@@ -43,7 +43,7 @@
 
 </template>
 <style scoped>
-    button.mobile-menu::after {
+    button.mobile-menu::after { /* circular shadow when clicked */
         position: absolute;
         top: 0;
         left: 0;
@@ -75,7 +75,6 @@
     a.link:hover::after {
         width: 100%;
     }
-    a.mobile-link:last-child:hover::after { }
     .grow-enter-from, .grow-leave-to {
         max-height: 0;
     }
