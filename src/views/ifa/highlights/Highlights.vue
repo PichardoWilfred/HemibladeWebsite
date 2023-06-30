@@ -1,15 +1,15 @@
 <template>
-    <main class="highlights">
+    <main class="highlights pt-20">
         <section v-for="(section, index) in sections" :key="index" 
         class="flex flex-col w-full bg-gradient-to-b font-courier py-12 px-6 lg:px-14 first:mt-1" 
         :class="[section.class]">
         <h2 class="text-[25px] font-bold leading-[0.9] mb-4" :class="section.name.class">
             {{  section.name.content }}
         </h2>
-        <div class="flex max-lg:flex-col w-full">
+        <div class="flex max-xl:flex-col w-full">
             <img v-if="section.multi" :src="get_link(index)" class="min-[1125px]:min-w-[57vw] min-[1125px]:w-[1050px] object-contain" alt="" srcset="">
             <img v-else :src="get_image(section.gallery)" class="lg:w-[1050px] object-contain " alt="" srcset="">
-            <p v-html="section.description.content" class="text-[17px] leading-[1.7] mb-7 lg:ml-10 mt-4" :class="section.description.class"></p>
+            <p v-html="section.description.content" class="text-[17px] leading-[1.7] mb-7 xl:ml-10 mt-4" :class="section.description.class"></p>
         </div>
         </section>
     </main>

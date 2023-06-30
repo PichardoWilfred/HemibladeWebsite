@@ -21,10 +21,10 @@ const list = reactive([
         </p>
         <div class="flex justify-around flex-wrap">
             <RouterLink class="flex application" to="/ifa">
-                <img :src="ifa" class="" alt="" srcset="">
+                <img :src="ifa" >
             </RouterLink>
             <a class="flex application" href="#" @click.prevent="() => {}">
-                <img :src="aka" class=" aka">
+                <img :src="aka" class="aka">
             </a>
         </div>
     </section>

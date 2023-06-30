@@ -2,8 +2,8 @@
 <template>
     <!-- desktop -->
     <header ref="navbar" class="fixed top-0 bg-white w-full font-consolas font-light border-b border-gray-3 z-50">
-        <transition name="grow">
-            <div v-if="!scrolled && website.section === 'ifa'" class="overflow-hidden relative block bg-yellow-3 h-6 w-full border-b border-gray-5 z-[60]" />
+        <transition name="grow" mode="out-in" appear>
+            <div v-show="!scrolled && website.section === 'ifa'" class="relative h-6 bg-yellow-3 w-full border-b border-gray-5 z-[60]" />
         </transition>
         
         <div class="flex items-center w-full px-4 lg:px-10  transition-all" :class="scrolled ? 'py-2':'py-4'">
@@ -76,6 +76,16 @@
         width: 100%;
     }
     a.mobile-link:last-child:hover::after { }
+    .grow-enter-from, .grow-leave-to {
+        max-height: 0;
+    }
+    .grow-enter-to, .grow-leave-from {
+        max-height: 30px;
+    }
+    .grow-enter-active, .grow-leave-active {
+        transition-duration: .1s;
+    }
+
 </style>
 
 <script setup>
