@@ -2,7 +2,10 @@
 <template>
     <!-- desktop -->
     <header ref="navbar" class="fixed top-0 bg-white w-full font-consolas font-light border-b border-gray-3 z-50">
-        <div v-if="!scrolled && website.section === 'ifa'" class="overflow-hidden relative block bg-yellow-3 h-6 w-full border-b border-gray-5 z-[60]" />
+        <transition name="grow">
+            <div v-if="!scrolled && website.section === 'ifa'" class="overflow-hidden relative block bg-yellow-3 h-6 w-full border-b border-gray-5 z-[60]" />
+        </transition>
+        
         <div class="flex items-center w-full px-4 lg:px-10  transition-all" :class="scrolled ? 'py-2':'py-4'">
             <a @click="goHome">
                 <h3 v-if="scrolled" class="cursor-pointer lg:my-2 font-consolas font-bold uppercase text-gray-8 text-xl lg:text-3xl transition-all">
@@ -11,16 +14,11 @@
                 <img v-else alt="Hemiblade logo" class="cursor-pointer logo transition-all w-[100px] lg:w-[150px]" src="/img/nav-logo.png" />
             </a>
             <nav class="hidden lg:block my-1 ms-auto text-lg transition-all h-full">
-                <a v-for="({ label, address, type }) in website.routes" 
-                :key="address" 
-                @click.prevent="scroll(address, type)"
+                <a v-for="({ label, address, type }) in website.routes" :key="address" @click.prevent="scroll(address, type)"
                 :class="website.section === 'ifa' ? 'yellow':'blue'"
                 class="link relative cursor-pointer hover:font-bold mr-8 last:mr-0">
                     {{ label }} 
                 </a>
-                <div class="hidden overflow-hidden w-[200px] h-[42px]">
-                    {{ links }}
-                </div>
             </nav>
             <!-- mobile menu button-->
             <button v-if="website.section !== 'none'" class="mobile-menu lg:hidden relative ms-auto" @click="toggle_mobile_menu()">
@@ -29,22 +27,14 @@
         </div>
     </header>
     <!-- mobile -->
-    <transition name="fade" mode="out-in">
+    <transition name="fade">
         <div v-if="show_mobile_menu" class="absolute h-screen w-screen top-0 left-0">
-            <div class="fixed bg-[#09090954] h-full top-0 left-0 w-full z-40" @click="toggle_mobile_menu()"></div>
+            <div class="fixed bg-[#09090954] h-full top-0 left-0 w-full z-40" @click="toggle_mobile_menu()" /> <!-- mask-->
             <nav class="mobile fixed h-full bg-white right-0 z-50 flex flex-col font-consolas border-t border-gray-3">
-                <template v-for="({ label, address, type }) in website.routes" :key="address">
-                    <router-link v-if="type === 'page'" :to="address" @click.prevent="toggle_mobile_menu()" 
-                    :class="website.section === 'ifa' ? 'yellow':'blue'"
-                    class="mobile-link link relative w-full px-6 py-2 cursor-pointer hover:font-bold">
-                        {{ label }}
-                    </router-link>
-                    <a v-else @click.prevent="debounceToggle(address)" 
-                    :class="website.section === 'ifa' ? 'yellow':'blue'"
-                    class="mobile-link link relative w-full px-6 py-2 cursor-pointer hover:font-bold mr-8 border-b border-gray-3">
-                        {{ label }}
-                    </a>
-                </template>
+                <a v-for="({ label, address, type }) in website.routes" :key="address" @click.prevent="debounceToggle(address, type)" 
+                :class="website.section === 'ifa' ? 'yellow':'blue'" class="link relative w-full px-6 py-2 cursor-pointer hover:font-bold mr-8 border-b border-gray-3">
+                    {{ label }}
+                </a>
             </nav>
         </div>
     </transition>
@@ -85,14 +75,12 @@
     a.link:hover::after {
         width: 100%;
     }
-    a.mobile-link:last-child:hover::after {
-        /* width: 0%; */
-    }
+    a.mobile-link:last-child:hover::after { }
 </style>
 
 <script setup>
 import menu_svg from '/img/mobile-menu.svg';
-import { RouterLink, useRouter, useRoute } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 import { ref, inject, onMounted, onBeforeUnmount, reactive, nextTick, watch } from 'vue';
 
 // mobile menu
@@ -138,19 +126,14 @@ watch(
     () => route.path,
     async () => {
         let website_section;
-        const path = route.path;
 
-        const in_home = ['/'].includes(path);
-        const in_ifa = ['/highlights','/ifa'].includes(path);
-        if (in_home) {
+        if (['/'].includes(route.path)) {
             website_section = 'home';
-        }else if (in_ifa) {
+        }else if (['/highlights','/ifa'].includes(route.path)) {
             website_section = 'ifa';
         }else {
             website_section = 'none';
         }
-
-        // const website_section = path !== '/' ? 'home' : route.path.substring(1);
         website.routes = section_adresses[website_section];
         website.section = website_section;
     },
@@ -174,7 +157,6 @@ const scroll = async (address, type = 'scroll') => {
     if (route.path === '/highlights') {
         await router.push('/ifa')
     }
-    console.log(website.section);
     // else if ( window.matchMedia('(max-width: 1025px)').matches ){ }
     const scrollTo = document.querySelector(address);
     smoothScroll({ scrollTo, offset: navbar_height.value * -1 });
@@ -185,9 +167,9 @@ const goHome = async () => {
     smoothScroll({ scrollTo, offset: navbar_height.value * -1 });
 }
 
-const debounceToggle = (address) => {
+const debounceToggle = (address, type) => {
     listener.nav = setTimeout(() => {
-        scroll(address);
+        scroll(address, type);
         toggle_mobile_menu();
     }, 400) 
 }
@@ -207,8 +189,13 @@ onMounted(() => {
     listener.scroll = document.addEventListener("scroll", () => {
         navbar_height.value = navbar.value.clientHeight;
         scrolled.value = getScrollPercentage(document.body) > 3.5;
+        // console.log("scroll...");
+        // console.log(navbar_height.value);
+        
+        // emit('setHeight', (navbar.value.clientHeight) + 'px');
     });
-    emit('setHeight', (navbar.value.clientHeight - 30) + 'px');
+    // console.log(navbar.value.clientHeight);
+    emit('setHeight', (navbar.value.clientHeight) + 'px');
 });
 
 onBeforeUnmount(() => {

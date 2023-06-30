@@ -6,9 +6,9 @@ import portrait_img from '/img/portrait/portrait_logo.png'
     <section class="relative lg:h-[840px]">
         <div class="bg-section bg-blue-1 h-full" 
         :style="{ backgroundImage: `url(${portrait_img})` }"></div>
-        <div class="flex h-full w-full absolute top-0 items-center justify-center flex-col z-30 lg:px-6">
+        <div class="flex h-full w-full absolute top-0 items-center sm:justify-center flex-col z-30 lg:px-6">
             <h2 class="font-consolas max-sm:mx-3 px-6 py-2 rounded-lg text-default font-bold text-center 
-            text-2xl mt-[6rem] lg:mt-[4rem]">
+            text-2xl mt-[9rem] sm:mt-[6rem] lg:mt-[4rem]">
                 NOW IT ALL MAKES PERFECT SENSE®
             </h2>
             <h1 class="font-barlow max-lg:px-3 lg:px-4 lg:py-2 rounded-lg font-semibold max-w-[900px] text-[30px] 
@@ -17,8 +17,8 @@ import portrait_img from '/img/portrait/portrait_logo.png'
                 CONNECT THE DOTS BETWEEN SECURITY SYSTEMS
                 THAT WERE UNRELATED… UNTIL NOW.
             </h1>
-            <p class="font-consolas max-lg:p-4 text-center text-bold text-default 
-                text-base lg:text-xl max-w-[800px] mt-[1.5rem] max-sm:bg-[#FFFFFFA1]">
+            <p class="font-consolas max-lg:p-4 text-center text-default 
+                text-base lg:text-xl max-w-[800px] mt-[4rem] sm:mt-[1.5rem] max-lg:bg-[#FFFFFFA1]">
                 We develop event-driven integration software tools that add the
                 intelligence and communication needed to coordinate independent 
                 systems to operate as a team to enrich your situational awareness.

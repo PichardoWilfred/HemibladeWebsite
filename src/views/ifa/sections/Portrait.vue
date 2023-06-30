@@ -17,16 +17,16 @@
         <div class="absolute h-full w-full top-0 z-20">
             <div class="relative overflow-hidden bg-[#474747] h-full flex justify-center items-center">
                 <div class="gray-line absolute left-0 top-[32%] lg:bottom-[32%] w-[200%]">
-                    <img src="img/ifa/portrait/line-gray.png" />
+                    <img src="/img/ifa/portrait/line-gray.png" />
                 </div>
                 <div class="green-line absolute left-0 bottom-[22%] lg:bottom-[23%] w-[200%]">
-                    <img src="img/ifa/portrait/line-green.png" />
+                    <img src="/img/ifa/portrait/line-green.png" />
                 </div>
                 <div class="yellow-line absolute left-0 bottom-[18%] lg:bottom-[16%] w-[160%]">
-                    <img src="img/ifa/portrait/line-yellow.png" />
+                    <img src="/img/ifa/portrait/line-yellow.png" />
                 </div>
                 <div class="blue-line absolute left-0 bottom-[10%] lg:bottom-[6%] w-[130%]">
-                    <img src="img/ifa/portrait/line-blue.png" />
+                    <img src="/img/ifa/portrait/line-blue.png" />
                 </div>
                 <div class="absolute bg-gradient-to-b from-white to-[#FFFFFF99] w-full h-full z-20 top-0 left-0" />
             </div>
