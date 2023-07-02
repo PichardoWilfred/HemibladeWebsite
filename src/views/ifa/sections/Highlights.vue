@@ -14,7 +14,7 @@
                     </ul>
                 </div>
                 <router-link 
-                to="/highlights" 
+                to="/ifa/highlights" 
                 class="learn-more-btn group flex flex-shrink-0 items-center justify-center uppercase font-bold font-consolas hover:text-default text-gray-8 bg-gray-3 hover:bg-yellow-3 active:bg-yellow-3 mt-8 lg:mt-14 px-4 py-4 lg:py-1 w-full lg:w-max transition-all">
                     <span class="flex break-normal text-lg font-medium">Learn more</span>
                     <arrow_square class="group-hover:translate-x-2 flex-shrink-0 ml-2 transition-all" :width="12" />

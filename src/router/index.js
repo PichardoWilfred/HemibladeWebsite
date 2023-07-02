@@ -23,7 +23,7 @@ const router = createRouter({
       component: Ifa,
     },
     {
-      path: '/highlights',
+      path: '/ifa/highlights',
       name: 'highlights',
       component: Highlights,
     },

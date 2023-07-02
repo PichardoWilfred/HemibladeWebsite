@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-wrap justify-center px-7 sm:px-20 pt-14 lg:pt-24 pb-10 lg:pb-20">
-        <router-link to="/highlights" tag="div" v-for="(card, index) of cards" :key="index" 
+        <router-link to="/ifa/highlights" tag="div" v-for="(card, index) of cards" :key="index" 
         class="perk border-2 border-gray-3 hover:border-white w-full lg:w-[260px] overflow-auto mb-7 sm:ml-7 cursor-pointer transition-all">
             <div class="flex justify-center border-b-2 border-gray-3 py-4">
                 <component :is="card.icon" />

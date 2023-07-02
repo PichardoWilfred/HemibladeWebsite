@@ -138,7 +138,7 @@ watch(
 
         if (['/'].includes(route.path)) {
             website_section = 'home';
-        }else if (['/highlights','/ifa'].includes(route.path)) {
+        }else if (['/ifa/highlights','/ifa'].includes(route.path)) {
             website_section = 'ifa';
         }else {
             website_section = 'none';
@@ -163,7 +163,7 @@ const scroll = async (address, type = 'scroll') => {
         await router.push(address);
         return;
     }
-    if (route.path === '/highlights') {
+    if (route.path === '/ifa/highlights') {
         await router.push('/ifa')
     }
     // else if ( window.matchMedia('(max-width: 1025px)').matches ){ }
