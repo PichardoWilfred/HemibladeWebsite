@@ -8,7 +8,7 @@ let route = useRoute();
 </script>
 
 <template>
-  <Navbar @set-height="(payload) => { marginTop = route.path === '/ifa' || route.path === '/ifa/highlights' ? (payload+24):payload }" />
+  <Navbar @set-height="(payload) => { marginTop = route.path === '/ifa' || route.path === '/ifa/highlights' ? (payload + 24) : payload }" />
   <RouterView :style="{ marginTop }"/>
   <Footer_ id="contact"/>
 </template>

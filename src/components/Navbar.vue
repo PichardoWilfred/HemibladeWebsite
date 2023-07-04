@@ -111,7 +111,7 @@ const section_adresses = {
         { address: '#media', label: 'Media' },
         { address: '#about', label: 'About' },
         { address: '#contact', label: 'Contact' },
-        { address: '#buy', label: 'Buy' },
+        
         { address: '/privacy-policy', label: 'Privacy Policy', type: 'page' },
     ],
     ifa: [
@@ -119,6 +119,7 @@ const section_adresses = {
         { address:'#gallery', label: 'Gallery' },
         { address:'#highlight', label: 'Highlights' },
         { address:'#comparison', label: 'Integrations' },
+        { address: '#buy', label: 'Buy' },
         { address:'#downloads', label: 'Download' },
         { address:'#contact', label: 'Contact' },
     ],

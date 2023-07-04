@@ -6,6 +6,7 @@
         <Perks />
         <Compatibility />
         <Comparison id="comparison"/>
+        <Buy id="buy"/>
         <Downloads id="downloads"/>
     </main>
 </template>
@@ -16,5 +17,6 @@ import Highlights from "./sections/Highlights.vue";
 import Compatibility from "./sections/Compatibility.vue";
 import Comparison from "./sections/Comparison.vue";
 import Perks from "./sections/Perks.vue";
+import Buy from "./sections/Buy.vue";
 import Downloads from "./sections/Downloads.vue";
 </script>
