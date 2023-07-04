@@ -29,11 +29,11 @@ const list = reactive([
         </div>
     </section>
     
-    <section class="bg-gray-7 font-consolas px-7 lg:px-12 py-24 border-y border-[#EFEFEF] text-white">
+    <section class="years-security bg-gray-7 font-consolas px-7 lg:px-12 py-24 border-y border-[#EFEFEF] text-white">
         <h4 class="max-lg:mb-4 mb-3 uppercase font-bold text-[16px] lg:text-2xl">
             Years in the security industry working with products from many vendors taught us a few things.
         </h4>
-        <p class="text-[15px] lg:text-lg">
+        <p class="text-[15px] lg:text-lg mb-10">
             <ul class="mb-6">
                 <li v-for="(item, index) of list" :key="index" class="before:mr-2 before:content-['-'] flex flex-shrink-0 text-[15px] lg:text-lg mb-3 lg:mb-1">
                     {{ item }}
@@ -47,6 +47,9 @@ const list = reactive([
                 <br /><br />Request your guided demo at: <a class="underline" href="info@hemiblade.com">info@hemiblade.com</a>
             </p>
         </p>
+        <div class="flex max-lg:justify-center flex-wrap">
+            <img :src="`/img/agents/picture-${index}.jpg`" class="w-[420px] mr-6 mb-6" alt="test" v-for="(img, index) of [...Array(8).keys()]" :key="index" >
+        </div>
     </section>
 
 </template>
@@ -57,5 +60,10 @@ const list = reactive([
 }
 img.application.aka {
     transform: scale(1.04) translateY(-10px);
+}
+section.years-security {
+    background-image: url('/img/agents/2nd-section-bg.png');
+    background-position: top center;
+    background-size: 100% 100%;
 }
 </style>
