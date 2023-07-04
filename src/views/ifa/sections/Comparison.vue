@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div class="flex flex-col items-start max-lg:px-7">
+        <div class="flex flex-col items-start px-7">
             <div class="table-section-container">
                 <h1 class="title">INTEGRATION COMPARISON</h1>
     
@@ -111,7 +111,7 @@
                 </p>
             </div>
         </div>
-        <div class="bg-gray-1 max-lg:px-7 pt-6">
+        <div class="bg-gray-1 px-7 pt-6">
             <div class="table-section-container">
                 <div class="my-8 mt-10">
                     <h2 class="subtitle">VMS INTEGRATION COMPARISON</h2>
@@ -140,7 +140,7 @@
                     </div>
                 </div>
                 <div class="flex max-lg:flex-col">
-                    <div class="table-container bg-gray-1 flex flex-col bg- border-gray-3 border mb-20 max-[1475px]:w-full max-[1475px]:overflow-x-scroll">
+                    <div class="table-container bg-gray-1 flex flex-col border-gray-3 border mb-20 w-full overflow-x-scroll">
                         <div v-for="(row, index) in table_rows_2" :key="index" class="custom-table-row flex items-stretch">
                             <div :class="[row.title_col.class, {'full-column': row.content === 'full'}]" 
                             class="grow-[2] min-w-[280px] flex items-center font-consolas leading-[0.5] px-5 py-3 max-lgtext-[15px]">
