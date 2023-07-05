@@ -1,16 +1,3 @@
-<script setup>
-import { reactive } from "vue";
-import { RouterLink } from 'vue-router';
-import ifa from "/img/portrait/IFA.png";
-import aka from "/img/portrait/AKA.png";
-const list = reactive([
-    'Not a single manufacturer offers all the best products.',
-    'To have the best possible system products must be bought from different manufacturers but not naturaly integrated.',
-    'Useful integration it’s hard to achieve.',
-    'Good integration products are expensive to acquire and complex to set up	and maintain.',
-])
-</script>
-
 <template>
     <section class="px-7 lg:px-12 pt-10" id="products">
         <p class="normal-text text-[15px] lg:text-xl pb-12 lg:pb-[60px] max-w-[1700px]">
@@ -31,29 +18,49 @@ const list = reactive([
     
     <section class="years-security bg-gray-7 font-consolas px-7 lg:px-12 py-24 border-y border-[#EFEFEF] text-white">
         <h4 class="max-lg:mb-4 mb-3 uppercase font-bold text-[16px] lg:text-2xl">
-            Years in the security industry working with products from many vendors taught us a few things.
+            Years in the security industry working with products from many vendors <br/> taught us a few things.
         </h4>
         <p class="text-[15px] lg:text-lg mb-10">
-            <ul class="mb-6">
-                <li v-for="(item, index) of list" :key="index" class="before:mr-2 before:content-['-'] flex flex-shrink-0 text-[15px] lg:text-lg mb-3 lg:mb-1">
+            <ul class="mb-3">
+                <li v-for="(item, index) of list" :key="index" class="before:mr-2 before:content-['•'] flex flex-shrink-0 leading-[20px] text-[15px] lg:text-[18px] mb-3 lg:mb-1">
                     {{ item }}
                 </li>
             </ul>
             <br />
             <p class="text-[15px] lg:text-lg">
                 Hemiblade software tools are easy on the budget, a breeze to set up and maintain, and very simple to use.
-                <br /><br />
+                <br />
                 We stand 100% behind our products. Ask for a free demo. We will guide you thru to have the best experience.
-                <br /><br />Request your guided demo at: <a class="underline" href="info@hemiblade.com">info@hemiblade.com</a>
+                <br />Request your guided demo at: <a class="underline" href="info@hemiblade.com">info@hemiblade.com</a>
             </p>
         </p>
-        <div class="flex max-lg:justify-center flex-wrap">
-            <img :src="`/img/agents/picture-${index}.jpg`" class="w-[420px] mr-6 mb-6" alt="test" v-for="(img, index) of [...Array(8).keys()]" :key="index" >
+        <div class="flex justify-between flex-wrap">
+            <img v-for="(_, index) of [ ...Array(8).keys() ]" :key="index"  :src="`/img/agents/picture-${index}.jpg`" 
+            class="md:w-[23.5%] mb-8" alt="test" />
         </div>
     </section>
 
 </template>
+<script setup>
+import { RouterLink } from 'vue-router';
+import src_0 from "/img/agents/picture-0.jpg";
 
+import ifa from "/img/portrait/IFA.png";
+import aka from "/img/portrait/AKA.png";
+
+const list =[
+    'Not a single manufacturer offers all the best products.',
+    'To have the best possible system products must be bought from different manufacturers but not naturaly integrated.',
+    'Useful integration it’s hard to achieve.',
+    'Good integration products are expensive to acquire and complex to set up	and maintain.',
+]
+const images = [
+    {
+        class_:"",
+        src: src_0
+    }
+];
+</script>
 <style scoped>
 .application {
     @apply flex w-full sm:max-w-[460px] lg:min-w-[490px] lg:w-[40%] max-w-[750px] flex-shrink-0 mx-5 mb-10 lg:mb-24;

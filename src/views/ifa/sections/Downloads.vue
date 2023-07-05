@@ -1,13 +1,12 @@
 <template>
-    <section class="flex flex-col px-7 sm:px-20 pt-10 lg:pt-20 pb-[5.5rem] lg:pl-32">
+    <section class="flex flex-col px-7 sm:px-20 pt-10 lg:pt-20 pb-[7rem] lg:pl-32">
         
         <h1 class="font-consolas font-bold text-gray-8 text-3xl lg:text-4xl mb-4 uppercase">Downloads</h1>
         <div class="flex flex-wrap justify-between">
-
             <div>
                 <h2 class="download-title">BROCHURES</h2>
                 <ul>
-                    <li v-for="({ title, download }, index) in downloads" :key="index" class="text-gray-8 text-[15px] lg:text-2xl lg:max-w-[100%] max-lg:mb-3 mb-1">
+                    <li v-for="({ title, download }, index) in downloads" :key="index" class="download-item">
                         <a :href="download" class="cursor-pointer hover:underline" download>
                             {{ title }}
                         </a>
@@ -18,7 +17,7 @@
             <div class="xl:mx-10">
                 <h2 class="download-title">SOFTWARE</h2>
                 <ul>
-                    <li v-for="({ title, software }, index) in softwares" :key="index" class="text-gray-8 text-[15px] lg:text-2xl lg:max-w-[100%] max-lg:mb-3">
+                    <li v-for="({ title, software }, index) in softwares" :key="index" class="download-item">
                         <a :href="software" class="cursor-pointer hover:underline" download>
                             {{ title }}
                         </a>
@@ -29,7 +28,7 @@
             <div>
                 <h2 class="download-title">DOCUMENTATION</h2>
                 <ul>
-                    <li v-for="({ title, download }, index) in integration_features" :key="index" class="text-gray-8 text-[15px] lg:text-2xl lg:max-w-[100%] max-lg:mb-3">
+                    <li v-for="({ title, download }, index) in integration_features" :key="index" class="download-item">
                         <a :href="download" class="cursor-pointer hover:underline" download>
                             {{ title }}
                         </a>
@@ -93,5 +92,8 @@ export default {
 <style scoped>
     .download-title {
         @apply font-consolas font-bold text-gray-8 text-xl lg:text-2xl mt-6 mb-5 lg:mb-1;
+    }
+    .download-item {
+        @apply text-gray-8 text-[15px] lg:text-xl lg:max-w-[100%] max-lg:mb-3;
     }
 </style>
