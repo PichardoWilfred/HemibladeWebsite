@@ -16,7 +16,7 @@
         </div>
     </section>
     
-    <section class="years-security bg-gray-7 font-consolas px-7 lg:px-12 py-24 border-y border-[#EFEFEF] text-white">
+    <section class="years-security bg-gray-7 font-consolas px-7 lg:px-12 pt-24 pb-[54px] border-y border-[#EFEFEF] text-white">
         <h4 class="max-lg:mb-4 mb-3 uppercase font-bold text-[16px] lg:text-2xl">
             Years in the security industry working with products from many vendors <br/> taught us a few things.
         </h4>
@@ -35,8 +35,8 @@
             </p>
         </p>
         <div class="flex justify-between flex-wrap">
-            <img v-for="(_, index) of [ ...Array(8).keys() ]" :key="index"  :src="`/img/agents/picture-${index}.jpg`" 
-            class="md:w-[23.5%] mb-8" alt="test" />
+            <img v-for="(_, index) of [ ...Array(8).keys() ]" :key="index" :src="`/img/agents/picture-${index}.jpg`" 
+            class="agent md:w-[23.5%] mb-12 md:mb-[2%]" alt="test"/>
         </div>
     </section>
 
@@ -72,5 +72,8 @@ section.years-security {
     background-image: url('/img/agents/2nd-section-bg.png');
     background-position: top center;
     background-size: 100% 100%;
+}
+img.agent {
+    height: auto;
 }
 </style>
