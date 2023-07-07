@@ -18,7 +18,7 @@
                 <h2 class="download-title">SOFTWARE</h2>
                 <ul>
                     <li v-for="({ title, software }, index) in softwares" :key="index" class="download-item">
-                        <a :href="software" class="cursor-pointer hover:underline" download>
+                        <a :href="software" class="cursor-pointer hover:underline" target="_blank" download>
                             {{ title }}
                         </a>
                     </li>
@@ -63,21 +63,17 @@ export default {
             ],
             softwares: [
                 {
-                    title: 'IFA 2023-R1 Installer B1.0.3.3',
-                    software: 'https://drive.google.com/file/d/1RYyrBaMjXnGZR3FDeLjEHUICfpGUGIOK/view?usp=sharing',
-                },
-                {
-                    title: 'IFA Release Notes',
-                    software: '',
-                },
+                    title: 'IFA 2023-R1 Installer v1.0.4.3',
+                    software: 'https://drive.google.com/file/d/1LJRVVyy2nNcFP6ZVWa31sngRZ24z8Tfw/view?usp=sharing',
+                }
             ],
             integration_features: [
                 {
-                    title: 'Control Panel Integration B1.0.3.3',
+                    title: 'Control Panel Integration v1.0.3.3',
                     download: 'tables/IFA Panel integration comparison B1.0.3.pdf',
                 },
                 {
-                    title: 'VMS Integration B1.0.3.3',
+                    title: 'VMS Integration v1.0.3.3',
                     download: 'tables/IFA VMS integration comparison B1.0.3.pdf',
                 },
                 {

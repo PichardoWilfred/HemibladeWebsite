@@ -5,7 +5,7 @@
             <div class="flex flex-col">
                 <div class="flex flex-col">
                     <h4 class="font-medium  text-white text-[16px] lg:text-2xl mb-2">Get in Touch via Email</h4>
-                    <a class="flex text-[#b3b3b3] font-regular text-[16px] lg:text-lg hover:text-yellow transition-all cursor-pointer"  href = "mailto: abc@example.com">
+                    <a class="flex text-[#b3b3b3] font-regular text-[16px] lg:text-lg hover:text-yellow transition-all cursor-pointer"  href = "mailto: info@hemiblade.com">
                         <img src="/img/footer/email.svg" class="w-8 mr-3" alt="" srcset="">
                         info@hemiblade.com
                     </a>
