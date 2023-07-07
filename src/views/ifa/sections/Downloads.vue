@@ -18,7 +18,7 @@
                 <h2 class="download-title">SOFTWARE</h2>
                 <ul>
                     <li v-for="({ title, software }, index) in softwares" :key="index" class="download-item">
-                        <a :href="software" class="cursor-pointer hover:underline" download>
+                        <a :href="software" class="cursor-pointer hover:underline" target="_blank" download>
                             {{ title }}
                         </a>
                     </li>
