@@ -27,12 +27,6 @@ export default {
                 { title: 'Highlights', section: "#highlight", offset: -260 },
                 { title: 'Perks', section: "#perks", offset: -255 },
             ],
-            downloads: [
-                { title: '[ IFA ] Brochure - Take control of your security (EN)', download: 'files/text.txt' },
-                { title: '[ IFA ] Brochure - Tome control de su seguridad (ES)', download: 'files/text.txt' },
-                { title: '[ IFA ] Brochure - Supervise your panels (EN)', download: 'files/text.txt' },
-                { title: '[ IFA ] Brochure - Supervise sus paneles (ES)', download: 'files/text.txt' },
-            ]
         }
     },
 }
