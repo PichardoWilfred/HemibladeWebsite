@@ -7,7 +7,7 @@
             The best solution for security panel supervision and instant video alarm confirmation is offered in two versions and <br class="max-sm:hidden"/> a trouble-free subscription mode for your convenience.
         </p>
         <div class="flex max-[835px]:flex-col justify-center z-10 mt-6 lg:mt-6 first:justify-end">
-            <div v-for="({name, price, color, class_, description, list}, index) of cards" :key="index" 
+            <div v-for="({name, price, color, class_, list_class, description, list}, index) of cards" :key="index" 
             class="flex flex-col min-[835px]:mr-28 last:mr-0 items-center" :class="class_">
                 <div class="card flex flex-col p-[2px] bg-white rounded-lg mb-10 w-[285px]">
                     <div class="h-[30px]"> <!-- badge -->
@@ -31,8 +31,9 @@
                         {{ description }}
                     </p>
                     <ul class="pl-8">
-                        <li v-for="(item, index_) of list" :key="index_" 
-                        class="before:mr-1 before:content-['>'] before:text-[#56C1FF] 
+                        <li v-for="(item, index_) of list" :key="index_"
+                        :class="list_class"
+                        class="before:mr-1 before:content-['>']
                         flex flex-shrink-0 text-[15px] leading-[20px] lg:text-[16px] mb-3 lg:mb-0">
                             {{ item }}
                         </li>
@@ -59,13 +60,14 @@ const cards = [
         color: '#F3BE19',
         description: 'Forward panel messages to VMS for post-processing.',
         list: [
-        'Alarm panel integration.',
-        'Panels live message monitoring.',
-        'VMS integration.' ,       
-        'IFA System Dashboard.',
-        'Panels messages log.'
+            'Alarm panel integration.',
+            'Panels live message monitoring.',
+            'VMS integration.' ,       
+            'IFA System Dashboard.',
+            'Panels messages log.'
         ],
         class_: 'min-[835px]:items-end',
+        list_class: 'before-yellow'
     },
     {
         name: 'STANDARD',
@@ -78,9 +80,9 @@ const cards = [
             'RTE Events.',
             'Panel live zone monitoring.',
             'Panel remote control (Arm, disarm, more).',
-            'Arming assistant.',
+            'Visual arming assistant.',
             'Alarm history.',
-            'Auto video download from related alarms.',
+            'Auto video backup from related alarms.',
             'Multiple reports from panels and VMS.',
             'Manual video download.',
             'Optimized to display alarms on 4k monitors.',
@@ -88,10 +90,12 @@ const cards = [
             'Sessions administration.',
             'Users audit reports.',
             'Alarms notifications thru E-Mail and Telegram.',
+            'Incidents research.',
             'More.',
         ],
         class_: 'min-[835px]:items-start',
-    }
+        list_class: 'before-blue'
+    } 
     ];
 </script>
 <style scoped>
@@ -107,12 +111,19 @@ section {
     }
 }
 /* bg-gradient-to-b from-[#56C1FF] to-[#0076BA] */
+.blue-bubble {
+    background: linear-gradient(180deg, #56C1FF 0%, #0076BA 110%);
+}
+@media (min-width: 768px) {
     .blue-bubble {
-        background: linear-gradient(180deg, #56C1FF 0%, #0076BA 110%);
+        background: linear-gradient(180deg, #56C1FF 50%, #0076BA 110%);
     }
-    @media (min-width: 768px) {
-        .blue-bubble {
-            background: linear-gradient(180deg, #56C1FF 50%, #0076BA 110%);
-        }
-    }
+}
+
+.before-yellow::before {
+    color: #F3BE19;
+}
+.before-blue::before {
+    color: #56C1FF;
+}
 </style>
