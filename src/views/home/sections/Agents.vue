@@ -8,10 +8,10 @@
         </p>
         <div class="flex justify-around flex-wrap">
             <RouterLink class="application" to="/ifa">
-                <img :src="ifa" >
+                <img src="/img/portrait/IFA.png" >
             </RouterLink>
             <a class="application" href="#" @click.prevent="() => {}">
-                <img :src="aka" class="aka">
+                <img src="/img/portrait/AKA.png" class="aka">
             </a>
         </div>
     </section>
@@ -36,7 +36,7 @@
         </p>
         <div class="flex justify-between flex-wrap">
             <img v-for="(_, index) of [ ...Array(8).keys() ]" :key="index" :src="`/img/agents/picture-${index}.jpg`" 
-            class="agent md:w-[23.5%] mb-12 md:mb-[2%]" alt="test"/>
+            class="agent md:w-[23.5%] mb-12 md:mb-[2%] border border-gray-7" alt="test"/>
         </div>
     </section>
 
@@ -45,8 +45,6 @@
 import { RouterLink } from 'vue-router';
 import src_0 from "/img/agents/picture-0.jpg";
 
-import ifa from "/img/portrait/IFA.png";
-import aka from "/img/portrait/AKA.png";
 
 const list =[
     'Not a single manufacturer offers all the best products.',
@@ -74,6 +72,5 @@ section.years-security {
     background-size: 100% 100%;
 }
 img.agent {
-    height: auto;
 }
 </style>
