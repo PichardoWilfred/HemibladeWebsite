@@ -26,7 +26,11 @@
 <style scoped>
 section {
     background-image: url('/img/about/about-us-bg.png');
-    /* background-position: 0px -10px; */
     background-size: 100% 100%;
+}
+@media (max-width: 576px) {
+    section {
+        background-size: 1500px;
+    }
 }
 </style>

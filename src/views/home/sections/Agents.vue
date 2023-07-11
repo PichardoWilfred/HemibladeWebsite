@@ -34,17 +34,15 @@
                 <br />Request your guided demo at: <a class="underline" href="info@hemiblade.com">info@hemiblade.com</a>
             </p>
         </p>
-        <div class="flex justify-between flex-wrap">
+        <div class="flex flex-wrap max-w-[1400px]">
             <img v-for="(_, index) of [ ...Array(8).keys() ]" :key="index" :src="`/img/agents/picture-${index}.jpg`" 
-            class="agent md:w-[23.5%] mb-12 md:mb-[2%] border border-gray-7" alt="test"/>
+            class="agent md:w-[21.5%] max-lg:mb-12 border border-gray-7" alt="test"/>
         </div>
     </section>
 
 </template>
 <script setup>
 import { RouterLink } from 'vue-router';
-import src_0 from "/img/agents/picture-0.jpg";
-
 
 const list =[
     'Not a single manufacturer offers all the best products.',
@@ -52,12 +50,6 @@ const list =[
     'Useful integration it’s hard to achieve.',
     'Good integration products are expensive to acquire and complex to set up	and maintain.',
 ]
-const images = [
-    {
-        class_:"",
-        src: src_0
-    }
-];
 </script>
 <style scoped>
 .application {
@@ -69,8 +61,9 @@ img.application.aka {
 section.years-security {
     background-image: url('/img/agents/2nd-section-bg.png');
     background-position: top center;
-    background-size: 100% 100%;
 }
-img.agent {
+section.years-security {
+    background-image: url('/img/agents/2nd-section-bg.png');
+    background-position: top center;
 }
 </style>

@@ -6,7 +6,7 @@
             <div>
                 <h2 class="download-title">BROCHURES</h2>
                 <ul>
-                    <li v-for="({ title, download }, index) in downloads" :key="index" class="download-item">
+                    <li v-for="({ title, download }, index) in brochures" :key="index" class="download-item">
                         <a :href="download" class="cursor-pointer hover:underline" download>
                             {{ title }}
                         </a>
@@ -28,7 +28,7 @@
             <div>
                 <h2 class="download-title">DOCUMENTATION</h2>
                 <ul>
-                    <li v-for="({ title, download }, index) in integration_features" :key="index" class="download-item">
+                    <li v-for="({ title, download }, index) in documentation" :key="index" class="download-item">
                         <a :href="download" class="cursor-pointer hover:underline" download>
                             {{ title }}
                         </a>
@@ -43,7 +43,7 @@ export default {
     name: 'Downloads',
     data() {
         return {
-            downloads: [
+            brochures: [
                 {
                     title: 'Take control of your security (EN)',
                     download: 'files/[IFA] Brochure - Take control of your security (EN).pdf',
@@ -63,11 +63,11 @@ export default {
             ],
             softwares: [
                 {
-                    title: 'IFA 2023-R1 Installer v1.0.4.3',
+                    title: 'IFA 2023-R1 B1.0.3.3 Installer',
                     software: 'https://drive.google.com/file/d/1LJRVVyy2nNcFP6ZVWa31sngRZ24z8Tfw/view?usp=sharing',
                 }
             ],
-            integration_features: [
+            documentation: [
                 {
                     title: 'Control Panel Integration v1.0.3.3',
                     download: 'tables/IFA Panel integration comparison B1.0.3.pdf',
@@ -79,7 +79,12 @@ export default {
                 {
                     title: 'IFA Telegram Integration Guide',
                     download: 'guide/IFA Telegram Guide.pdf',
+                },
+                {
+                    title: 'IFA versions comparison',
+                    download: 'files/IFA versions functionality comparison B1.0.3.0.pdf',
                 }
+                // “IFA versions comparison”
             ]
         }
     },
