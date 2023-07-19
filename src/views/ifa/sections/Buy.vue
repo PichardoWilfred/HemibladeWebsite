@@ -1,5 +1,5 @@
 <template>
-    <section class="overflow-hidden flex flex-col items-center relative min-h-[780px] bg-gray-8 pb-14 px-7 lg:px-32">
+    <section class="overflow-hidden flex flex-col items-center relative min-h-[780px] bg-gray-8 pb-[70px] px-7 lg:px-32">
         <p class="sm:text-center relative z-10 font-italic max-w-[1600px]
             font-consolas text-white md:leading-[28px] xl:leading-[38px] text-[18px] md:text-[20px] xl:text-[33px] 
             pt-8 xl:pt-18">
@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="relative w-full min-[835px]:h-[1px]">
-            <div class="min-[835px]:absolute left-[0px] lg:left-[-50px] top-[-110px] flex flex-col self-start 
+            <div class="min-[835px]:absolute left-[0px] lg:left-[-50px] top-[-98px] flex flex-col self-start 
             lg:mb-6 md:max-w-[400px] xl:max-w-[800px]">
                 <img src="/img/ifa/buy/flag_dr.png" class="w-[90px] mb-2" alt="DOMINICAN REPUBLIC"/>
                 <h3 class="font-consolas text-[16px] sm:leading-[15px] lg:text-[13px] text-white">
