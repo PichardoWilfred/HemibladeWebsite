@@ -38,7 +38,7 @@
                         </li>
                     </ul>
                     <div v-if="index === 1" class="max-[835px]:hidden absolute flex bottom-[-70px]">
-                        <a href="tables/IFA VMS integration comparison B1.0.3.pdf" download
+                        <a href="files/buy/IFA Versions comparison.pdf" download
                         class="learn-more-btn group flex flex-shrink-0 items-center justify-center font-bold font-consolas
                         hover:text-default text-gray-8 bg-gray-3 hover:bg-yellow-3 active:bg-yellow px-4 py-4 lg:py-1 ml-14 transition-all cursor-pointer">
                             <b class="flex break-normal text-lg font-medium">DOWNLOAD COMPARISON CHARTS</b>
@@ -60,9 +60,6 @@
                 </h4>
             </div>
         </div>
-    </section>
-    <section class="hidden">
-        <img class="w-full" src="/img/agents/newbuy(1).jpg" alt="" srcset="">
     </section>
 </template>
 <script setup>

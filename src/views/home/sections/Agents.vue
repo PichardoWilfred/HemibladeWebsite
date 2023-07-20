@@ -16,8 +16,8 @@
         </div>
     </section>
     
-    <section class="years-security bg-gray-7 font-consolas px-7 lg:px-12 pt-24 pb-[54px] border-y border-[#EFEFEF] text-white">
-        <h4 class="max-lg:mb-4 mb-3 uppercase font-bold text-[16px] lg:text-2xl">
+    <section class="years-security bg-gray-7 font-consolas px-7 lg:px-12 pt-[60px] pb-[54px] border-y border-[#EFEFEF] text-white">
+        <h4 class="max-lg:mb-4 mb-6 uppercase font-bold text-[16px] lg:text-[24px] leading-[28px]">
             Years in the security industry working with products from many vendors <br/> taught us a few things.
         </h4>
         <p class="text-[15px] lg:text-lg mb-10">
@@ -36,7 +36,7 @@
         </p>
         <div class="flex flex-wrap max-w-[1400px]">
             <img v-for="(_, index) of [ ...Array(8).keys() ]" :key="index" :src="`/img/agents/picture-${index}.jpg`" 
-            class="agent md:w-[21.5%] max-lg:mb-12 border border-gray-7" alt="test"/>
+            class="agent md:w-[22%] max-lg:mb-12 border border-gray-7" alt="test"/>
         </div>
     </section>
 

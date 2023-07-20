@@ -8,12 +8,12 @@
         
         <div class="flex items-center w-full px-4 lg:px-10  transition-all" :class="scrolled ? 'py-2':'py-4'">
             <a @click="goHome">
-                <h3 v-if="scrolled" class="cursor-pointer lg:my-2 font-consolas font-bold uppercase text-gray-8 text-xl lg:text-3xl transition-all">
+                <h3 v-if="scrolled" class="cursor-pointer lg:my-1 font-bold font-consolas uppercase text-gray-8 text-xl lg:text-2xl transition-all">
                     Hemiblade software
                 </h3>
-                <img v-else alt="Hemiblade logo" class="cursor-pointer logo transition-all w-[100px] lg:w-[150px]" src="/img/nav-logo.png" />
+                <img v-else alt="Hemiblade logo" class="cursor-pointer logo transition-all w-[100px] lg:w-[120px]" src="/img/nav-logo.png" />
             </a>
-            <nav class="hidden lg:block my-1 ms-auto text-lg transition-all h-full">
+            <nav class="hidden lg:block my-1 ms-auto text-[17px] transition-all h-full">
                 <a v-for="({ label, address, type }) in website.routes" :key="address" @click.prevent="scroll(address, type)"
                 :class="website.section === 'ifa' ? 'yellow':'blue'"
                 class="link relative cursor-pointer hover:font-bold mr-8 last:mr-0">

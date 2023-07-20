@@ -81,7 +81,7 @@ export default {
                     download: 'guide/IFA Telegram Guide.pdf',
                 },
                 {
-                    title: 'IFA versions comparison',
+                    title: 'IFA Versions Comparison',
                     download: 'files/IFA versions functionality comparison B1.0.3.0.pdf',
                 }
                 // “IFA versions comparison”

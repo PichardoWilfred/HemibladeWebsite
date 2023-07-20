@@ -1,16 +1,16 @@
 <template>
-    <main class="highlights pt-20">
+    <main class="highlights pt-12">
         <section v-for="(section, index) in sections" :key="index" 
-        class="flex flex-col w-full bg-gradient-to-b font-courier py-12 px-6 lg:px-14 first:mt-1" 
+        class="flex flex-col w-full bg-gradient-to-b font-courier py-12 px-6 lg:px-14 first:mt-1 border-b border-gray-3 even:bg-gray-1" 
         :class="[section.class]">
-        <h2 class="text-[25px] font-bold leading-[0.9] mb-4" :class="section.name.class">
-            {{  section.name.content }}
-        </h2>
-        <div class="flex max-xl:flex-col w-full">
-            <img v-if="section.multi" :src="get_link(index)" class="min-[1125px]:min-w-[57vw] min-[1125px]:w-[1050px] object-contain" alt="" srcset="">
-            <img v-else :src="get_image(section.gallery)" class="lg:w-[1050px] object-contain " alt="" srcset="">
-            <p v-html="section.description.content" class="text-[17px] leading-[1.7] mb-7 xl:ml-10 mt-4" :class="section.description.class"></p>
-        </div>
+            <h2 class="text-[25px] font-bold leading-[0.9] mb-4" :class="section.name.class">
+                {{  section.name.content }}
+            </h2>
+            <div class="flex max-xl:flex-col w-full">
+                <img v-if="section.multi" :src="get_link(index)" class="min-[1125px]:min-w-[57vw] min-[1125px]:w-[1050px] object-contain" alt="" srcset="">
+                <img v-else :src="get_image(section.gallery)" class="lg:w-[1050px] object-contain " alt="" srcset="">
+                <p v-html="section.description.content" class="text-[17px] leading-[1.7] mb-7 xl:ml-10 mt-4" :class="section.description.class"></p>
+            </div>
         </section>
     </main>
 </template>
@@ -33,7 +33,8 @@ export default {
                         content:'IFA makes controlling and supervising your alarm panels a breeze because of the unified user interface regardless of the panel brand or model. Learn it once to use them all.',
                         class: 'max-w-[680px]'
                     },
-                    class: 'from-[#FFFFFF] to-[#F3BE19]',
+                    // from-[#FFFFFF] to-[#F3BE19]
+                    class: '',
                     multi: true,
                     gallery: ['IFA (1-1)', 'IFA (1-2)'],
                     selected_image: 0,
@@ -60,7 +61,8 @@ export default {
                         content:'Once your alarm panel and VMS are integrated into IFA, relate alarm panel zones to VMS cameras and you are all set to have your alarm panel events and related video for instant alarm confirmation.',
                         class: 'max-w-[980px]'
                     },
-                    class: 'from-[#FFFFFF] to-[#1FB8E9]',
+                    // from-[#FFFFFF] to-[#1FB8E9]
+                    class: '',
                     multi: false,
                     gallery: 'IFA (3-1)',
                 },
@@ -87,7 +89,8 @@ export default {
                         content:'IFA sends notification messages thru E-Mail and/or Telegram for instant messaging. <br /> <br/> Both messages can include a photo from the related camera.  <br />Unlimited notification rules can be defined each with a different set of events to notify.',
                         class: ''
                     },
-                    class: 'from-[#FFFFFF] to-[#DDDDDD]',
+                    // from-[#FFFFFF] to-[#DDDDDD]
+                    class: '',
                     multi: false,
                     gallery: 'IFA (5-1)',
                 },
@@ -114,7 +117,8 @@ export default {
                         content:'Stop connecting to individual panels to retrieve operational logs. IFA keeps all your panel logs in a single place for simplified access. <br /> <br /> Generate reports, print or export records for external processing. Generate reports of single or multiple panels at once for all or specific types of events for cross-reference analysis.',
                         class: ''
                     },
-                    class: 'from-[#FFFFFF] to-[#610203]',
+                    // from-[#FFFFFF] to-[#610203]
+                    class: '',
                     multi: true,
                     gallery: this.get_array({ length: 5, section: 7 }),
                     selected_image: 0,
