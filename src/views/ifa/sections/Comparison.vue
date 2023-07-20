@@ -161,10 +161,56 @@
                         </div>
                     </div>
                     <div class="flex items-start lg:ml-8 mb-12">
-                        <a href="tables/IFA VMS integration comparison B1.0.3.pdf" download
+                        <a href="files/buy/IFA Versions comparison.pdf" download
                         class="learn-more-btn group flex flex-shrink-0 items-center justify-center uppercase font-bold font-consolas hover:text-default text-gray-8 bg-gray-3 hover:bg-yellow-3 active:bg-yellow px-4 py-4 lg:py-1 w-full lg:w-max transition-all cursor-pointer">
                             <span class="flex break-normal text-lg font-medium">Download</span>
                             <download-icon width="22px" height="22px" class="ml-2" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="px-7 pt-6">
+            <div class="table-section-container">
+                <div class="my-8 mt-10">
+                    <h2 class="subtitle">IFA VERSIONS COMPARISON</h2>
+                    <p class="normal-text-bold">Release date: 2023-07-09</p>
+                    <p class="normal-text-bold">IFA built 1.0.4.0</p>
+                </div>
+                
+                <div class="flex max-lg:flex-col">
+                    <div class="table-container bg-gray-1 border-gray-3 border w-full overflow-x-scroll min-[1300px]:max-w-[1200px] min-[1300px]:w-[70%] mb-20">
+                        <div v-for="(row, index) in table_rows_3" :key="index" class="custom-table-row flex items-stretch">
+                            <div :class="[row.title_col.class]" 
+                            class="min-w-[455px] grow flex items-center font-consolas leading-[0.5] px-5 py-3 max-lg:text-[15px]">
+                                {{ row.title_col.text }}
+                            </div>
+                            <template v-if="row.content === 'title'">
+                                <div :class="row.col_1.class" 
+                                class="flex items-center justify-center flex-shrink-0 font-regular font-consolas px-5 py-1 text-lg text-center w-[180px]">
+                                    {{ row.col_1.text }}
+                                </div>
+                                <div :class="row.col_2.class" 
+                                class="flex items-center justify-center flex-shrink-0 font-regular border-x border-gray-3 font-consolas px-5 py-1 text-lg text-center w-[180px]">
+                                    {{ row.col_2.text }}
+                                </div>
+                            </template>
+                            <template v-if="row.content === 'dots'">
+                                <div class="content-column flex-shrink-0 py-1 bg-yellow-1 border-x border-x-gray-3 leading-[0.5] w-[180px]" :class="row.content_1_class">
+                                    •
+                                </div>
+                                <div class="content-column flex-shrink-0 py-1 bg-blue-1 leading-[0.5] w-[180px]" :class="row.content_2_class">
+                                    •
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="flex items-start lg:ml-8 mb-12">
+                        <a download href="tables/IFA Panel integration comparison B1.0.3.pdf"
+                        class="learn-more-btn group flex flex-shrink-0 items-center justify-center uppercase font-bold font-consolas hover:text-default text-gray-8 bg-gray-3 hover:bg-yellow-3 active:bg-yellow-3 px-4 py-4 lg:py-1 w-full lg:w-max transition-all cursor-pointer">
+                            <span class="flex break-normal text-lg font-medium">Download</span>
+                            <downloadIcon width="22px" height="22px" class="ml-2" />
                         </a>
                     </div>
                 </div>
@@ -608,7 +654,307 @@ export default {
                     col_5: 'text-white',
                     col_6: 'text-white',
                 },
-            ]
+            ],
+            table_rows_3: [
+                {   
+                    content: 'title',
+                    title_col: {
+                        text: 'FEATURE',
+                        class: 'font-bold bg-gray-4'
+                    },
+                    col_1: {
+                        text: 'FORWARD',
+                        class: 'font-bold bg-yellow-3'
+                    },
+                    col_2: {
+                        text: 'STANDARD',
+                        class: 'font-bold bg-blue-3'
+                    },
+                    col_3: {
+                        text: 'DSC POWER PRO',
+                        class: 'font-bold bg-blue-3'
+                    }
+                },
+                {   
+                    content: 'dots',
+                    title_col: {
+                        text: 'Listener network message monitor.',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-gray-8',
+                    content_2_class: 'text-gray-8',
+                },
+                {   
+                    content: 'dots',
+                    title_col: {                    
+                        text: 'System dashboard.',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-gray-8',
+                    content_2_class: 'text-gray-8',
+                },
+                {   
+                    content: 'dots',
+                    title_col: {
+                        text: 'Visor dashboard',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {   
+                    content: 'dots',
+                    title_col: {
+                        text: 'Audio feedback mute control',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {   
+                    content: 'dots',
+                    title_col: {
+                        text: 'Multiuser',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {   
+                    content: 'dots',
+                    title_col: {
+                        text: 'Connection & session manager',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {   
+                    content: 'dots',
+                    title_col: {
+                        text: 'Recipients manager',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-gray-8',
+                    content_2_class: 'text-gray-8',
+                },
+                {   
+                    content: 'dots',
+                    title_col: {
+                        text: 'Recipients reports',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {   
+                    content: 'dots',
+                    title_col: {
+                        text: 'Panels manager',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-gray-8',
+                    content_2_class: 'text-gray-8',
+                },
+                {   
+                    content: 'dots',
+                    title_col: {
+                        text: 'Panels reports',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {   
+                    content: 'dots',
+                    title_col: {
+                        text: 'Panel zone status live monitor',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Panel remote. Arm, disarm, more.',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Push events and bookmarks to recipients',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-gray-8',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Realtime events (RTE)',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Visual arming assistant',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Listener logs',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-gray-8',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Dispacher logs',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-gray-8',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'System logs',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-gray-8',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Audit log',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-gray-8',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Login log',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-gray-8',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Notification manager',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-gray-8',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'E-Mail notifications',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Telegram notifications',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Alarms research',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Incidents research',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Live and recorded video from related alarms',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Alarms history',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Auto video backup from related alarms',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Manual video download',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Optimized to display alarms on 4k displays',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                },
+                {
+                    content: 'dots',
+                    title_col: {
+                        text: 'Extensive configuration options',
+                        class: 'bg-white'
+                    },
+                    content_1_class: 'text-yellow-1',
+                    content_2_class: 'text-gray-8',
+                }
+            ],
         }
     },
 }
