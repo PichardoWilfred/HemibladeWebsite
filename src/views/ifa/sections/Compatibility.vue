@@ -1,12 +1,17 @@
 <template>
-    <section class="flex flex-col space-y-4 items-center max-lg:px-7 mb-20 lg:mb-36">
-        <div class="flex flex-wrap sm:mb-[0.3rem]">
-            <h1 class="flex max-sm:flex-col font-consolas font-bold text-gray-8 text-lg">
-                [IFA] IS COMPATIBLE WITH THE FOLLOWING SYSTEMS:
-            </h1>
-        </div>
-        <div class="flex flex-wrap items-center justify-center pt-10 sm:pt-4 px-12 bg-gray-1 rounded-md w-full lg:max-w-[96%]">
-            <img v-for="img in images" :class="img.img_class" class="first:ml-0 sm:ml-11 mb-8 sm:mb-4" :src="img.src">
+    <section class="max-lg:px-7 mb-20 lg:mb-36 py-10">
+        <h1 class="text-center font-consolas text-2xl text-gray-3 mb-16">
+            [IFA] IS COMPATIBLE WITH THE FOLLOWING SYSTEMS:
+        </h1>
+        <div class="images-container">
+            <img src="/img/ifa/compatibility/dmp.png" class="image first-img" />
+            <img src="/img/ifa/compatibility/neo.png" class="image second-img" />
+            <img src="/img/ifa/compatibility/milestone.png" class="image third-img" />
+            <img src="/img/ifa/compatibility/nx.png" class="image fourth-img" />
+            <img src="/img/ifa/compatibility/dw.png" class="image fifth-img" />
+            <img src="/img/ifa/compatibility/hanwha.png" class="image sixth-img" />
+            <img src="/img/ifa/compatibility/dahua.png" class="image seventh-img" />
+            <img src="/img/ifa/compatibility/hikvision.png" class="image eigth-img" />
         </div>
     </section>
 </template>
@@ -15,14 +20,14 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 
 // images
-import DMP from "/img/ifa/compatibility/DMP.png";
-import DSC from "/img/ifa/compatibility/DSC.png";
-import Milestone from "/img/ifa/compatibility/Milestone.png";
-import NX from "/img/ifa/compatibility/NX.png";
-import DW from "/img/ifa/compatibility/DW.png";
-import Hanwha from "/img/ifa/compatibility/Hanwha.png";
-import Hikvision from "/img/ifa/compatibility/Hikvision.png";
-import BW from "/img/ifa/compatibility/B&W.png";
+import DMP from "/img/ifa/compatibility/dmp.png";
+import Dahua from "/img/ifa/compatibility/dahua.png";
+import Milestone from "/img/ifa/compatibility/milestone.png";
+import NX from "/img/ifa/compatibility/nx.png";
+import DW from "/img/ifa/compatibility/dw.png";
+import Hanwha from "/img/ifa/compatibility/hanwha.png";
+import Neo from "/img/ifa/compatibility/neo.png";
+import Hikvision from "/img/ifa/compatibility/hikvision.png";
 
 export default {
     name: 'Compatibility',
@@ -30,14 +35,14 @@ export default {
     data() {
         return {
             images: [
-                { src: DMP, img_class: 'h-[45px] lg:h-[35px]',},
-                { src: DSC, img_class: 'h-[30px] lg:h-[28px]',},
-                { src: Milestone, img_class: 'h-[40px]',},
-                { src: NX, img_class: 'h-[43px]',},
-                { src: DW, img_class: 'h-[33px]',},
-                { src: Hanwha, img_class: 'h-[68px]',},
-                { src: BW, img_class: 'h-[53px]',},
-                { src: Hikvision, img_class: 'h-[23px]'},
+                { src: DMP, img_class: '',},
+                { src: Dahua, img_class: '',},
+                { src: Milestone, img_class: '',},
+                { src: NX, img_class: '',},
+                { src: DW, img_class: '',},
+                { src: Hanwha, img_class: '',},
+                { src: Hikvision, img_class: ''},
+                { src: Neo, img_class: ''},
             ]
         }
     },
@@ -48,4 +53,59 @@ export default {
     }
 }
 </script>
-<style scoped></style>
+<style scoped>
+section {
+    background-position: top center;
+    background-size: 100% 100%;
+    background-image: url('/img/ifa/compatibility/section-bg.png')
+}
+.image {
+    @apply max-lg:mb-10 flex border border-gray-4 rounded-md w-[330px];
+}
+
+.images-container {
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 992px) {
+    .images-container {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: auto;
+        grid-template-rows: 22vh 21vh 20vh;
+        column-gap: 35px;
+        grid-template-areas:
+        ". first-img second-img ."
+        "third-img fourth-img fifth-img sixth-img"
+        ". seventh-img eigth-img .";
+    }
+}
+.first-img, .second-img {
+    align-self: start;
+}
+.first-img {
+    grid-area: first-img;
+}
+.second-img {
+    grid-area: second-img;
+}
+.third-img {
+    grid-area: third-img;
+}
+.fourth-img {
+    grid-area: fourth-img;
+}
+.fifth-img {
+    grid-area: fifth-img;
+}
+.sixth-img {
+    grid-area: sixth-img;
+}
+.seventh-img {
+    grid-area: seventh-img;
+}
+.eigth-img {
+    grid-area: eigth-img;
+}
+</style>

@@ -53,3 +53,13 @@ a.learn-more-btn:hover svg :is(rect, path) {
 .fade-enter-from, .fade-leave-to {
     opacity: 0;
 }
+
+
+.learn-more-btn:hover svg path.arrow {
+    transform: translateY(7px);
+}
+.learn-more-btn svg path.arrow {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}

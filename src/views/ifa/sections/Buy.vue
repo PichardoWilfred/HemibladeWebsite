@@ -13,7 +13,7 @@
                     <h3 class="py-1 font-consolas text-white font-bold text-2xl rounded-lg text-center" :style="{ backgroundColor: color }">
                         IFA {{ name }}
                     </h3>
-                    <div class="flex items-start content-start justify-center font-consolas py-7" :style="{ color }">
+                    <div class="flex items-start content-start justify-center font-consolas py-5" :style="{ color }">
                         <p class="text-[35px] leading-[35px] mt-3">$</p>
                         <p class="text-[115px] leading-[80px]">{{ price }}</p>
                     </div>
@@ -26,7 +26,7 @@
                     <h5 class="font-bold pl-2 sm:pl-8" :style="{backgroundColor: color}">
                         IFA {{ name }}
                     </h5>
-                    <p class="pl-2 sm:pl-8 text-lg sm:text-xl mb-6 sm:my-1">
+                    <p class="pl-2 sm:pl-8 text-lg sm:text-xl mb-6 sm:mt-1 sm:mb-3">
                         {{ description }}
                     </p>
                     <ul class="pl-4 sm:pl-14">

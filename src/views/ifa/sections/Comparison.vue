@@ -982,14 +982,6 @@ export default {
         @apply font-consolas flex justify-center px-5 text-[32px] text-center;
     }
 
-    .learn-more-btn:hover ::v-deep(svg path.arrow) {
-        transform: translateY(7px);
-    }
-    .learn-more-btn ::v-deep(svg path.arrow) {
-        transition-property: all;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 150ms;
-    }
     .table-section-container {
         @apply w-full min-[1100px]:pl-[12.5rem] min-[1100px]:pr-[5rem];
     }

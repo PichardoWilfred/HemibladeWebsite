@@ -2,9 +2,9 @@
     <section class="py-24 px-7 lg:px-12 font-consolas text-white bg-gray-8">
         <h3 class="font-bold mb-8 text-2xl">ABOUT US</h3>
         <div class="text-[15px] lg:text-xl">
-            <p class="max-w-[1160px] mb-6">
-                HEMIBLADE is a conglomerate of veteran programmers dedicated to develop cross platform software to integrate systems 
-                of different natures.
+            <p class="max-w-[1290px] mb-6">
+                HEMIBLADE is a conglomerate of veteran programmers dedicated to develop cross platform software to 
+                integrate systems of different natures.
             </p>
             <p class="max-w-[1690px]">
                 HEMIBLADE is driven by a visionary approach aimed at revolutionizing the markets with many industry-first products.             

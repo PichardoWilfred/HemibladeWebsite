@@ -69,11 +69,11 @@ export default {
             ],
             documentation: [
                 {
-                    title: 'Control Panel Integration v1.0.3.3',
+                    title: 'Control Panel Integration', //v1.0.3.3
                     download: 'tables/IFA Panel integration comparison B1.0.3.pdf',
                 },
                 {
-                    title: 'VMS Integration v1.0.3.3',
+                    title: 'VMS Integration', //v1.0.3.3
                     download: 'tables/IFA VMS integration comparison B1.0.3.pdf',
                 },
                 {
@@ -83,8 +83,11 @@ export default {
                 {
                     title: 'IFA Versions Comparison',
                     download: 'files/IFA versions functionality comparison B1.0.3.0.pdf',
+                },
+                {
+                    title: 'IFA Setup Guide',
+                    download: 'guide/IFA Setup Guide 2023-R1.pdf',
                 }
-                // “IFA versions comparison”
             ]
         }
     },
