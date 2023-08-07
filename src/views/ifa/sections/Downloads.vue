@@ -63,17 +63,17 @@ export default {
             ],
             softwares: [
                 {
-                    title: 'IFA 2023-R1 B1.0.3.3 Installer',
-                    software: 'https://drive.google.com/file/d/1LJRVVyy2nNcFP6ZVWa31sngRZ24z8Tfw/view?usp=sharing',
+                    title: 'IFA 2023-R1 Installer',
+                    software: 'https://drive.google.com/file/d/1EUvtAskp8pOCLNo9q86eN-GLknyLyPTC/view?usp=drive_link',
                 }
             ],
             documentation: [
                 {
-                    title: 'Control Panel Integration', //v1.0.3.3
+                    title: 'Control Panel Integration',
                     download: 'tables/IFA Panel integration comparison B1.0.3.pdf',
                 },
                 {
-                    title: 'VMS Integration', //v1.0.3.3
+                    title: 'VMS Integration',
                     download: 'tables/IFA VMS integration comparison B1.0.3.pdf',
                 },
                 {
