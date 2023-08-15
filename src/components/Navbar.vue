@@ -2,9 +2,9 @@
 <template>
     <!-- desktop -->
     <header ref="navbar" class="fixed top-0 bg-white w-full font-consolas font-light border-b border-gray-3 z-50">
-        <transition name="grow" mode="out-in" appear>
+        <!-- <transition name="grow" mode="out-in" appear>
             <div v-show="!scrolled && website.section === 'ifa'" class="relative h-6 bg-yellow-3 w-full border-b border-gray-5 z-[60]" />
-        </transition>
+        </transition> -->
         
         <div class="flex items-center w-full px-4 lg:px-10  transition-all" :class="scrolled ? 'py-2':'py-4'">
             <a @click="goHome">
