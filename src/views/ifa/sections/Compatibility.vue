@@ -4,14 +4,14 @@
             [IFA] IS COMPATIBLE WITH THE FOLLOWING SYSTEMS:
         </h1>
         <div class="images-container">
-            <img src="/img/ifa/compatibility/dmp.png" class="image first-img" />
+            <img src="/img/ifa/compatibility/DMP.png" class="image first-img" />
             <img src="/img/ifa/compatibility/neo.png" class="image second-img" />
-            <img src="/img/ifa/compatibility/milestone.png" class="image third-img" />
-            <img src="/img/ifa/compatibility/nx.png" class="image fourth-img" />
-            <img src="/img/ifa/compatibility/dw.png" class="image fifth-img" />
-            <img src="/img/ifa/compatibility/hanwha.png" class="image sixth-img" />
+            <img src="/img/ifa/compatibility/Milestone.png" class="image third-img" />
+            <img src="/img/ifa/compatibility/NX.png" class="image fourth-img" />
+            <img src="/img/ifa/compatibility/DW.png" class="image fifth-img" />
+            <img src="/img/ifa/compatibility/Hanwha.png" class="image sixth-img" />
             <img src="/img/ifa/compatibility/dahua.png" class="image seventh-img" />
-            <img src="/img/ifa/compatibility/hikvision.png" class="image eigth-img" />
+            <img src="/img/ifa/compatibility/Hikvision.png" class="image eigth-img" />
         </div>
     </section>
 </template>
@@ -20,14 +20,14 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 
 // images
-import DMP from "/img/ifa/compatibility/dmp.png";
+import DMP from "/img/ifa/compatibility/DMP.png";
 import Dahua from "/img/ifa/compatibility/dahua.png";
-import Milestone from "/img/ifa/compatibility/milestone.png";
+import Milestone from "/img/ifa/compatibility/Milestone.png";
 import NX from "/img/ifa/compatibility/nx.png";
-import DW from "/img/ifa/compatibility/dw.png";
-import Hanwha from "/img/ifa/compatibility/hanwha.png";
+import DW from "/img/ifa/compatibility/DW.png";
+import Hanwha from "/img/ifa/compatibility/Hanwha.png";
 import Neo from "/img/ifa/compatibility/neo.png";
-import Hikvision from "/img/ifa/compatibility/hikvision.png";
+import Hikvision from "/img/ifa/compatibility/Hikvision.png";
 
 export default {
     name: 'Compatibility',
