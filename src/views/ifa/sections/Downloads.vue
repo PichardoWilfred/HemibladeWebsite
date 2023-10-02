@@ -87,6 +87,10 @@ export default {
                 {
                     title: 'IFA Setup Guide',
                     download: 'guide/IFA Setup Guide 2023-R1.pdf',
+                },
+                {
+                    title: 'IFA Installation Guide',
+                    download: 'guide/IFA Installation Guide.pdf',
                 }
             ]
         }
