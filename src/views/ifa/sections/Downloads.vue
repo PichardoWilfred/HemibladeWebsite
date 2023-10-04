@@ -77,20 +77,24 @@ export default {
                     download: 'tables/IFA VMS integration comparison B1.0.3.pdf',
                 },
                 {
-                    title: 'IFA Telegram Integration Guide',
-                    download: 'guide/IFA Telegram Guide.pdf',
-                },
-                {
                     title: 'IFA Versions Comparison',
                     download: 'files/IFA versions functionality comparison B1.0.3.0.pdf',
                 },
                 {
                     title: 'IFA Setup Guide',
-                    download: 'guide/IFA Setup Guide 2023-R1.pdf',
+                    download: 'guide/ifa/IFA Setup Guide 2023-R1.pdf',
                 },
                 {
                     title: 'IFA Installation Guide',
-                    download: 'guide/IFA Installation Guide.pdf',
+                    download: 'guide/ifa/IFA Installation Guide.pdf',
+                },
+                {
+                    title: 'Telegram Integration Guide',
+                    download: 'guide/messengers/Telegram Integration Guide.pdf',
+                },
+                {
+                    title: 'Slack Integration Guide',
+                    download: 'guide/messengers/Slack Integration Guide.pdf',
                 }
             ]
         }
