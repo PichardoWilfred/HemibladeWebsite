@@ -48,18 +48,6 @@
                 </div>
             </div>
         </div>
-        <div class="relative w-full min-[835px]:h-[1px]">
-            <div class="min-[835px]:absolute left-[0px] lg:left-[-50px] top-[-98px] flex flex-col self-start 
-            lg:mb-6 md:max-w-[400px] xl:max-w-[800px]">
-                <img src="/img/ifa/buy/flag_dr.png" class="w-[90px] mb-2" alt="DOMINICAN REPUBLIC"/>
-                <h3 class="font-consolas text-[16px] sm:leading-[15px] lg:text-[13px] text-white">
-                    CLIENTS LOCATED IN DOMINICAN REPUBLIC CAN TAKE ADVANTAGE OF IFA LAUNCH PROMOTION <br /> TO GET THE STANDARD VERSION AT A 50% DISCOUNT DURING 2023.
-                </h3>
-                <h4 class="font-consolas text-[16px] sm:leading-[20px] lg:text-[13px] mt-2 text-gray-5">
-                    PRICES IN NORTH AMERICAN DOLLARS
-                </h4>
-            </div>
-        </div>
     </section>
 </template>
 <script setup>
@@ -67,7 +55,7 @@ import downloadIcon from '../../../components/icons/download-icon.vue';
 const cards = [
     {
         name: 'FORWARD',
-        price: 10,
+        price: 8,
         color: '#F3BE19',
         description: 'Forward panel messages to VMS for post-processing.',
         list: [
@@ -82,7 +70,7 @@ const cards = [
     },
     {
         name: 'STANDARD',
-        price: 30,
+        price: 11,
         color: '#1da5f5',
         description: 'All IFA Forward functionality plus the following.',
         list: [
