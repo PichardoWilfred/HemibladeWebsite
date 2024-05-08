@@ -17,8 +17,8 @@
             <div class="xl:mx-10">
                 <h2 class="download-title">SOFTWARE</h2>
                 <ul>
-                    <li v-for="({ title, software }, index) in softwares" :key="index" class="download-item">
-                        <a :href="software" class="cursor-pointer hover:underline" target="_blank" download>
+                    <li v-for="({ title, software, hint }, index) in softwares" :key="index" class="download-item">
+                        <a :href="software" class="cursor-pointer hover:underline" :title="hint" target="_blank" download>
                             {{ title }}
                         </a>
                     </li>
@@ -29,7 +29,7 @@
                 <h2 class="download-title">DOCUMENTATION</h2>
                 <ul>
                     <li v-for="({ title, download }, index) in documentation" :key="index" class="download-item">
-                        <a :href="download" class="cursor-pointer hover:underline" download>
+                        <a :href="download"  class="cursor-pointer hover:underline" download >
                             {{ title }}
                         </a>
                     </li>
@@ -63,8 +63,9 @@ export default {
             ],
             softwares: [
                 {
-                    title: 'IFA 2023-R1 Installer',
-                    software: 'https://drive.google.com/file/d/1EUvtAskp8pOCLNo9q86eN-GLknyLyPTC/view?usp=drive_link',
+                    title: 'IFA 2024-R1 Installer',
+                    software: 'installers/ifa/IFA2024R1_v1_14_1.exe',
+                    hint: 'IFA 2024-R1 version 1.14.1'
                 },
                 {
                     title: 'IFA Installation Guide',

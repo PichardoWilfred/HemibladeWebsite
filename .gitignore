@@ -17,6 +17,9 @@ coverage
 /cypress/videos/
 /cypress/screenshots/
 
+# Ignore installers
+installers/ifa/*.exe
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
