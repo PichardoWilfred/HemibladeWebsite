@@ -8,15 +8,16 @@
         </p>
         <div class="flex justify-around flex-wrap">
             <RouterLink class="application" to="/ifa">
-                <img src="/img/portrait/IFA.png" >
+                <cloud-img img="v1716138335/IFA_mj4ftx.png" />
             </RouterLink>
             <a class="application" href="#" @click.prevent="() => {}">
-                <img src="/img/portrait/AKA.png" class="aka">
+                <cloud-img img="v1716138335/AKA_ehqxko.png" class="aka" />
             </a>
         </div>
     </section>
     
-    <section class="years-security bg-gray-7 font-consolas px-7 lg:px-12 pt-[60px] pb-[54px] border-y border-[#EFEFEF] text-white">
+    <section class="years-security bg-gray-7 font-consolas px-7 lg:px-12 pt-[60px] pb-[54px] border-y border-[#EFEFEF] text-white"
+    :style="{'background-image': `url('https://res.cloudinary.com/drmvnxe4l/image/upload/v1716161786/2nd-section-bg_e7gylv.png')`}">
         <h4 class="max-lg:mb-4 mb-6 uppercase font-bold text-[16px] lg:text-[24px] leading-[28px]">
             Years in the security industry working with products from many vendors <br/> taught us a few things.
         </h4>
@@ -35,7 +36,7 @@
             </p>
         </p>
         <div class="flex flex-wrap max-w-[1400px]">
-            <img v-for="(_, index) of [ ...Array(8).keys() ]" :key="index" :src="`/img/agents/picture-${index}.jpg`" 
+            <cloud-img v-for="(img, index) of images_" :key="index" :img="img" 
             class="agent md:w-[22%] max-lg:mb-12 border border-gray-7" alt="test"/>
         </div>
     </section>
@@ -43,12 +44,23 @@
 </template>
 <script setup>
 import { RouterLink } from 'vue-router';
-
-const list =[
+import cloudImg from '../../../components/cloud-img.vue';
+// 
+const list = [
     'Not a single manufacturer offers all the best products.',
     'To have the best possible system products must be bought from different manufacturers but not naturaly integrated.',
     'Useful integration it’s hard to achieve.',
     'Good integration products are expensive to acquire and complex to set up	and maintain.',
+]
+const images_ = [
+    'v1716161791/picture-0_acurmc.jpg',
+    'v1716161800/picture-1_ktuukc.jpg',
+    'v1716161800/picture-2_lhjqgz.jpg',
+    'v1716161801/picture-3_uo7zbu.jpg',
+    'v1716161791/picture-4_ld49x4.jpg',
+    'v1716161788/picture-5_lvhys4.jpg',
+    'v1716161800/picture-6_llgpyf.jpg',
+    'v1716161796/picture-7_eitsi2.jpg',
 ]
 </script>
 <style scoped>
@@ -59,11 +71,7 @@ img.application.aka {
     transform: scale(1.04) translateY(-10px);
 }
 section.years-security {
-    background-image: url('/img/agents/2nd-section-bg.png');
-    background-position: top center;
-}
-section.years-security {
-    background-image: url('/img/agents/2nd-section-bg.png');
+    /* background-image: url('/img/agents/2nd-section-bg.png'); */
     background-position: top center;
 }
 </style>

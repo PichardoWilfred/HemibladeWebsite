@@ -1,10 +1,12 @@
 <script setup>
-import portrait_img from '/img/portrait/portrait_logo.png'
+import portrait_img from '/img/portrait/portrait_logo.png';
+import cloudImg from '../../../components/cloud-img.vue';
 </script>
 
 <template>
     <section class="relative lg:h-[840px]">
-        <div class="bg-section bg-white h-full" :style="{ backgroundImage: `url(${portrait_img})` }" />
+        <cloud-img class="bg-section object-cover h-full" img="v1716138337/portrait_logo_w5ad4b.png" />
+        <!-- <div class="bg-section bg-white h-full" :style="{ backgroundImage: `url(https://res.cloudinary.com/drmvnxe4l/image/upload/v1716138337/portrait_logo_w5ad4b.png)` }" /> -->
         <div class="flex flex-col h-full w-full absolute top-0 items-center z-30 lg:px-6">
             <h2 class="font-consolas max-sm:mx-3 px-6 py-2 rounded-lg text-default font-bold text-center 
             text-2xl mt-[9rem] lg:mt-[9rem]">

@@ -4,14 +4,14 @@
             [IFA] IS COMPATIBLE WITH THE FOLLOWING SYSTEMS:
         </h1>
         <div class="images-container">
-            <img src="/img/ifa/compatibility/DMP.png" class="image first-img" />
-            <img src="/img/ifa/compatibility/neo.png" class="image second-img" />
-            <img src="/img/ifa/compatibility/Milestone.png" class="image third-img" />
-            <img src="/img/ifa/compatibility/NX.png" class="image fourth-img" />
-            <img src="/img/ifa/compatibility/DW.png" class="image fifth-img" />
-            <img src="/img/ifa/compatibility/Hanwha.png" class="image sixth-img" />
-            <img src="/img/ifa/compatibility/dahua.png" class="image seventh-img" />
-            <img src="/img/ifa/compatibility/Hikvision.png" class="image eigth-img" />
+            <cloud-img img="v1716169115/dmp_u8yrkm.png" class="image first-img" />
+            <cloud-img img="v1716169124/neo_knz009.png" class="image second-img" />
+            <cloud-img img="v1716169122/milestone_b3npvs.png" class="image third-img" />
+            <cloud-img img="v1716169125/nx_pijd2y.png" class="image fourth-img" />
+            <cloud-img img="v1716169117/dw_jii8mu.png" class="image fifth-img" />
+            <cloud-img img="v1716169119/hanwha_aptu3g.png" class="image sixth-img" />
+            <cloud-img img="v1716169114/dahua_xgo8f9.png" class="image seventh-img" />
+            <cloud-img img="v1716169120/hikvision_m2oz6h.png" class="image eigth-img" />
         </div>
     </section>
 </template>
@@ -29,9 +29,11 @@ import Hanwha from "/img/ifa/compatibility/Hanwha.png";
 import Neo from "/img/ifa/compatibility/neo.png";
 import Hikvision from "/img/ifa/compatibility/Hikvision.png";
 
+import cloudImg from '../../../components/cloud-img.vue';
+
 export default {
     name: 'Compatibility',
-    components: { Swiper, SwiperSlide },
+    components: { Swiper, SwiperSlide, cloudImg },
     data() {
         return {
             images: [
@@ -60,6 +62,8 @@ section {
     background-image: url('/img/ifa/compatibility/section-bg.png')
 }
 .image {
+    height: auto;
+    object-fit: fill;
     @apply max-lg:mb-10 flex border border-gray-4 rounded-md w-[330px];
 }
 

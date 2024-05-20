@@ -5,7 +5,6 @@
         <!-- <transition name="grow" mode="out-in" appear>
             <div v-show="!scrolled && website.section === 'ifa'" class="relative h-6 bg-yellow-3 w-full border-b border-gray-5 z-[60]" />
         </transition> -->
-        
         <div class="flex items-center w-full px-4 lg:px-10  transition-all" :class="scrolled ? 'py-2':'py-4'">
             <a @click="goHome">
                 <h3 v-if="scrolled" class="cursor-pointer lg:my-1 font-bold font-consolas uppercase text-gray-8 text-xl lg:text-2xl transition-all">

@@ -7,8 +7,8 @@
                 {{  section.name.content }}
             </h2>
             <div class="flex max-xl:flex-col w-full">
-                <img v-if="section.multi" :src="get_link(index)" class="min-[1125px]:min-w-[57vw] min-[1125px]:w-[1050px] object-contain" alt="" srcset="">
-                <img v-else :src="get_image(section.gallery)" class="lg:w-[1050px] object-contain " alt="" srcset="">
+                <img v-if="section.multi" :src="get_link(index)" class="min-[1125px]:min-w-[57vw] min-[1125px]:w-[1050px] object-contain" alt="">
+                <img v-else :src="get_image(section.gallery)" class="lg:w-[1050px] object-contain " alt="">
                 <p v-html="section.description.content" class="text-[17px] leading-[1.7] mb-7 xl:ml-10 mt-4" :class="section.description.class"></p>
             </div>
         </section>
@@ -82,11 +82,11 @@ export default {
                 },
                 {
                     name: {
-                        content:'NOTIFICATIONS WITH GRANULAR CONTROL',
+                        content: 'NOTIFICATIONS WITH GRANULAR CONTROL',
                         class: ''
                     },
                     description: {
-                        content:'IFA sends notification messages thru E-Mail and/or Telegram for instant messaging. <br /> <br/> Both messages can include a photo from the related camera.  <br />Unlimited notification rules can be defined each with a different set of events to notify.',
+                        content: 'IFA sends notification messages thru E-Mail and/or Telegram for instant messaging. <br /> <br/> Both messages can include a photo from the related camera.  <br />Unlimited notification rules can be defined each with a different set of events to notify.',
                         class: ''
                     },
                     // from-[#FFFFFF] to-[#DDDDDD]

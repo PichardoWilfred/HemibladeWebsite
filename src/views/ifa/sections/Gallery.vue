@@ -1,7 +1,7 @@
 <template>
     <section class="bg-[#f1f1f1]">
         <div class="mb-20 flex flex-col lg:flex-row max-lg:items-center justify-center pt-24 max-lg:space-y-12" id="title-section">
-            <img src="/img/ifa/IFA-logo.png" class="w-[265px] h-[137px] lg:ml-[90px]" alt="IFA" srcset="">
+            <cloud-img img="v1716168029/IFA-logo_bttcs1.png" class="w-[265px] h-[137px] lg:ml-[90px]" alt="IFA" />
             <div class="flex flex-col max-lg:items-start max-lg:text-justify text-gray-8 font-consolas px-6 lg:pl-12 lg:w-[680px]">
                 <h2 class="max-lg:text-start max-lg:mb-2 text-10 font-bold text-[22px] lgtext-[27px] leading-none">HEMIBLADE</h2>
                 <h1 v-if="show.title" class="flex flex-col md:flex-row font-semibold text-[22px] lg:text-[42px] max-lg:leading-[1.2] max-lg:mb-5">
@@ -32,11 +32,11 @@
                 @mouseover.self.passive="() => { focus_gallery(true) }" 
                 @mouseleave.self.passive="() => { focus_gallery(false) }"> <!-- Gallery -->
                     <transition name="fade" mode="out-in">
-                        <img 
-                        class="relative z-20 object-contain max-h-[82vh] lg:min-h-[70vh]"
-                        :src="getImage(images[selected_image].src)"
+                        <cloud-img 
+                        class="relative z-20 object-contain max-h-[82vh] lg:min-h-[774px]"
+                        :img="images[selected_image].src"
                         :key="selected_image"
-                        :class="[show_description ? 'show': 'hide']">
+                        :class="[show_description ? 'show': 'hide']" />
                     </transition>
                     <transition name="fade" mode="out-in">
                         <div 
@@ -72,12 +72,13 @@
         </div>
     </section>
 </template>
-<script>
+<script >
+import CloudImg from '../../../components/cloud-img.vue';
 import ArrowSquare from '../../../components/svg/arrow-square.vue';
 
 export default {
     name: "Gallery",
-    components: { ArrowSquare },
+    components: { ArrowSquare,CloudImg },
     data() {
         return {            
             show: {
@@ -86,12 +87,68 @@ export default {
             },
             focused_gallery: true,
             selected_image: 0,
-            images: [...Array(15).keys()].map((number, index) => {
-                return {
-                    src: `IFA Carrusel.0${(number+1) < 10 ? '0':''}${number + 1}`,
-                    show: index === 0,
-                }
-            }),
+            images: [
+                {
+                    src: 'v1716168175/IFA_Carrusel.001_qh50c4.png',
+                    show: true
+                },
+                {
+                    src: 'v1716168177/IFA_Carrusel.002_yresgi.png',
+                    show: false
+                },
+                {
+                    src: 'v1716168177/IFA_Carrusel.003_aunlqw.png',
+                    show: false
+                },
+                {
+                    src: 'v1716168178/IFA_Carrusel.004_dez0vj.png',
+                    show: false
+                },
+                {
+                    src: 'v1716168180/IFA_Carrusel.005_jkydjh.png',
+                    show: false
+                },
+                {
+                    src: 'v1716168181/IFA_Carrusel.006_hbpauh.png',
+                    show: false
+                },
+                {
+                    src: 'v1716168182/IFA_Carrusel.007_rtbdie.png',
+                    show: false
+                },
+                {
+                    src: 'v1716168184/IFA_Carrusel.008_zp3mz8.png',
+                    show: false
+                },
+                {
+                    src: 'v1716168185/IFA_Carrusel.009_iizg8k.png',
+                    show: false
+                },
+                {
+                    src: 'v1716168186/IFA_Carrusel.010_tj3rhy.png',
+                    show: false
+                },
+                {
+                    src: 'v1716168188/IFA_Carrusel.011_jx7q9i.png',
+                    show: false
+                },
+                {
+                    src: 'v1716168190/IFA_Carrusel.012_adqmo8.png',
+                    show: false
+                },
+                {
+                    src: 'v1716168190/IFA_Carrusel.013_uyhbiv.png',
+                    show: false
+                },
+                {
+                    src: 'v1716168191/IFA_Carrusel.014_midygz.png',
+                    show: false
+                },
+                {
+                    src: 'v1716168193/IFA_Carrusel.015_jr2nlz.png',
+                    show: false
+                },
+            ],
             flexible: {
                 distance: 1,
                 scale: 1

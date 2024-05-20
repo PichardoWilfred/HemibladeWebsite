@@ -25,7 +25,7 @@
 
 <style scoped>
 section {
-    background-image: url('/img/about/about-us-bg.png');
+    background-image: url('https://res.cloudinary.com/drmvnxe4l/image/upload/v1716167951/about-us-bg_hv8m7a.png');
     background-size: 100% 100%;
 }
 @media (max-width: 576px) {

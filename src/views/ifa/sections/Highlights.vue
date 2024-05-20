@@ -1,6 +1,7 @@
 <template>
     <section class="flex flex-col lg:flex-row py-[3.5rem] max-lg:p-6 max-lg:pt-16 lg:px-20 border-y border-gray-3 bg-[#f1f1f1]">
-        <img src="/img/ifa/IFA-logo.png" class="w-[215px] h-[100px] max-lg:mb-8 xl:ml-32 lg:mr-8 max-lg:mx-auto">
+        <cloud-img img="v1716168029/IFA-logo_bttcs1.png" 
+        class="w-[215px] h-[100px] max-lg:mb-8 xl:ml-32 lg:mr-8 max-lg:mx-auto" />
         <div class="flex flex-col xl:ml-20 grow">
             <div class="flex max-lg:flex-col items-start justify-between">
                 <div class="flex flex-col mr-3">
@@ -26,9 +27,11 @@
 </template>
 <script>
 import arrow_square from '../../../components/svg/arrow-square.vue';
+import cloudImg from '../../../components/cloud-img.vue';
+
 export default {
     name: 'Features',
-    components: { arrow_square },
+    components: { cloudImg, arrow_square },
     data() {
         return {
             highlights: [
@@ -53,6 +56,6 @@ export default {
 </script>
 <style scoped>
 section {
-    background-image: url('/img/ifa/highlights/section-bg.png');
+    background-image: url('https://res.cloudinary.com/drmvnxe4l/image/upload/v1716169001/section-bg_rmisyg.png');
 }
 </style>

@@ -99,7 +99,7 @@ const cards = [
 </script>
 <style scoped>
     section {
-        background-image: url('/img/ifa/buy/buy-background.png');
+        background-image: url('https://res.cloudinary.com/drmvnxe4l/image/upload/v1716169974/buy-background_dmygat.png');
         background-repeat: no-repeat;
     }
 @media (min-width: 992px) {
