@@ -7,17 +7,21 @@
                 {{  section.name.content }}
             </h2>
             <div class="flex max-xl:flex-col w-full">
-                <img v-if="section.multi" :src="get_link(index)" class="min-[1125px]:min-w-[57vw] min-[1125px]:w-[1050px] object-contain" alt="">
-                <img v-else :src="get_image(section.gallery)" class="lg:w-[1050px] object-contain " alt="">
+                <cloud-img v-if="section.multi" :img="get_link(index)" 
+                class="min-[1125px]:min-w-[57vw] min-[1125px]:w-[1050px] object-contain" 
+                alt="" />
+                <cloud-img v-else :img="get_image(section.gallery)" 
+                class="lg:w-[1050px] object-contain " alt="" />
                 <p v-html="section.description.content" class="text-[17px] leading-[1.7] mb-7 xl:ml-10 mt-4" :class="section.description.class"></p>
             </div>
         </section>
     </main>
 </template>
 <script>
-
+import cloudImg from '../../../components/cloud-img.vue';
 export default {
     name: 'Highlights',
+    components: {cloudImg},
     data() {
         return {
             timeout: {
@@ -36,7 +40,7 @@ export default {
                     // from-[#FFFFFF] to-[#F3BE19]
                     class: '',
                     multi: true,
-                    gallery: ['IFA (1-1)', 'IFA (1-2)'],
+                    gallery: ['v1716298874/IFA_1-1_retylf.png', 'IFA_1-2_wae9vg.png'],
                     selected_image: 0,
                 },
                 {
@@ -50,7 +54,7 @@ export default {
                     },
                     class: '',
                     multi: false,
-                    gallery: 'IFA (2-1)',
+                    gallery: 'v1716298877/IFA_2-1_rwltss.png',
                 },
                 {
                     name: {
@@ -64,7 +68,7 @@ export default {
                     // from-[#FFFFFF] to-[#1FB8E9]
                     class: '',
                     multi: false,
-                    gallery: 'IFA (3-1)',
+                    gallery: 'v1716298887/IFA_3-1_he9zqb.png',
                 },
                 {
                     name: {
@@ -77,7 +81,11 @@ export default {
                     },
                     class: '',
                     multi: true,
-                    gallery: this.get_array({ length: 7, section: 4 }),
+                    gallery: [
+                        'v1716298874/IFA_4-1_zw3csj.png','v1716298874/IFA_4-2_tgcfpl.png',
+                        'v1716298873/IFA_4-3_zgfju6.png','v1716298874/IFA_4-4_dgmnht.png',
+                        'v1716298875/IFA_4-5_xu8qlr.png','v1716298876/IFA_4-6_nkvlgr.png',
+                        'v1716298877/IFA_4-7_tliupf.png'],
                     selected_image: 0,
                 },
                 {
@@ -92,7 +100,7 @@ export default {
                     // from-[#FFFFFF] to-[#DDDDDD]
                     class: '',
                     multi: false,
-                    gallery: 'IFA (5-1)',
+                    gallery: 'v1716298876/IFA_5-1_smc9b1.png',
                 },
                 {
                     name: {
@@ -105,7 +113,13 @@ export default {
                     },
                     class: '',
                     multi: true,
-                    gallery:  this.get_array({ length: 9, section: 6 }),
+                    gallery:  [
+                        'v1716298877/IFA_6-1_fm1qb9.png','v1716298878/IFA_6-2_cukowv.png',
+                        'v1716298878/IFA_6-3_qdw0c3.png','v1716298878/IFA_6-4_y4kii1.png',
+                        'v1716298879/IFA_6-5_fohi1n.png','v1716298879/IFA_6-6_bn4tsd.png',
+                        'v1716298880/IFA_6-7_u8pb31.png','v1716298879/IFA_6-8_flighv.png',
+                        'v1716298880/IFA_6-9_cuc2as.png'
+                    ],
                     selected_image: 0,
                 },
                 {
@@ -120,7 +134,11 @@ export default {
                     // from-[#FFFFFF] to-[#610203]
                     class: '',
                     multi: true,
-                    gallery: this.get_array({ length: 5, section: 7 }),
+                    gallery: [
+                        'v1716298880/IFA_7-1_lfjqrr.png','v1716298881/IFA_7-2_bzoozh.png',
+                        'v1716298881/IFA_7-3_w00cvi.png','v1716298883/IFA_7-4_qzhzv4.png',
+                        'v1716298882/IFA_7-5_hqmwli.png',
+                    ],
                     selected_image: 0,
                 },
                 {
@@ -134,14 +152,14 @@ export default {
                     },
                     class: '',
                     multi: false,
-                    gallery: 'IFA (8-1)',
+                    gallery: 'v1716298885/IFA_8-1_g2gkpk.png',
                 },
             ],
         }
     },
     methods: {
         get_image(name) {
-            return `/img/ifa/highlights/${name}.png`;
+            return name;
         },
         get_array({ length, section }){
             return [...Array(length).keys()].map((el, index) => `IFA (${section}-${(index + 1)})`);

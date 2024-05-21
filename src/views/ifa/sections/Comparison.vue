@@ -2,7 +2,7 @@
     <section>
         <div class="flex flex-col items-start px-7">
             <div class="table-section-container">
-                <h1 class="title">INTEGRATION COMPARISON</h1>
+                <h2 class="title">INTEGRATION COMPARISON</h2>
     
                 <div class="mb-8">
                     <h2 class="subtitle">CONTROL PANEL INTEGRATION COMPARISON</h2>

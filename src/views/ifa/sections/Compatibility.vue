@@ -1,8 +1,8 @@
 <template>
     <section class="max-lg:px-7 mb-20 lg:mb-36 py-10">
-        <h1 class="text-center font-consolas text-2xl text-gray-3 mb-16">
+        <h2 class="text-center font-consolas text-2xl text-gray-3 mb-16">
             [IFA] IS COMPATIBLE WITH THE FOLLOWING SYSTEMS:
-        </h1>
+        </h2>
         <div class="images-container">
             <cloud-img img="v1716169115/dmp_u8yrkm.png" class="image first-img" />
             <cloud-img img="v1716169124/neo_knz009.png" class="image second-img" />

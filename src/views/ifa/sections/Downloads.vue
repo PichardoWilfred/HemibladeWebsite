@@ -1,7 +1,7 @@
 <template>
     <section class="flex flex-col px-7 sm:px-20 pt-10 lg:pt-20 pb-[7rem] lg:pl-32">
         
-        <h1 class="font-consolas font-bold text-gray-8 text-3xl lg:text-4xl mb-4 uppercase">Downloads</h1>
+        <h2 class="font-consolas font-bold text-gray-8 text-3xl lg:text-4xl mb-4 uppercase">Downloads</h2>
         <div class="flex flex-wrap justify-between">
             <div>
                 <h2 class="download-title">BROCHURES</h2>

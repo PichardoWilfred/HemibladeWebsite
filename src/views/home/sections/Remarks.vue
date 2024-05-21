@@ -8,9 +8,9 @@
                     "{{ testimonial.remark }}"
                 </p>
                 <div class="client-info">
-                    <h1 class="font-bold text-xl lg:text-center">
+                    <h3 class="font-bold text-xl lg:text-center">
                         {{ testimonial.name }}
-                    </h1>
+                    </h3>
                     <h2 class="lg:text-center">
                         {{ testimonial.role }}
                     </h2>

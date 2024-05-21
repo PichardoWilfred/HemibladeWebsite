@@ -1,7 +1,7 @@
 <template>
     <section class="relative text-black font-consolas px-7 lg:px-12 pt-24" :style="{backgroundImage: `url(${bg_code})`}">
         <div class="w-full relative z-20 max-w-[1450px]">
-            <h3 class="max-lg:mb-4 mb-3 text-[16px] lg:text-2xl font-bold">HEMIBLADE INTEGRATION PLATFORM (HIP)</h3>
+            <h2 class="max-lg:mb-4 mb-3 text-[16px] lg:text-2xl font-bold">HEMIBLADE INTEGRATION PLATFORM (HIP)</h2>
             <p class="mb-4 text-[15px] lg:text-lg">
                 The HEMIBLADE Integration Platform, HIP for short, is our proprietary
                 framework that provides the functionality and control needed to

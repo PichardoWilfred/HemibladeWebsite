@@ -1,8 +1,8 @@
 <template>
     <main class="px-8 lg:px-24 pt-24">
-        <h1 class="font-consolas font-bold text-gray-8 text-4xl mb-4 uppercase">
+        <h2 class="font-consolas font-bold text-gray-8 text-4xl mb-4 uppercase">
             Privacy policy
-        </h1>
+        </h2>
         <h2>
             Privacy Policy of HEMIBLADE SOFTWARE
         </h2>

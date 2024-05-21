@@ -6,9 +6,9 @@
                 <component :is="card.icon" />
             </div>
             <div class="flex flex-col mx-4 mb-6">
-                <h1 class="font-barlow font-bold text-default text-[22px] mb-3 mt-5">
+                <h2 class="font-barlow font-bold text-default text-[22px] mb-3 mt-5">
                     {{ card.title }}
-                </h1>
+                </h2>
                 <p class="font-nunito text-gray-8 font-bold leading-tight text-[19px]">
                     {{ card.text }}
                 </p>

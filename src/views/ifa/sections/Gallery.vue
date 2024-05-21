@@ -4,28 +4,30 @@
             <cloud-img img="v1716168029/IFA-logo_bttcs1.png" class="w-[265px] h-[137px] lg:ml-[90px]" alt="IFA" />
             <div class="flex flex-col max-lg:items-start max-lg:text-justify text-gray-8 font-consolas px-6 lg:pl-12 lg:w-[680px]">
                 <h2 class="max-lg:text-start max-lg:mb-2 text-10 font-bold text-[22px] lgtext-[27px] leading-none">HEMIBLADE</h2>
-                <h1 v-if="show.title" class="flex flex-col md:flex-row font-semibold text-[22px] lg:text-[42px] max-lg:leading-[1.2] max-lg:mb-5">
-                    [IFA] INTRUSION FIRE AGENT
-                </h1>
+                <span v-if="show.title" class="flex flex-col md:flex-row font-semibold text-[22px] lg:text-[42px] max-lg:leading-[1.2] max-lg:mb-5">
+                    <span class="me-4">[<h1 class="inline-flex">IFA</h1>]</span> INTRUSION FIRE AGENT
+                </span>
                 <p v-show="show.description" class="description text-xl max-w-[630px] leading-[1.45rem] transition-all">
                     The best product for integrating your alarm panel and VMS
                     for INSTANT video confirmation of alarms.
                 </p>
             </div>
         </div>
-        <transition name="fade-delayed" mode="out-in">
-            <div class="mobile-image-description lg:hidden min-h-[282px] min-w-[372px] px-6 mb-10" :key="selected_image">
-                <h3 class="font-consolas font-bold text-2xl mb-2"> {{ info[selected_image].title }} </h3>
-                <p class="font-courier font-medium text-gray-8 text-[1.3rem] leading-[30px] tracking-[-1px] z-20"> {{ info[selected_image].description }}</p>
-            </div>
-        </transition>
+        <div class="lg:hidden min-h-[292px]">
+            <transition name="fade-delayed" mode="out-in">
+                <div class="mobile-image-description lg:hidden min-h-[282px] min-w-[372px] px-6 mb-10" :key="selected_image">
+                    <h3 class="font-consolas font-bold text-2xl mb-2"> {{ info[selected_image].title }} </h3>
+                    <p class="font-courier font-medium text-gray-8 text-[1.3rem] leading-[30px] tracking-[-1px] z-20"> {{ info[selected_image].description }}</p>
+                </div>
+            </transition>
+        </div>
 
         <div class="relative unselectable max-lg:min-h-[200px] flex items-center justify-between sm:px-10 z-[1] pb-20">
             <div class="arrow arrow-left">
                 <arrow-square v-bind="arrow('left')" @click="select_image('previous')"/>
             </div>
 
-            <div class="gallery-container flex flex-col items-center max-lg:justify-between justify-center h-full lg:min-w-[75vw] lg:min-h-[70vh]">
+            <div class="gallery-container flex flex-col items-center max-lg:justify-between justify-center min-h-[210px] lg:min-w-[75vw] lg:min-h-[70vh]">
                 <div v-bind="mouse_interaction"
                 class="lg:min-h-[70vh]"
                 @mouseenter.self.passive="() => { focus_gallery(true) }" 
@@ -61,7 +63,7 @@
                         </div>
                     </transition>
                 </div>
-                <div class="flex items-center mt-auto lg:mt-4"> <!-- Bullets list-->
+                <div class="flex items-center mt-2 lg:mt-4"> <!-- Bullets list-->
                     <div class="bullet" v-for="(_, index) in images" :key="index" @click="select_image(index)" :class="{ active: selected_image === index }"></div>
                 </div>
             </div>

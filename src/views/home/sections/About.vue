@@ -1,6 +1,6 @@
 <template>
     <section class="py-24 px-7 lg:px-12 font-consolas text-white bg-gray-8">
-        <h3 class="font-bold mb-8 text-2xl">ABOUT US</h3>
+        <h2 class="font-bold mb-8 text-2xl">ABOUT US</h2>
         <div class="text-[15px] lg:text-xl">
             <p class="max-w-[1290px] mb-6">
                 HEMIBLADE is a conglomerate of veteran programmers dedicated to develop cross platform software to 

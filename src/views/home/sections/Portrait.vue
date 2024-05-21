@@ -12,13 +12,13 @@ import cloudImg from '../../../components/cloud-img.vue';
             text-2xl mt-[9rem] lg:mt-[9rem]">
                 NOW IT ALL MAKES PERFECT SENSE®
             </h2>
-            <h1 class="font-barlow max-lg:px-3 lg:px-4 lg:py-2 rounded-lg font-semibold max-w-[572px] lg:max-w-[900px] 
+            <p class="font-barlow max-lg:px-3 lg:px-4 lg:py-2 rounded-lg font-semibold max-w-[572px] lg:max-w-[900px] 
             text-[5.3vw] sm:text-[30px] lg:text-[48px] 
             lg:leading-[60px] text-center text-blue-4
             mt-[7.5rem] lg:mt-[20rem]">
                 CONNECT THE DOTS BETWEEN SECURITY SYSTEMS
                 THAT WERE UNRELATED… UNTIL NOW.
-            </h1>
+            </p>
             <div class="max-lg:bg-[#FFFFFF] max-lg:p-4 pt-0 mt-[1.5rem] w-full flex justify-center">
                 <p class="font-consolas text-default text-center 
                     text-base lg:text-xl max-w-[663px] lg:max-w-[800px]">

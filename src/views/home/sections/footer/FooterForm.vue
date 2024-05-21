@@ -1,6 +1,6 @@
 <template>
     <form class="flex flex-col w-[36rem] mb-6" ref="form_ref">
-        <h1 class="font-barlow-w font-semibold text-white text-2xl mb-6">CONNECT WITH US</h1>
+        <h2 class="font-barlow-w font-semibold text-white text-2xl mb-6">CONNECT WITH US</h2>
         <div class="form-control flex flex-col mb-5">
             <input v-model="form.email.value" name="email"
             class="px-2 pb-1 mb-1 font-open-sans bg-[transparent] placeholder-gray-6 placeholder:font-bold placeholder:text-[14px] border-b border-gray-7 focus-within:outline-none focus-within:border-yellow hover:border-yellow active:border-yellow" 

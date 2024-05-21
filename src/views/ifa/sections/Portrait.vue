@@ -3,11 +3,11 @@ e
     <section class="relative flex flex-col items-center text-center px-6 max-lg:py-6 sm:px-12 sm:pt-[108px] sm:pb-[156px]">
         <div class="relative z-30 flex flex-col items-center text-center">
             <h2 class="font-consolas font-extrabold text-center sm:text-[24px] lg:text-[1.5rem]">NOW IT ALL MAKES PERFECT SENSE®</h2>
-            <h1 class="font-barlow text-center text-xl sm:text-[32px] lg:text-[44px] font-semibold text-[#0099DA] sm:leading-[42px] lg:leading-[52px] max-w-5xl pb-10 pt-5">
+            <h3 class="font-barlow text-center text-xl sm:text-[32px] lg:text-[44px] font-semibold text-[#0099DA] sm:leading-[42px] lg:leading-[52px] max-w-5xl pb-10 pt-5">
                 TAKE YOUR SECURITY DEPARTMENT EFFICIENCY TO NEW HEIGHTS
                 REAP THE BENEFITS OF INTEGRATION FOR INSTANT AND FORENSIC
                 ALARM CONFIRMATION BY VIDEO
-            </h1>
+            </h3>
             <p class="max-sm:hidden font-nunito text-default text-md text-[16px] lg:text-[22px] text-center font-bold max-w-[1310px] leading-[1.6]">
                 IFA handles your alarm panels and VMS as a single entity with access to their resources including the panel’s sensors activation when it is not armed. 
                 Relate panel zones to VMS cameras, and create rules for event forwarding, notifications and supervision. 
